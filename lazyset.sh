@@ -27,9 +27,9 @@ echo "Install all application in feeds to package..."
 #6 Install toolchain for Cavium platform.
 cp /data/public/Sonicwall/Source-Code/openwrt-1.7/tools.tgz ../OCTEON-SDK
 echo "Un-tar and install tools.tgz..."
-tar -zxvf ../OCTEON-SDK/tools.tgz
+tar -zxvf ../OCTEON-SDK/tools.tgz -C ../OCTEON-SDK
 
-rm -rf ../tools.tgz
+rm -rf ../OCTEON-SDK/tools.tgz
 
 #7 Use 'make defconfig' to let the system do the rest setting of .config for us
 echo "Use "make defconfig" for the rest setting..."
