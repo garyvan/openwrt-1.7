@@ -1,0 +1,53 @@
+#!/bin/sh
+
+#. /lib/functions/uci-defaults.sh
+
+rm -f /etc/config/openvpn
+touch /etc/config/openvpn
+
+uci set network.vpn0=interface
+uci set network.vpn0.ifname=tun0
+uci set network.vpn0.proto=none
+uci commit network;
+
+uci add firewall  rule
+uci set firewall.@rule[-1].name=Allow-OpenVPN-Inbound
+uci set firewall.@rule[-1].target=ACCEPT
+uci set firewall.@rule[-1].src=*
+uci set firewall.@rule[-1].proto=udp
+uci set firewall.@rule[-1].dest_port=1194
+uci add firewall  zone
+uci set firewall.@zone[-1].name=vpn
+uci set firewall.@zone[-1].input=ACCEPT
+uci set firewall.@zone[-1].forward=ACCEPT
+uci set firewall.@zone[-1].output=ACCEPT
+uci commit firewall
+
+echo > /etc/config/openvpn
+mkdir -p /etc/openvpn
+cp /etc/certificates/my-server.crt /etc/openvpn
+cp /etc/certificates/my-server.key /etc/openvpn
+cp /etc/certificates/ca.crt /etc/openvpn
+cp /etc/certificates/dh2048.pem /etc/openvpn
+uci set openvpn.myvpn=openvpn
+uci set openvpn.myvpn.enabled=1
+uci set openvpn.myvpn.dev=tun
+uci set openvpn.myvpn.proto=udp
+uci set openvpn.myvpn.log=/tmp/openvpn.log
+uci set openvpn.myvpn.verb=3
+uci set openvpn.myvpn.engine=octeon
+uci set openvpn.myvpn.cipher=AES-256-CBC
+uci set openvpn.myvpn.auth=SHA1
+uci set openvpn.myvpn.ca=/etc/openvpn/ca.crt
+uci set openvpn.myvpn.cert=/etc/openvpn/my-server.crt
+uci set openvpn.myvpn.key=/etc/openvpn/my-server.key
+uci set openvpn.myvpn.dh=/etc/openvpn/dh2048.pem
+uci set openvpn.myvpn.server='10.8.0.0 255.255.255.0'
+uci set openvpn.myvpn.port=1194
+uci set openvpn.myvpn.keepalive='10 120'
+uci set openvpn.myvpn.push=''
+uci commit openvpn
+
+/etc/init.d/openvpn enable
+
+exit 0

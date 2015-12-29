@@ -1,0 +1,4 @@
+<map id="hfa_cluster_cleanup" name="hfa_cluster_cleanup">
+<area shape="rect" id="node3" href="$cvm-hfa-cluster_8c.html#a5eb9ad880a56c9e7af7891cb994ae9db" title="Counterpart of hfa_cluster_setmem()." alt="" coords="209,5,393,35"/>
+<area shape="rect" id="node5" href="$cvm-hfa-cluster_8c.html#a6c30dec281084f6e40bf9d98356418bd" title="Frees Cache pool for cluster." alt="" coords="207,59,396,88"/>
+</map>

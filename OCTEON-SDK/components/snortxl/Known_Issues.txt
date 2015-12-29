@@ -1,0 +1,31 @@
+SnortXL Known Issues
+====================
+
+1.  This release supports only OCTEON 70XX EVB/SFF device.
+2.  SnortXL on Linux in SE-UM mode is supported in this build. SE mode is not 
+    supported.
+3.  PCAP, OCTEON and AFPACKET data acquistion modules (DAQ) are supported in 
+    this release. DAQ AFPACKET works with OCTEON Ethernet module and supports 
+    inline mode of operation; however this is an experimental feature and has 
+    not been verified.
+4.  SnortXL using OCTEON DAQ can not co-exist with OCTEON ethernet module.
+5.  SnortXL using OCTEON DAQ should be run on a power of 2 number of cores for
+    hardware flow pinning to work.
+6.  SnortXL using AFPACKET DAQ can be run only on a single core. However for
+    better performance, Linux should be booted with multiple cores and SnortXL
+    should be scheduled to run on any one core.
+7.  Multiple runs of SnortXL on Linux maybe unstable and thus not recommended.
+8.  This build has been tested with the bundled snort configurations and rules
+    only. Refer to the configuration file for verified preprocessor options.
+9.  Snort compilation options can be seen in the Makefile placed in the parent
+    folder. This build has been verified with these compile options only.
+10. This release supports the preprocessors Stream5, HttpInspect and Frag3. 
+11. Dynamic preprocessors/plugins and shared object rules are not supported. 
+12. This release has been verified for packet-sizes upto 1500 only.
+13. IPv6 Packets are not supported in this release.
+14. Target based option has not been verified in this release.
+15. All logging/tagging options are not verified. For functional tests, alert 
+    logging to console may be used.
+16. There maybe few duplicate alerts reported in asynchronous mode of operation.
+17. Only 'Alert' action has been verified for this release.
+

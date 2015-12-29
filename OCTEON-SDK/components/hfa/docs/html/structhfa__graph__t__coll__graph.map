@@ -1,0 +1,8 @@
+<map id="hfa_graph_t" name="hfa_graph_t">
+<area shape="rect" id="node2" href="$structppinfo__t.html" title="{ppinfo_t\n|+ base\l+ snode\l+ snode2\l+ info\l|}" alt="" coords="55,638,137,775"/>
+<area shape="rect" id="node4" href="$structpp__tstamp__t.html" title="{pp_tstamp_t\n|+ version\l+ uuid\l|}" alt="" coords="19,407,117,510"/>
+<area shape="rect" id="node6" href="$structpp__tstampopt__t.html" title="{pp_tstampopt_t\n|+ linkable\l+ memonly\l+ cachealgo\l+ dfa\l+ strings\l+ cachesize\l+ target\l+ optlevel\l+ unused1\l+ linked\land 7 more...\l|}" alt="" coords="5,5,125,264"/>
+<area shape="rect" id="node8" href="$structhfa__dev.html" title="HFA Device Structure." alt="" coords="164,664,236,749"/>
+<area shape="rect" id="node10" href="$structhfa__devinfo__t.html" title="HFA Device Info." alt="" coords="145,347,284,571"/>
+<area shape="rect" id="node12" href="$structhfa__memchunk__t.html" title="Memory Chunk attributes." alt="" coords="149,83,283,186"/>
+</map>

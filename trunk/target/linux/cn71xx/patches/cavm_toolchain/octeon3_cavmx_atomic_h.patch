@@ -1,0 +1,30 @@
+--- a/arch/mips/include/asm/octeon/cvmx-atomic.h	2014-04-15 15:00:25.000000000 -0700
++++ b/arch/mips/include/asm/octeon/cvmx-atomic.h	2014-06-05 17:09:06.197451939 -0700
+@@ -74,12 +74,14 @@ static inline void cvmx_atomic_add32_nos
+ 
+ #ifdef CVMX_CAVIUM_OCTEON2
+ 	{
++/*
+ 		__asm__ __volatile__("   saa %[inc], (%[base]) \n":"+m"(*ptr)
+ 				     :[inc] "r"(incr),[base] "r"(ptr)
+ 				     :"memory");
++*/
+ 	}
+ #else
+-	if (OCTEON_IS_MODEL(OCTEON_CN3XXX)) {
++	if (/*OCTEON_IS_MODEL(OCTEON_CN3XXX)*/ 1) {
+ 		uint32_t tmp;
+ 
+ 		__asm__ __volatile__(".set noreorder         \n"
+@@ -90,9 +92,11 @@ static inline void cvmx_atomic_add32_nos
+ 				     :[inc] "r"(incr)
+ 				     :"memory");
+ 	} else {
++/*
+ 		__asm__ __volatile__("   saa %[inc], (%[base]) \n":"+m"(*ptr)
+ 				     :[inc] "r"(incr),[base] "r"(ptr)
+ 				     :"memory");
++*/
+ 	}
+ #endif
+ }

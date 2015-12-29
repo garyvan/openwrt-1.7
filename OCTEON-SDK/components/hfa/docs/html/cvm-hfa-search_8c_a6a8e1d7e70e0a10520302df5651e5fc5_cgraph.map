@@ -1,0 +1,5 @@
+<map id="hfa_searchctx_get_searchstatus" name="hfa_searchctx_get_searchstatus">
+<area shape="rect" id="node3" href="$cvm-hfa_8c.html#a4753d2dd586e19676b1a59dd16baaeed" title="Obtain status of submitted insruction." alt="" coords="284,32,460,61"/>
+<area shape="rect" id="node5" href="$cvm-hfa-instr_8h.html#a56f2522dcba965745a1bc239fc432dca" title="Gets done from RWORD0." alt="" coords="516,5,679,35"/>
+<area shape="rect" id="node7" href="$cvm-hfa-instr_8h.html#a9700a50b68b6616506528eb725a8bda1" title="Gets reason from RWORD0." alt="" coords="511,59,684,88"/>
+</map>

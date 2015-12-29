@@ -1,0 +1,12 @@
+--- a/drivers/net/usb/usbnet.c	2014-04-15 15:00:07.000000000 -0700
++++ b/drivers/net/usb/usbnet.c	2014-09-08 16:21:40.572831975 -0700
+@@ -206,9 +206,6 @@
+ 		break;
+ 	}
+ 
+-	if (!netif_running (dev->net))
+-		return;
+-
+ 	status = usb_submit_urb (urb, GFP_ATOMIC);
+ 	if (status != 0)
+ 		netif_err(dev, timer, dev->net,

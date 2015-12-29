@@ -1,0 +1,6 @@
+<map id="pp_get_version_string_ex" name="pp_get_version_string_ex">
+<area shape="rect" id="node3" href="$cvm-hfa_8c.html#afd1d53fe8a402d4c5799e6e98c67baaa" title="Displays HFA Device info." alt="" coords="239,32,393,61"/>
+<area shape="rect" id="node5" href="$cvm-hfa_8c.html#a873768042b716d60996ec5d858fc8fd9" title="This function must be called by application to initialize HFA engine and setup resources for HFA hard..." alt="" coords="443,32,541,61"/>
+<area shape="rect" id="node7" href="$hfa-lnx-async_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="591,5,644,35"/>
+<area shape="rect" id="node9" href="$hfa-se-async_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="591,59,644,88"/>
+</map>

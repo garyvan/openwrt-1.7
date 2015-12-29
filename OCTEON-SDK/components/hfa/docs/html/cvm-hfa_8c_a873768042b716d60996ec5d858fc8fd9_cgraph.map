@@ -1,0 +1,30 @@
+<map id="hfa_dev_init" name="hfa_dev_init">
+<area shape="rect" id="node3" href="$cvm-hfa-stats_8c.html#a2fcf955b47370bfa46705ee5a23a70cf" title="This routine allocates memory for counters to maintain statistics of each processing core..." alt="" coords="195,109,331,139"/>
+<area shape="rect" id="node23" href="$cvm-hfa_8c.html#a27982497398da2118cd5287ed51732e7" title="Provides device&#45;specific information This is a utility routine used to obtain HFA device&#45;specific det..." alt="" coords="189,163,336,192"/>
+<area shape="rect" id="node25" href="$pp_8h.html#a6f5982b2671e9682262a26b0d2996396" title="Constructs a readable version string for the PP library." alt="" coords="183,216,343,245"/>
+<area shape="rect" id="node27" href="$cvm-hfa_8c.html#afd1d53fe8a402d4c5799e6e98c67baaa" title="Displays HFA Device info." alt="" coords="185,269,340,299"/>
+<area shape="rect" id="node33" href="$cvm-hfa_8c.html#a236e64ca73680ea6761204d5c44d4e96" title="API to set PP resource allocator for partial matches." alt="" coords="173,323,352,352"/>
+<area shape="rect" id="node35" href="$cvm-hfa_8c.html#ab547f175726534d6a0a334eb35af4980" title="Default function pointer for PP allocations." alt="" coords="183,376,343,405"/>
+<area shape="rect" id="node37" href="$cvm-hfa_8c.html#a148abbfdeebb207ff46884af8eeb8fa4" title="API to set PP resource deallocator for partial matches." alt="" coords="175,429,351,459"/>
+<area shape="rect" id="node39" href="$cvm-hfa_8c.html#a832239ee7b188265bdacbbfb7e879af1" title="Default function pointer for PP deallocations." alt="" coords="185,483,340,512"/>
+<area shape="rect" id="node41" href="$cvm-hfa_8c.html#a774451b83b300f862763d189c9758e1f" title="API to set PP buffer size function pointer." alt="" coords="175,536,351,565"/>
+<area shape="rect" id="node43" href="$cvm-hfa_8c.html#a11aab8e30488e4cfc900f60a0dabc784" title="Default function pointer for PP size." alt="" coords="185,589,340,619"/>
+<area shape="rect" id="node45" href="$cvm-hfa_8c.html#a9a0b038e0d29435cb91a21d9c62806cc" title="API to set PP resource allocator for temporary memory." alt="" coords="171,643,355,672"/>
+<area shape="rect" id="node47" href="$cvm-hfa_8c.html#a2cbca63c413f08d3861f9b4c2855391f" title="API to set PP resource deallocator for temporary memory." alt="" coords="173,696,352,725"/>
+<area shape="rect" id="node49" href="$cvm-hfa_8c.html#af0b17e8a09b1f7a1dd438ddcb1e4cd14" title="API to set temporary memory size function pointer." alt="" coords="173,749,352,779"/>
+<area shape="rect" id="node51" href="$cvm-hfa_8c.html#aa2754afcdd94eb3dcd90c374f779dd24" title="API to set PP resource allocator for match/result buffer." alt="" coords="152,803,373,832"/>
+<area shape="rect" id="node53" href="$cvm-hfa_8c.html#ad022f5aec72780af8b36533884693539" title="API to set PP resource deallocator for result/match buf." alt="" coords="155,856,371,885"/>
+<area shape="rect" id="node55" href="$cvm-hfa_8c.html#a8b71887165c143e32600513d12f9274f" title="API to set match buffer size function pointer." alt="" coords="155,909,371,939"/>
+<area shape="rect" id="node57" href="$cvm-hfa_8c.html#abcc0595aa8b2bb2d6116d600abbf55f8" title="API to set PP error callback." alt="" coords="172,963,353,992"/>
+<area shape="rect" id="node59" href="$cvm-hfa_8c.html#ac115556b315ff135ed2fd059cdf7d066" title="Default function pointer for PP errors." alt="" coords="189,1016,336,1045"/>
+<area shape="rect" id="node5" href="$cvm-hfa-stats_8c.html#ab70d294575883530a6ecd321a2a09fc3" title="Create ARENA for hfa statistics." alt="" coords="428,56,599,85"/>
+<area shape="rect" id="node19" href="$cvm-hfa-stats_8c.html#acbdfa65e476c04cd9b67b7c462eefe56" title="This routine allocates required memory from STATS ARENA." alt="" coords="428,109,599,139"/>
+<area shape="rect" id="node21" href="$cvm-hfa-stats_8c.html#a7a2acbe48c3850d43256938ee996aa16" title="This routine frees memory to STATS ARENA." alt="" coords="431,163,596,192"/>
+<area shape="rect" id="node7" href="$cvm-hfa_8c.html#a199331bc34e479a3defde18ae38a1d49" title="This is a utility routine to find or allocate a named block." alt="" coords="655,56,820,85"/>
+<area shape="rect" id="node9" href="$cvmx-hfa_8c.html#a547dc48185d98dcfe05c3f2cf49429fd" title="Finds a named bootmem block by name." alt="" coords="1119,5,1313,51"/>
+<area shape="rect" id="node11" href="$cvmx-hfa_8c.html#ae7d614919dc1b610fef50491246901ce" title="Create a named bootmem block by name." alt="" coords="869,29,1069,59"/>
+<area shape="rect" id="node13" href="$cvm-hfa_8c.html#a741c1a0561a8b5a320f061afee14ecf4" title="Free the named block allocated using hfa_find_named_block()." alt="" coords="885,83,1053,112"/>
+<area shape="rect" id="node16" href="$cvmx-hfa_8c.html#a96a2b8d673269a4c41c3a151e4e56abb" title="Frees a named bootmem block by name." alt="" coords="1119,109,1313,139"/>
+<area shape="rect" id="node29" href="$pp_8h.html#a9e7b310f36183e66e8880a57028cb670" title="Constructs a readable extended version string for the PP library." alt="" coords="423,243,604,272"/>
+<area shape="rect" id="node31" href="$cvmx-hfa_8c.html#a04d071e03c6b4ceee5c1f527b34de173" title="Given the chip processor ID from COP0, this function returns a string representing the chip model num..." alt="" coords="429,295,597,342"/>
+</map>

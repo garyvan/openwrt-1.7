@@ -1,0 +1,9 @@
+<map id="hfaf_sparam_t" name="hfaf_sparam_t">
+<area shape="rect" id="node2" href="$structppiovec__t.html" title="{ppiovec_t\n|+ ptr\l+ len\l|}" alt="" coords="47,6,129,109"/>
+<area shape="rect" id="node8" href="$structhfa__output__t_1_1sparam__data__gather.html" title="Output buffer &#45; gather mode." alt="" coords="153,185,313,305"/>
+<area shape="rect" id="node13" href="$structhfa__input__t.html" title="Gather input search parameter." alt="" coords="43,339,133,424"/>
+<area shape="rect" id="node4" href="$structhfa__searchparams.html" title="Search Parameters set by Application." alt="" coords="123,654,264,826"/>
+<area shape="rect" id="node6" href="$unionhfa__output__t.html" title="Output search parameter provided by application Depending upon used mode &#45; Single or Gather..." alt="" coords="396,449,495,586"/>
+<area shape="rect" id="node11" href="$structhfa__output__t_1_1sparam__data__direct.html" title="Direct output buffer (Non&#45;iovec)" alt="" coords="365,177,525,314"/>
+<area shape="rect" id="node16" href="$structhfa__search__hwpp__ofields__t.html" title="HFA hardware and Post processing fields returned to Application." alt="" coords="177,457,372,577"/>
+</map>

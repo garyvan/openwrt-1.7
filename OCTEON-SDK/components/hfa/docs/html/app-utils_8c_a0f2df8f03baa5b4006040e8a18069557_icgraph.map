@@ -1,0 +1,4 @@
+<map id="hfa_sigint_handler" name="hfa_sigint_handler">
+<area shape="rect" id="node3" href="$app-utils_8c.html#a4ef3fc7ca0729733044bc1430922cb2f" title="Register signal handler for SIGINT(CTRL&#45;C)." alt="" coords="193,5,407,35"/>
+<area shape="rect" id="node5" href="$hfa-se-async_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="456,5,509,35"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="hfa_graph_getstatus" name="hfa_graph_getstatus">
+<area shape="rect" id="node3" href="$cvm-hfa_8c.html#a4753d2dd586e19676b1a59dd16baaeed" title="Obtain status of submitted insruction." alt="" coords="216,32,392,61"/>
+<area shape="rect" id="node9" href="$cvm-hfa-instr_8h.html#aa7b5661907cf23e01fe784a70980ed4b" title="Gets itype from RWORD0." alt="" coords="223,85,385,115"/>
+<area shape="rect" id="node11" href="$cvm-hfa-graph_8c.html#aa4c0667cc4f92a08c249041eb8a4ec58" title="This routine is used to free the buffers and change the graph load status after instruction completio..." alt="" coords="207,139,401,168"/>
+<area shape="rect" id="node5" href="$cvm-hfa-instr_8h.html#a56f2522dcba965745a1bc239fc432dca" title="Gets done from RWORD0." alt="" coords="457,5,620,35"/>
+<area shape="rect" id="node7" href="$cvm-hfa-instr_8h.html#a9700a50b68b6616506528eb725a8bda1" title="Gets reason from RWORD0." alt="" coords="452,59,625,88"/>
+<area shape="rect" id="node13" href="$cvm-hfa-cluster_8c.html#ad8cad96579f5a310b62caaf8c166658f" title="Returns a copy of a cluster of the HFA device." alt="" coords="479,139,599,168"/>
+</map>

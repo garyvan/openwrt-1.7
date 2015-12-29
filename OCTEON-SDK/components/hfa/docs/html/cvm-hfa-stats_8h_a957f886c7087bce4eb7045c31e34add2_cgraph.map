@@ -1,0 +1,5 @@
+<map id="hfa_searchctx_stats_print" name="hfa_searchctx_stats_print">
+<area shape="rect" id="node3" href="$cvm-hfa-search_8c.html#a48920dcf6a80687b7f6c86056f29523a" title="This routine is used to print PP statistics while post processing is going on." alt="" coords="207,5,372,51"/>
+<area shape="rect" id="node5" href="$cvm-hfa-pp_8c.html#add6064138ec2e35741929056a0992d8d" title="ppgetstats" alt="" coords="421,13,509,43"/>
+<area shape="rect" id="node7" href="$pp_8h.html#a808d5057ee5670ce724a6a88fc22b799" title="pphfa_getstats" alt="" coords="559,13,673,43"/>
+</map>

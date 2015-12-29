@@ -1,0 +1,17 @@
+<map id="destroyctx" name="destroyctx">
+<area shape="rect" id="node3" href="$hfa-se-flow_8c.html#a7ab45fe0bf9371bbe81609ffe8a62702" title="Cleanup memory allocated for search parameters." alt="" coords="215,5,303,35"/>
+<area shape="rect" id="node7" href="$cvm-hfa-search_8c.html#a6a8e1d7e70e0a10520302df5651e5fc5" title="This routine provides the status of an outstanding pattern search operation initiated using hfa_searc..." alt="" coords="144,59,373,88"/>
+<area shape="rect" id="node15" href="$cvm-hfa-search_8c.html#a30064f173d814bd3791b59d675c2f45f" title="This routine cleans&#45;up a Search Context." alt="" coords="157,165,360,195"/>
+<area shape="rect" id="node5" href="$hfa-se-flow_8c.html#a49535197bf697f5b0b5f2952e1e5063c" title="Free packet buffer and wqe to the corresponding fpa pools." alt="" coords="485,5,536,35"/>
+<area shape="rect" id="node9" href="$cvm-hfa_8c.html#a4753d2dd586e19676b1a59dd16baaeed" title="Obtain status of submitted insruction." alt="" coords="423,59,599,88"/>
+<area shape="rect" id="node11" href="$cvm-hfa-instr_8h.html#a56f2522dcba965745a1bc239fc432dca" title="Gets done from RWORD0." alt="" coords="655,5,817,35"/>
+<area shape="rect" id="node13" href="$cvm-hfa-instr_8h.html#a9700a50b68b6616506528eb725a8bda1" title="Gets reason from RWORD0." alt="" coords="649,59,823,88"/>
+<area shape="rect" id="node17" href="$cvm-hfa-pp_8c.html#add6064138ec2e35741929056a0992d8d" title="ppgetstats" alt="" coords="467,112,555,141"/>
+<area shape="rect" id="node21" href="$cvm-hfa-pp_8c.html#a57ec655c9bdb6ce63ada6767c7e14763" title="ppcleanstats" alt="" coords="460,165,561,195"/>
+<area shape="rect" id="node25" href="$cvm-hfa-pp_8c.html#a41ce9d3103c639e474783d3843e09071" title="ppcleanup" alt="" coords="467,219,555,248"/>
+<area shape="rect" id="node29" href="$cvm-hfa-stats_8c.html#a2df4c76e04e7b028ed2df4bba1b2de3d" title="This routine is the counterpart of hfa_searchctx_init_stats()." alt="" coords="436,271,585,318"/>
+<area shape="rect" id="node19" href="$pp_8h.html#a808d5057ee5670ce724a6a88fc22b799" title="pphfa_getstats" alt="" coords="679,112,793,141"/>
+<area shape="rect" id="node23" href="$pp_8h.html#a978b171bd7a736cb7fa0d5d034aa94e2" title="pphfa_cleanstats" alt="" coords="671,165,801,195"/>
+<area shape="rect" id="node27" href="$pp_8h.html#a428ad073d1fd72da37ab8b00f13693a3" title="pphfa_cleanup" alt="" coords="679,219,793,248"/>
+<area shape="rect" id="node31" href="$cvm-hfa-stats_8c.html#a7a2acbe48c3850d43256938ee996aa16" title="This routine frees memory to STATS ARENA." alt="" coords="653,280,819,309"/>
+</map>

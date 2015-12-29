@@ -1,0 +1,11 @@
+<map id="snode_cleanup" name="snode_cleanup">
+<area shape="rect" id="node3" href="$cvm-hfa-search_8c.html#a30064f173d814bd3791b59d675c2f45f" title="This routine cleans&#45;up a Search Context." alt="" coords="173,85,376,115"/>
+<area shape="rect" id="node5" href="$cvm-hfa-pp_8c.html#add6064138ec2e35741929056a0992d8d" title="ppgetstats" alt="" coords="456,5,544,35"/>
+<area shape="rect" id="node9" href="$cvm-hfa-pp_8c.html#a57ec655c9bdb6ce63ada6767c7e14763" title="ppcleanstats" alt="" coords="449,59,551,88"/>
+<area shape="rect" id="node13" href="$cvm-hfa-pp_8c.html#a41ce9d3103c639e474783d3843e09071" title="ppcleanup" alt="" coords="456,112,544,141"/>
+<area shape="rect" id="node17" href="$cvm-hfa-stats_8c.html#a2df4c76e04e7b028ed2df4bba1b2de3d" title="This routine is the counterpart of hfa_searchctx_init_stats()." alt="" coords="425,165,575,211"/>
+<area shape="rect" id="node7" href="$pp_8h.html#a808d5057ee5670ce724a6a88fc22b799" title="pphfa_getstats" alt="" coords="651,5,765,35"/>
+<area shape="rect" id="node11" href="$pp_8h.html#a978b171bd7a736cb7fa0d5d034aa94e2" title="pphfa_cleanstats" alt="" coords="643,59,773,88"/>
+<area shape="rect" id="node15" href="$pp_8h.html#a428ad073d1fd72da37ab8b00f13693a3" title="pphfa_cleanup" alt="" coords="651,112,765,141"/>
+<area shape="rect" id="node19" href="$cvm-hfa-stats_8c.html#a7a2acbe48c3850d43256938ee996aa16" title="This routine frees memory to STATS ARENA." alt="" coords="625,173,791,203"/>
+</map>

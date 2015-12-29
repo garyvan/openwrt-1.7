@@ -1,0 +1,5 @@
+<map id="init_interfaces" name="init_interfaces">
+<area shape="rect" id="node3" href="$cvm-hfa_8c.html#a4444cdb0e19b7ae88684b6e41c12a303" title="This API allows application to control FPA pool counts at Runtime This API is for non&#45;kernel mode and..." alt="" coords="165,5,323,35"/>
+<area shape="rect" id="node5" href="$app-utils_8c.html#aefd985776fb6437d808b08aedd91e709" title="Initialize WQE, IBUF and PKO fpa pools." alt="" coords="181,58,307,105"/>
+<area shape="rect" id="node7" href="$app-utils_8c.html#af0e2ef99a9a91fdd489c8217ec681b41" title="Initialize the interfaces to receive network traffic." alt="" coords="167,128,321,157"/>
+</map>

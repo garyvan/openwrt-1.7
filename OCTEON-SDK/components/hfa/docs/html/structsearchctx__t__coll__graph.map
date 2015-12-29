@@ -1,0 +1,14 @@
+<map id="searchctx_t" name="searchctx_t">
+<area shape="rect" id="node2" href="$structhfa__searchctx.html" title="Search context data structure." alt="" coords="289,1273,401,1375"/>
+<area shape="rect" id="node4" href="$structhfa__graph__t.html" title="Graph structure." alt="" coords="121,947,292,1205"/>
+<area shape="rect" id="node6" href="$structppinfo__t.html" title="{ppinfo_t\n|+ base\l+ snode\l+ snode2\l+ info\l|}" alt="" coords="40,690,123,827"/>
+<area shape="rect" id="node8" href="$structpp__tstamp__t.html" title="{pp_tstamp_t\n|+ version\l+ uuid\l|}" alt="" coords="17,407,116,510"/>
+<area shape="rect" id="node10" href="$structpp__tstampopt__t.html" title="{pp_tstampopt_t\n|+ linkable\l+ memonly\l+ cachealgo\l+ dfa\l+ strings\l+ cachesize\l+ target\l+ optlevel\l+ unused1\l+ linked\land 7 more...\l|}" alt="" coords="5,5,125,264"/>
+<area shape="rect" id="node12" href="$structhfa__dev.html" title="HFA Device Structure." alt="" coords="171,716,243,801"/>
+<area shape="rect" id="node14" href="$structhfa__devinfo__t.html" title="HFA Device Info." alt="" coords="145,347,284,571"/>
+<area shape="rect" id="node16" href="$structhfa__memchunk__t.html" title="Memory Chunk attributes." alt="" coords="149,83,283,186"/>
+<area shape="rect" id="node18" href="$structhfa__savedsearchctx.html" title="Hardware and software search context." alt="" coords="369,1033,521,1119"/>
+<area shape="rect" id="node20" href="$unioncvm__hfa__snode__t.html" title="Type for saved node data(WORD0)." alt="" coords="267,638,403,879"/>
+<area shape="rect" id="node22" href="$unioncvm__hfa__snode2__t.html" title="Type for saved node data(WORD1)." alt="" coords="427,681,571,836"/>
+<area shape="rect" id="node24" href="$structppstate__t.html" title="{ppstate_t\n|+ state\l|}" alt="" coords="595,716,675,801"/>
+</map>

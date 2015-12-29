@@ -1,0 +1,3 @@
+<map id="cvmx_fpa_get_dfa_pool_block_size" name="cvmx_fpa_get_dfa_pool_block_size">
+<area shape="rect" id="node3" href="$cvmx-hfa_8h.html#a072039e13a84663c558a6c7eabba6c8f" title="Initialize the DFA/HFA hardware before use Returns 0 on success, &#45;1 on failure." alt="" coords="229,13,373,43"/>
+</map>

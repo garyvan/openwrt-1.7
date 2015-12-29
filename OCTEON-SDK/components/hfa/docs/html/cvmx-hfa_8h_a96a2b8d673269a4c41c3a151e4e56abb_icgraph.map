@@ -1,0 +1,10 @@
+<map id="hfa_bootmem_free_named" name="hfa_bootmem_free_named">
+<area shape="rect" id="node3" href="$cvm-hfa_8c.html#a199331bc34e479a3defde18ae38a1d49" title="This is a utility routine to find or allocate a named block." alt="" coords="468,8,633,37"/>
+<area shape="rect" id="node15" href="$cvm-hfa_8c.html#a741c1a0561a8b5a320f061afee14ecf4" title="Free the named block allocated using hfa_find_named_block()." alt="" coords="251,60,419,89"/>
+<area shape="rect" id="node5" href="$cvm-hfa-stats_8c.html#ab70d294575883530a6ecd321a2a09fc3" title="Create ARENA for hfa statistics." alt="" coords="695,5,865,35"/>
+<area shape="rect" id="node7" href="$cvm-hfa-stats_8h.html#a69100ad9ae17fc0ec07982ea8b90c5df" title="This routine allocates memory for counters to maintain statistics of each processing core..." alt="" coords="925,7,1061,36"/>
+<area shape="rect" id="node9" href="$cvm-hfa_8c.html#a873768042b716d60996ec5d858fc8fd9" title="This function must be called by application to initialize HFA engine and setup resources for HFA hard..." alt="" coords="1109,8,1208,37"/>
+<area shape="rect" id="node11" href="$hfa-lnx-async_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="1257,8,1311,37"/>
+<area shape="rect" id="node13" href="$hfa-se-async_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1257,61,1311,91"/>
+<area shape="rect" id="node18" href="$hfa-se-async_8c.html#abc17fab65a320998a273d112ff24d658" title="Configure cluster memory resources." alt="" coords="683,58,877,105"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="hfa_find_named_block" name="hfa_find_named_block">
+<area shape="rect" id="node3" href="$cvmx-hfa_8c.html#a547dc48185d98dcfe05c3f2cf49429fd" title="Finds a named bootmem block by name." alt="" coords="471,5,665,51"/>
+<area shape="rect" id="node5" href="$cvmx-hfa_8c.html#ae7d614919dc1b610fef50491246901ce" title="Create a named bootmem block by name." alt="" coords="221,29,421,59"/>
+<area shape="rect" id="node7" href="$cvm-hfa_8c.html#a741c1a0561a8b5a320f061afee14ecf4" title="Free the named block allocated using hfa_find_named_block()." alt="" coords="237,83,405,112"/>
+<area shape="rect" id="node10" href="$cvmx-hfa_8c.html#a96a2b8d673269a4c41c3a151e4e56abb" title="Frees a named bootmem block by name." alt="" coords="471,109,665,139"/>
+</map>

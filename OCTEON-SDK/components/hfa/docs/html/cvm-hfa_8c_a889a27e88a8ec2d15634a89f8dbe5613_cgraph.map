@@ -1,0 +1,5 @@
+<map id="hfa_create_fpa_pool" name="hfa_create_fpa_pool">
+<area shape="rect" id="node3" href="$cvm-hfa-module_8c.html#a88fc7baac8574ccd76a0f0e03fe46a14" title="hfa_oct_fill_hw_memory &#45; fill a hardware pool with memory." alt="" coords="212,5,391,35"/>
+<area shape="rect" id="node5" href="$cvm-hfa-module_8c.html#a6da5324c911912f256ffdd8822f1e911" title="hfa_oct_free_hw_memory &#45; Free memory allocated by cvm_oct_fill_hw_memory" alt="" coords="207,59,396,88"/>
+<area shape="rect" id="node7" href="$cvmx-hfa_8c.html#a435a75ee9c8cd0df4249e8bfe76c0de5" title="hfa_bootmem_alloc" alt="" coords="228,112,375,141"/>
+</map>

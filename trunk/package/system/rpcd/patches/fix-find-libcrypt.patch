@@ -1,0 +1,11 @@
+diff -Naur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2015-03-16 12:58:43.000000000 -0700
++++ b/CMakeLists.txt	2015-03-16 14:13:17.268370504 -0700
+@@ -23,6 +23,7 @@
+ 
+ FIND_LIBRARY(json NAMES json-c json)
+ FIND_LIBRARY(crypt NAMES crypt)
++SET(crypt "crypt")
+ IF(crypt STREQUAL "crypt-NOTFOUND")
+   SET(crypt "")
+ ENDIF()

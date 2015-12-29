@@ -1,0 +1,20 @@
+<map id="hfa_searchparam_get_hwsearch_reason" name="hfa_searchparam_get_hwsearch_reason">
+<area shape="rect" id="node3" href="$flow_8c.html#a2976ab60901b133a56214323fb901663" title="Low level API to poll a flow." alt="" coords="217,31,388,60"/>
+<area shape="rect" id="node15" href="$hfa-lnx-async_8c.html#a972f8b60ef804914c009c2ef85bac50e" title="Process search for given payload and graph." alt="" coords="241,97,364,127"/>
+<area shape="rect" id="node24" href="$hfa-lnx-ctx_8c.html#a71e1d3d18cc48b90a1ecde583ffb3f7a" title="poll_searchctx" alt="" coords="245,151,360,180"/>
+<area shape="rect" id="node30" href="$hfa-lnx-linkgraph_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="276,204,329,233"/>
+<area shape="rect" id="node32" href="$hfa-lnx-nctx-lock_8c.html#adb0c831ef0f9af5441a6769c377d9c95" title="Post process the results from HFA and record found matches." alt="" coords="249,257,356,287"/>
+<area shape="rect" id="node39" href="$hfa-se-async_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="276,311,329,340"/>
+<area shape="rect" id="node5" href="$flow_8h.html#ab1b3378af88a440a6c3c0851be942e65" title="All submitted search parameters in Paramlist of flow are polled If low level API __hfaf_process_pktfl..." alt="" coords="439,5,596,35"/>
+<area shape="rect" id="node7" href="$hfa-se-flow_8c.html#a2d83c733eacd7afc955c3af18edcb52a" title="Polls for a submitted search instruction of a flow." alt="" coords="651,5,763,35"/>
+<area shape="rect" id="node9" href="$hfa-se-flow_8c.html#a786591694a8f8fb46cedbc8a580c88f6" title="Submitting or Polling flows from the software recently used cache IF Cache is empty, it tries to refill it." alt="" coords="817,5,900,35"/>
+<area shape="rect" id="node11" href="$hfa-se-flow_8c.html#aba72a61590283e37ffd78b4defd38220" title="Receive network packets and process." alt="" coords="949,5,1077,35"/>
+<area shape="rect" id="node13" href="$hfa-se-flow-wqe_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Implementation." alt="" coords="1125,5,1179,35"/>
+<area shape="rect" id="node17" href="$hfa-lnx-async_8c.html#a1e97b1d598034fdc92d57054a6c386e6" title="tasklet_callback" alt="" coords="456,59,579,88"/>
+<area shape="rect" id="node21" href="$hfa-lnx-async_8c.html#a7dea7d59754828b1173c4c7ec5d42f3e" title="thread_callback" alt="" coords="456,112,579,141"/>
+<area shape="rect" id="node19" href="$hfa-lnx-async_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="680,85,733,115"/>
+<area shape="rect" id="node26" href="$hfa-lnx-ctx_8c.html#a934a9fc08c4aab25d6f0d861e4a4f762" title="poll" alt="" coords="496,165,539,195"/>
+<area shape="rect" id="node28" href="$hfa-lnx-ctx_8c.html#a97df0ba8293c1b8436547946fd9d0d17" title="process_pkt" alt="" coords="657,165,756,195"/>
+<area shape="rect" id="node34" href="$hfa-lnx-nctx-lock_8c.html#a48d3743fb7abc7d3c6b68359678e52a1" title="Poll for the pending search instructions in the HW (blocked till instruction completes) and process t..." alt="" coords="496,219,539,248"/>
+<area shape="rect" id="node36" href="$hfa-lnx-nctx-lock_8c.html#a972f8b60ef804914c009c2ef85bac50e" title="Performs search process for each core." alt="" coords="645,244,768,273"/>
+</map>

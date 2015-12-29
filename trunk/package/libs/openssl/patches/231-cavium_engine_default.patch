@@ -1,0 +1,32 @@
+diff -Naur openssl-1.0.2/apps/openssl.cnf openssl-1.0.21/apps/openssl.cnf
+--- openssl-1.0.2/apps/openssl.cnf	2015-01-22 06:58:06.000000000 -0800
++++ openssl-1.0.21/apps/openssl.cnf	2015-02-24 13:49:28.837504218 -0800
+@@ -8,6 +8,8 @@
+ HOME			= .
+ RANDFILE		= $ENV::HOME/.rnd
+ 
++openssl_conf	= openssl_init
++
+ # Extra OBJECT IDENTIFIER info:
+ #oid_file		= $ENV::HOME/.oid
+ oid_section		= new_oids
+@@ -348,3 +350,19 @@
+ 				# (optional, default: no)
+ ess_cert_id_chain	= no	# Must the ESS cert id chain be included?
+ 				# (optional, default: no)
++				
++[ openssl_init ]
++
++engines	= engines_section
++
++[ engines_section ]
++
++octeon	= octeon_engine_section
++
++[ octeon_engine_section ]
++
++dynamic_path		= /usr/lib/engines/libocteon.so
++engine_id			= octeon
++init				= 1
++default_algorithms	= ALL
++

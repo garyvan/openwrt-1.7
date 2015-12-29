@@ -1,0 +1,11 @@
+<map id="gz_get_size" name="gz_get_size">
+<area shape="rect" id="node3" href="$app-utils_8c.html#a8d5ec2ca8ebb2e04916983e6053a5c79" title="Return size of a file(compressed or uncompressed)." alt="" coords="153,59,279,88"/>
+<area shape="rect" id="node5" href="$app-utils_8c.html#ae04c31b3e2ff1468333729059052375c" title="Parse command line arguments." alt="" coords="328,5,515,35"/>
+<area shape="rect" id="node11" href="$hfa-lnx-async_8c.html#a4c3443f524b4c0d95639694f0b74e850" title="Process command line options, Read graph and payload." alt="" coords="359,59,484,88"/>
+<area shape="rect" id="node15" href="$hfa-se-ngraphs_8c.html#aec36c5b3621964d19698bd5331990827" title="Allocate memory to store graph pointers and graph size and read graphs." alt="" coords="367,112,476,141"/>
+<area shape="rect" id="node7" href="$hfa-se-async_8c.html#ab42726e951c529a41b8e09fd6e84ada2" title="Process command line options, and read graph." alt="" coords="563,5,688,35"/>
+<area shape="rect" id="node9" href="$hfa-se-async_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="736,5,789,35"/>
+<area shape="rect" id="node13" href="$hfa-lnx-async_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="599,59,652,88"/>
+<area shape="rect" id="node17" href="$hfa-se-ngraphs_8c.html#ab42726e951c529a41b8e09fd6e84ada2" title="Process command line options, read graph." alt="" coords="563,112,688,141"/>
+<area shape="rect" id="node19" href="$hfa-se-ngraphs_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="736,112,789,141"/>
+</map>

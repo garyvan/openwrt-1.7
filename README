@@ -1,0 +1,10 @@
+For first time to compile the firmware, please simply execute lazyset.sh script first to setup the environment.
+
+./lazyset.sh
+
+and then go to directory ./trunk and type following command to start compile.
+
+make -j1 V=s ( or make -j8 for quicker compile )
+
+
+For other information, please see the Cavium SupportSite or OpenWRT website.

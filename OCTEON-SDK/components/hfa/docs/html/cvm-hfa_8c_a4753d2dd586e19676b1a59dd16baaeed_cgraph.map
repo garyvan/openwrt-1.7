@@ -1,0 +1,4 @@
+<map id="hfa_dev_getasyncstatus" name="hfa_dev_getasyncstatus">
+<area shape="rect" id="node3" href="$cvm-hfa-instr_8h.html#a56f2522dcba965745a1bc239fc432dca" title="Gets done from RWORD0." alt="" coords="239,5,401,35"/>
+<area shape="rect" id="node5" href="$cvm-hfa-instr_8h.html#a9700a50b68b6616506528eb725a8bda1" title="Gets reason from RWORD0." alt="" coords="233,59,407,88"/>
+</map>

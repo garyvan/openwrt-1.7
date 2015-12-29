@@ -1,0 +1,7 @@
+<map id="hfa_find_named_block" name="hfa_find_named_block">
+<area shape="rect" id="node3" href="$cvm-hfa-stats_8c.html#ab70d294575883530a6ecd321a2a09fc3" title="Create ARENA for hfa statistics." alt="" coords="221,32,392,61"/>
+<area shape="rect" id="node5" href="$cvm-hfa-stats_8h.html#a69100ad9ae17fc0ec07982ea8b90c5df" title="This routine allocates memory for counters to maintain statistics of each processing core..." alt="" coords="440,32,576,61"/>
+<area shape="rect" id="node7" href="$cvm-hfa_8c.html#a873768042b716d60996ec5d858fc8fd9" title="This function must be called by application to initialize HFA engine and setup resources for HFA hard..." alt="" coords="624,32,723,61"/>
+<area shape="rect" id="node9" href="$hfa-lnx-async_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="772,5,825,35"/>
+<area shape="rect" id="node11" href="$hfa-se-async_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="772,59,825,88"/>
+</map>

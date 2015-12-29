@@ -1,0 +1,51 @@
+<map id="process_nctx" name="process_nctx">
+<area shape="rect" id="node3" href="$app-utils_8c.html#a1944a739d03e86dcaee1a7d245cfeba0" title="Initialize the attributes needed for parsing the payload file." alt="" coords="1712,63,1861,109"/>
+<area shape="rect" id="node7" href="$app-utils_8c.html#a4b47f3c9c5a0b3eaee64e264171628a3" title="This routine reads data of chunksize/a packet from given payload(Normal/PCAP) file and returns data b..." alt="" coords="1456,11,1624,41"/>
+<area shape="rect" id="node10" href="$hfa-se-wqe_8c.html#a04f39f57f0b34482133ae70ab812a11e" title="Set search parameters and submit WQE to the HW." alt="" coords="427,163,525,193"/>
+<area shape="rect" id="node18" href="$hfa-se-ctx_8c.html#aaf2d1bda55a80b5467e3ef350c514243" title="Process search on recieved packet wqe." alt="" coords="208,691,315,721"/>
+<area shape="rect" id="node56" href="$cvm-hfa-search_8c.html#a6dbb15dc58155b2c94b19784ad42ef89" title="This routine post&#45;processes the search results from the HFA engine and reports the pattern matches fo..." alt="" coords="801,471,996,501"/>
+<area shape="rect" id="node90" href="$cvm-hfa-search_8h.html#ad18e328b50b109e1e44821f3d006bd9d" title="This routine returns the data&#45;buffer offset." alt="" coords="1459,693,1621,740"/>
+<area shape="rect" id="node93" href="$app-utils_8c.html#a633038357891aa5147b77fe939f300bf" title="Print pattern matches via match buffer and cleanup all matches." alt="" coords="1457,926,1623,955"/>
+<area shape="rect" id="node109" href="$cvm-hfa-common_8h.html#ab6b5a9b432c71164f1c1aaa4db029031" title="This routine is for getting WQE type." alt="" coords="192,977,331,1006"/>
+<area shape="rect" id="node111" href="$cvm-hfa-search_8c.html#a4e3a1a826235d80899e23fb44c69eb0f" title="This routine handles HFA WQE posted by HFA engine to indicate instruction completion." alt="" coords="161,1030,361,1059"/>
+<area shape="rect" id="node116" href="$app-utils_8c.html#a1f92c93fe820ec9fc9f4d8e993883b05" title="This routine is counter part of hfautils_init_payload_attributes()." alt="" coords="169,1083,353,1129"/>
+<area shape="rect" id="node5" href="$app-utils_8c.html#a7fbf4d982c3e4493bda83be020e7274c" title="Read file data from a gzip&#45;stream(compressed or uncompressed)." alt="" coords="2004,42,2073,71"/>
+<area shape="rect" id="node12" href="$cvm-hfa-search_8h.html#a3c407460808f038770473ffc6e4b5c38" title="This routine adds a new input IO vector to Search Param." alt="" coords="591,267,751,313"/>
+<area shape="rect" id="node14" href="$cvm-hfa-search_8h.html#a12882fa53f8ec49b9b2950711161db42" title="This routine sets the output buffer in the sparam." alt="" coords="1460,165,1620,212"/>
+<area shape="rect" id="node16" href="$cvm-hfa-search_8c.html#a0c36da280b39bd8afdf6081baea24472" title="This routine performs a pattern search using the given parameters in a non&#45;blocking manner..." alt="" coords="1705,657,1868,704"/>
+<area shape="rect" id="node20" href="$hfa-se-ctx_8c.html#a07eb255c008c854386962d955ebe636e" title="Send packet back or free packet data depending on wqe_status." alt="" coords="427,665,525,694"/>
+<area shape="rect" id="node28" href="$hfa-se-ctx_8c.html#a1bf8357c95e9c9afcbc15f7f45d349a8" title="Allocate and set parameters for search." alt="" coords="428,418,524,447"/>
+<area shape="rect" id="node30" href="$hfa-se-flow_8c.html#a7ab45fe0bf9371bbe81609ffe8a62702" title="Cleanup memory allocated for search parameters." alt="" coords="627,561,715,590"/>
+<area shape="rect" id="node39" href="$hfa-se-ctx_8c.html#a9309c0b1faf948cf8698429ff743fcab" title="Add search param to the paramlist to process search later." alt="" coords="411,771,541,801"/>
+<area shape="rect" id="node43" href="$hfa-se-ctx_8c.html#a77695c0833b3a3ee78df0d66b41c510e" title="Submit search instruction to the HW by parsing through the paramlist." alt="" coords="867,822,931,851"/>
+<area shape="rect" id="node46" href="$hfa-se-ctx_8c.html#a934a9fc08c4aab25d6f0d861e4a4f762" title="poll for all submitted searches." alt="" coords="455,718,497,747"/>
+<area shape="rect" id="node22" href="$hfa-se-ctx_8c.html#aee1d462f9d43161cf38d392ac80596a7" title="Signal handler for CTRL+C(SIGINT)" alt="" coords="624,665,717,694"/>
+<area shape="rect" id="node24" href="$hfa-se-flow_8c.html#a49535197bf697f5b0b5f2952e1e5063c" title="Free packet buffer and wqe to the corresponding fpa pools." alt="" coords="873,607,924,637"/>
+<area shape="rect" id="node26" href="$hfa-se-ctx_8c.html#abb3fee4415d5c2eb56562bf80c4e75f9" title="Resubmit WQE to HW." alt="" coords="632,718,709,747"/>
+<area shape="rect" id="node33" href="$cvm-hfa-search_8h.html#a0210e636ef06f718be0e67753bebaa04" title="This routine configures the application callback routine which will be invoked when a pattern match i..." alt="" coords="591,440,751,487"/>
+<area shape="rect" id="node35" href="$app-utils_8c.html#a97d86363214adebf7bbc22fa81e2c6b6" title="Match callback to count number of matches." alt="" coords="605,387,736,417"/>
+<area shape="rect" id="node48" href="$hfa-se-ctx_8c.html#a71e1d3d18cc48b90a1ecde583ffb3f7a" title="Polls once for all submitted searches.If a search is completed the result is processed." alt="" coords="613,771,728,801"/>
+<area shape="rect" id="node50" href="$cvm-hfa-search_8c.html#a6a8e1d7e70e0a10520302df5651e5fc5" title="This routine provides the status of an outstanding pattern search operation initiated using hfa_searc..." alt="" coords="1672,786,1901,815"/>
+<area shape="rect" id="node54" href="$cvm-hfa-search_8h.html#ab50a2d84e35b5a4a03a23fc90e4dffa0" title="This routine retrieves the reason code after a search operation has been completed by the HFA engine..." alt="" coords="1459,624,1621,671"/>
+<area shape="rect" id="node52" href="$cvm-hfa_8c.html#a4753d2dd586e19676b1a59dd16baaeed" title="Obtain status of submitted insruction." alt="" coords="1951,786,2127,815"/>
+<area shape="rect" id="node58" href="$cvm-hfa-common_8h.html#a0da7c57174fb96d75ae9cc2ed3116a05" title="Dump buffer pointed by &quot;buf&quot; in readable format." alt="" coords="1045,471,1160,501"/>
+<area shape="rect" id="node60" href="$cvm-hfa-pp_8c.html#a02d24f276578f8a39a93968262a08f1d" title="pp" alt="" coords="1084,415,1121,445"/>
+<area shape="rect" id="node62" href="$pp_8h.html#af7a68f9e08d3b54012ad008a4f47e1cd" title="pphfa" alt="" coords="1219,305,1277,334"/>
+<area shape="rect" id="node64" href="$cvm-hfa-res_8c.html#ad0de0b790a5786053d59797884dbdd23" title="Rinit" alt="" coords="1224,358,1272,387"/>
+<area shape="rect" id="node66" href="$cvm-hfa-pp_8c.html#adcc1149c628372e2e566c246870929cb" title="infoentry" alt="" coords="1209,518,1287,547"/>
+<area shape="rect" id="node103" href="$cvm-hfa-res_8c.html#a6c56aa24fa6551b23e4283ae2d5bcad8" title="Rreport1" alt="" coords="1211,465,1285,494"/>
+<area shape="rect" id="node107" href="$cvm-hfa-res_8c.html#a38aa04fce135199ec3bb8726da163846" title="Rfinish" alt="" coords="1216,411,1280,441"/>
+<area shape="rect" id="node68" href="$hfa-lnx_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="1345,518,1399,547"/>
+<area shape="rect" id="node101" href="$cvm-hfa-pp_8c.html#a85b4c8af06430f26eab8afdeea3a7395" title="hashidx" alt="" coords="1336,465,1408,494"/>
+<area shape="rect" id="node70" href="$hfa-lnx_8c.html#a4c3443f524b4c0d95639694f0b74e850" title="Process command line options, Read graph and payload." alt="" coords="1477,235,1603,265"/>
+<area shape="rect" id="node73" href="$cvm-hfa_8c.html#a873768042b716d60996ec5d858fc8fd9" title="This function must be called by application to initialize HFA engine and setup resources for HFA hard..." alt="" coords="1491,411,1589,441"/>
+<area shape="rect" id="node75" href="$hfa-lnx_8c.html#a546f3769e735d4bef0bfab1cba56921c" title="Load graph to HFA memory and cache." alt="" coords="1495,465,1585,494"/>
+<area shape="rect" id="node77" href="$hfa-lnx_8c.html#a924d2733ebc7a856f8c3fd293193ba44" title="Initialize search context." alt="" coords="1491,518,1589,547"/>
+<area shape="rect" id="node80" href="$cvm-hfa-search_8h.html#ae9741e867075c9b8cc63a7d889d5bf20" title="This routine is a variant of hfa_searchparam_set_inputiovec() when the previously searched input IO v..." alt="" coords="1460,288,1620,335"/>
+<area shape="rect" id="node83" href="$cvm-hfa-search_8c.html#a57d7540278164eb6b6c132be00db0de5" title="This routine performs a pattern search using the given parameters in a blocking manner." alt="" coords="1459,571,1621,601"/>
+<area shape="rect" id="node88" href="$cvm-hfa-common_8h.html#ad117ba199386b8d427cbb04f288b5905" title="Dump HFA related registers." alt="" coords="1480,358,1600,387"/>
+<area shape="rect" id="node95" href="$cvm-hfa-search_8c.html#a0ac0bca99358ad294a18f86696acf218" title="This routine returns a match by parsing through the match buffer." alt="" coords="1728,899,1845,929"/>
+<area shape="rect" id="node97" href="$cvm-hfa-search_8c.html#a543990bc2a5e1726298e5053391e3bf5" title="This routine cleans&#45;up the match&#45;buffers allocated by hfa_searchctx_getmatches()." alt="" coords="1705,953,1868,982"/>
+<area shape="rect" id="node99" href="$cvm-hfa-res_8c.html#a78813e2d747c1d659277b705ebdffc50" title="Rfree" alt="" coords="2011,953,2067,982"/>
+<area shape="rect" id="node105" href="$cvm-hfa-res_8c.html#a70c9e55ba1fcb934f74ad71ddca9d08f" title="Radd" alt="" coords="1345,411,1399,441"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="Initialize_Ctx" name="Initialize_Ctx">
+<area shape="rect" id="node3" href="$cvm-hfa-search_8c.html#a64ba7a41c7d677da10e588a58789015b" title="This routine initializes a Search Context." alt="" coords="159,59,327,88"/>
+<area shape="rect" id="node11" href="$cvm-hfa-search_8c.html#a954753c0e6f4a59599d05f1262a25b38" title="This routine associates a graph with sctx." alt="" coords="155,124,331,153"/>
+<area shape="rect" id="node20" href="$cvm-hfa-search_8c.html#a60c8025118f6a47f924733e47db8c77d" title="This routine is used to specify settings used during the search and getmatches API." alt="" coords="157,203,328,232"/>
+<area shape="rect" id="node5" href="$cvm-hfa-stats_8c.html#a1cff986555a79b0d5ccee49801cb0056" title="This routine allocates the memory for counters to maintain the statistics of search context..." alt="" coords="384,45,557,75"/>
+<area shape="rect" id="node7" href="$cvm-hfa-stats_8c.html#acbdfa65e476c04cd9b67b7c462eefe56" title="This routine allocates required memory from STATS ARENA." alt="" coords="612,5,783,35"/>
+<area shape="rect" id="node9" href="$cvm-hfa-stats_8c.html#a7a2acbe48c3850d43256938ee996aa16" title="This routine frees memory to STATS ARENA." alt="" coords="615,59,780,88"/>
+<area shape="rect" id="node13" href="$cvm-hfa-pp_8c.html#a9ad01b0f0de0f65b99a53f6c64f147e2" title="ppinit" alt="" coords="669,137,725,167"/>
+<area shape="rect" id="node17" href="$cvm-hfa-search_8c.html#a3200f5303f0611887f35dd500e7a8d00" title="This is a utility routine which associates an application&#45;specifc cookie in the sctx." alt="" coords="379,149,563,179"/>
+<area shape="rect" id="node15" href="$pp_8h.html#adc8d105abb8f12812385bb87d15e6e32" title="pphfa_init" alt="" coords="833,137,916,167"/>
+<area shape="rect" id="node22" href="$cvm-hfa-pp_8c.html#add6064138ec2e35741929056a0992d8d" title="ppgetstats" alt="" coords="427,203,515,232"/>
+<area shape="rect" id="node26" href="$cvm-hfa-pp_8c.html#a73cd0d7244d64410753dac7b809d2060" title="ppassignstats" alt="" coords="417,256,524,285"/>
+<area shape="rect" id="node24" href="$pp_8h.html#a808d5057ee5670ce724a6a88fc22b799" title="pphfa_getstats" alt="" coords="640,203,755,232"/>
+<area shape="rect" id="node28" href="$pp_8h.html#ad0cc4aeca687557949697bef25cdb764" title="pphfa_assignstats" alt="" coords="629,256,765,285"/>
+</map>

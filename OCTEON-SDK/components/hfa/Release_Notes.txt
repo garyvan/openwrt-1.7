@@ -1,0 +1,227 @@
+                 OCTEON HFA SDK Release Notes
+
+v3.1.0
+---------
+1.     Added support for OCTEON CN70/71XX device.
+2.     Made -rc mode default for HFA compiler. 
+3.     Fixed HFA graph corruption bug in HFA RegEx compiler.
+4.     HFA Linker is made functional with HFA graph compiled with -rc mode.
+5.     Added a "config" option to HFA compiler to help limit patterns and 
+       compilation options used.
+6.     Removed HFA compiler option "--compmulti".       
+7.     Added support to download/cacheload graph using WQE model paradigm.
+8.     Changed HFA Kernel Module License from "GPL" to "Cavium".
+9.     Optimized HFA APIs and reference applications for better performance.
+10.    Added statistics for HFA objects: Device, Cluster, Graph, Search Context.
+11.    Added statistics for Post Processing per Search Context.
+12.    Added reference application to showcase loading multiple graph on HFA.
+13.    Added reference application to showcase XML payload parsing.
+14.    Added flow (or stateful context) and WQE based experimental application
+       (hfa-se-flow-wqe.c). 
+15.    Optimized flow (or stateful context) based applications by distributing
+       incoming packets to all available cores using PIP_GRP_MSK functionality. 
+16.    Removed PCAP file support and FSAVEBUF search support in all applications 
+       except basic synchronous and asynchronous applications.
+  
+v3.0.0
+---------
+1.     Upgraded HFA API set with a revamped approach/interface. This new API set
+       is NOT backward compatible with the previous API. The new API set
+       provides greater flexibility in using the HFA engine capabilities. It
+       allows for different levels of programmability of the HFA engine - from
+       instruction-level to context-based searching.
+2.     Compiler tools are updated with newer features(such as rc mode, diag
+       option). The HFA walker can now walk payloads greater than 64K and can
+       also walk packets from a pcap file. Please refer to the documentation of
+       the tools for further details of different features/options. The
+       -submitall linker option is no longer available. The hfa compiler
+       pattern "*" has changed its behaviour from 'comprehensive' to 'lazy'
+       mode(as per PCRE terminology).
+3.     Multiple reference applications have been added to illustrate
+       comprehensive usage of the HFA SDK.
+4.     Improved per-core performance because of leaner HFA SDK API.
+5.     ppdfa() and pp() are now merged into pp(). The source code of DFA graph
+       post-processing is part of the HFA SDK as before.
+
+
+v2.3.0-04
+---------
+1.      Added support for OCTEON CN61XX device.
+2.      ppdfa source code has been provided.
+3.      Added support to optimize the graph using profile types.
+4.      Added support for terminal node in DFA mode only.
+
+v2.2.0-03
+---------
+1.      Modified the SE performance application to accept graphsize in 
+        hexadecimal also.
+
+v2.2.0-01
+---------
+1.      Added support for OCTEON CN66XX device.
+2.      Merged support for all OCTEON CN6XXX devices into a single package.
+3.      Added support in hfap-lnx-example/hfao-lnx-example application to 
+        download graphs, which are compressed using gzip for OCTEON CN68XX.
+4.      Added x86_64 toolchain binaries.
+5.      Compiler toolchain binaries have been updated, therefore patterns should
+        be recompiled.
+6.      Linux-user poll-mode has replaced the kernel-ioctl based linux-user 
+        mode.
+7.      Removed CN17XX support.
+
+v2.1.0-02
+---------
+1.      Proper exit from Linux user poll-mode performance application.
+
+v2.0.1-14
+----------
+
+1.      Added chunksize option for hfao example in linux-kernel mode.
+2.      Fixed segmentation fault for large no. of chunks in linux-user-poll
+        examples.
+3.      Argument names for linux-kernel mode examples changed.
+
+v2.0.1-13
+----------
+
+1.      Compatibility to OCTEON-SDK-2.1.0.
+2.      Added Linux User Poll mode functionality and performance examples.
+        This mode is recommended over linux-user mode which would be deprecated
+        in future releases.
+3.      Added NAPI support for local packets and WQEs.
+4.      Added support in performance application to read packet from PCAP/
+        payload file in linux kernel mode.
+
+v2.1.0-01
+---------
+1.      Corrected improper memory cleanup in OCTEON Linux User Poll mode APIs. 
+2.      Renamed examples in Linux user poll mode to have _ex suffix. For ex:
+        hfap_lnx_poll.c has been renamed to hfap_lnx_poll_ex.c
+3.      Changed the default value of OCTEON_HFA_ARENA_SIZE from 
+        0x6400000 (100MB) to 0x1F400000 (500MB) in config file.
+4.      Added packet-count-limit based test-mode in Linux user poll-mode 
+        performance application.
+5.      Linux user-mode is deprecated for performance reasons and the newer 
+        poll mode is recommended.
+
+v2.1.0-prerelease0.9
+--------------------
+1.      Added wqe argument in cvm_hfao_asyncload(), cvm_hfao_asyncunload() and
+        cvm_hfao_asyncsearch(), please look into the API documentation. 
+        The application must supply valid wqe to these API.
+
+v2.1.0-prerelease0.8
+--------------------
+1.      Fixed bug in OCTEON HFA Memory allocation and cleanup in SE environment.
+2.      Proper memory cleanup in OCTEON Linux Kernel examples and performance
+        application.
+3.      Fixed bug in OCTEON Linux User Poll mode examples and performance 
+        application if graph/payload file is not found.
+4.      Added default value for chunksize in hfao_example application.
+
+v2.1.0-alpha4
+-------------
+1.      Added support for OCTEON Linux User Poll mode environment.
+2.      Added support for HFAO Kernel APIs in OCTEON Linux environment.
+3.      Added support in performance application to read packet from PCAP/
+        payload file.
+
+v2.1.0-alpha3
+-------------
+1.      Added support for HFA+ and HFA Kernel APIs in OCTEON Linux environment.
+
+v2.1.0-alpha2
+-------------
+1.      Added support for OCTEON CN68XX device for HFA and HFAO APIs.
+        (Only in SE environment).
+
+v2.1.0-alpha1
+-------------
+1.      Added basic support for OCTEON CN68XX device, only for HFA+ APIs.
+        (Only in SE environment).
+        
+v2.0.0-12
+---------
+1.      Protected unnecessary print message, when no match found in case of 
+        CVM_HFAP_SINGLECALL. 
+2.      Fixed crash when trying to insert cn63xx-lib.ko (when cn63xx.ko is 
+        already present) and vice-versa.
+3.      Removed result buffer pool, to reduce the memory usage in Linux and
+        SE environment.
+4.      Added support in performance application to read packet from PCAP
+        file (Only in SE environment).
+
+v2.0.0-11
+---------
+1.      Removed patch conflict with other releases.
+
+v2.0.0-10
+---------
+1.      Added support to download graph in gather mode for CN63XX-PASS2 board.
+2.      Added support for patch_release5 of OCTEON-SDK-2.0.0 and
+        OCTEON-LINUX-2.0.0
+3.      Fixed a crash when matchcb is NULL cvm_hfap_createflow        
+4.      Renamed cn63xx_dfa_xxx parameters to the applications/modules to
+        cn63xx_hfa_xxx.
+5.      Renamed example modules in Linux Kernel to have -example suffix. For ex:
+        hfap-lnx.c/.ko has been renamed to hfap-lnx-example.c/.ko
+6.      Fixed incorrect assignment to matchcb callback-argument, when matchcb is
+        invoked.
+7.      Fixed crash when using large graphs, which exceeded
+        CN63XX_HFA_ARENA_SIZE.
+8.      Fixed problem in loading graphs that use the entire cachesize.
+9.      Fixed problem with higher number of graphs in a linked graph(approx.>5)
+10.     Fixed crash on OCTEON II Pass 1 when XAUI QLM is not connected, when
+        running hfap-lnx.ko(performance application)
+11.     The hfap(performance application) in SE environment has been changed to
+        operate in single-core(the same core does both submit and poll
+        operations). This allows the application to scale linearly with
+        increasing number of cores.
+12.     API cvm_hfao_asyncdownload() return value has been changed, please
+        look into the API documentation.
+13.     Added information for CVM_HFAP_FSAVEBUF flag in cvm_hfap_processflow ()
+        API documentation and fixed problem related to that.
+14.     Graph download/load API no longer print debug messages.
+
+Changes specific to Linux Kernel Environment:
+1.      Added support to read graph/payload file directly in OCTEON-Linux.
+        As a result, nm-block utility is now obsolete, since a named-block is no
+        longer required.
+2.      hfap-lnx-example/hfao-lnx-example applications now have the ability to
+        download graphs, which are compressed using gzip.
+3.      CVMX_FPA_DFA_POOL/CVMX_FPA_DFA_POOL_SIZE have been moved from
+        cvmx-config.h to cvmx-hfa.h
+4.      CN63XX_TBUFPOOL, CN63XX_OBUFPOOL, CN63XX_IBUFPOOL, CN63XX_PPBUFPOOL
+        along with corresponding POOL_SIZES have been moved from cvmx-config.h
+        seapi.h
+
+v2.0.0-09
+---------
+1.      Added support for linked-graph in HFA+ APIs.
+2.      Added support for all matches in single callback (For HFA+ APIs).
+3.      Symbolic links are now relative to installation directory.
+4.      Added HTML manual. (docs/html/index.html)
+
+v2.0.0-08
+---------
+1.      Added support for assertions
+2.      Added link-graph support in HFAO APIs
+3.      Added support for file-based graph loading in OCTEON Linux
+4.      Added support to get all matches without match-callback.
+5.      Support for CN63XX-PASS2 board.
+
+v2.0.0-07
+---------
+1.      Added support for patch_release4 of OCTEON-SDK-2.0.0 and
+        OCTEON-LINUX-2.0.0
+
+v2.0.0-5
+--------
+1.      Added support for start offset, capturing and back-references
+2.      Improved pcre syntax compliance
+3.      Ported toolchain to OCTEON linux (bin.oct)
+4.      Added driver and linux User APIs for OCTEON-LINUX on CN63XX
+5.      Linked HFA-SDK documentation to OCTEON-SDK documentation,
+        and removed man page format documentation.
+
+Cavium Networks

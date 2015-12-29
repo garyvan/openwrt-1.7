@@ -1,0 +1,13 @@
+<map id="hfa_bootmem_find_named_block" name="hfa_bootmem_find_named_block">
+<area shape="rect" id="node3" href="$app-utils_8c.html#a3e85d4c12420d8086bc60dedf59ab11f" title="Return size of named block." alt="" coords="260,5,404,35"/>
+<area shape="rect" id="node9" href="$app-utils_8c.html#a9c2ecc9580f894c6d3cf3a682e42ffb6" title="Return base address of named block." alt="" coords="269,59,395,88"/>
+<area shape="rect" id="node12" href="$cvm-hfa_8c.html#a199331bc34e479a3defde18ae38a1d49" title="This is a utility routine to find or allocate a named block." alt="" coords="479,111,644,140"/>
+<area shape="rect" id="node23" href="$cvm-hfa_8c.html#a741c1a0561a8b5a320f061afee14ecf4" title="Free the named block allocated using hfa_find_named_block()." alt="" coords="248,163,416,192"/>
+<area shape="rect" id="node5" href="$hfa-lnx-async_8c.html#abc17fab65a320998a273d112ff24d658" title="Configure cluster memory resources." alt="" coords="464,41,659,87"/>
+<area shape="rect" id="node7" href="$hfa-lnx-async_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="1281,63,1335,92"/>
+<area shape="rect" id="node14" href="$cvm-hfa-stats_8c.html#ab70d294575883530a6ecd321a2a09fc3" title="Create ARENA for hfa statistics." alt="" coords="719,101,889,131"/>
+<area shape="rect" id="node16" href="$cvm-hfa-stats_8h.html#a69100ad9ae17fc0ec07982ea8b90c5df" title="This routine allocates memory for counters to maintain statistics of each processing core..." alt="" coords="949,101,1085,131"/>
+<area shape="rect" id="node18" href="$cvm-hfa_8c.html#a873768042b716d60996ec5d858fc8fd9" title="This function must be called by application to initialize HFA engine and setup resources for HFA hard..." alt="" coords="1133,101,1232,131"/>
+<area shape="rect" id="node21" href="$hfa-se-async_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1281,128,1335,157"/>
+<area shape="rect" id="node26" href="$hfa-se-async_8c.html#abc17fab65a320998a273d112ff24d658" title="Configure cluster memory resources." alt="" coords="707,154,901,201"/>
+</map>

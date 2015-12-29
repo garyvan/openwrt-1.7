@@ -1,0 +1,68 @@
+#!/bin/sh
+
+. /lib/functions/uci-defaults.sh
+
+wan_if_list=
+lan_if_list=
+
+rm -f /etc/config/network
+touch /etc/config/network
+
+ucidef_set_interface_loopback
+
+model=`cat /proc/device-tree/model`
+
+case $model in
+	cavium,sff7000)
+	#SFF board
+	wan_if_list='eth0'
+	lan_if_list='eth1 eth2 eth3 eth4 eth5 eth6 eth7'
+	;;
+	cavium,wr8691c)
+	#Router Reference board
+	wan_if_list='eth0'
+	lan_if_list='agl0 eth1'
+	;;
+	cavium,wave2_ref)
+	#Wave2Lan board
+	wan_if_list='xaui0'
+	;;
+	cavium,nas_7000_ref)
+	#NAS Reference board
+	wan_if_list='eth0'
+	lan_if_list='eth1'
+	;;
+	cavium,eap_7000_ref)
+	#EAP Reference board
+	wan_if_list='eth0'
+	lan_if_list='eth1'
+	;;
+	*)
+	wan_if_list='eth0'
+	lan_if_list='agl0 eth1'
+	;;
+esac
+
+. /lib/functions.sh
+[ ! -e /etc/config/wireless } && {
+	/sbin/wifi detect > /etc/config/wireless
+}
+
+enable_wifi() {
+	config_get ifname "$1" ifname
+	config_get device "$1" device
+	uci delete wireless.$device.disabled=1
+	lan_if_list="$lan_if_list $ifname"
+}
+
+config_load wireless
+config_foreach enable_wifi wifi-iface
+uci commit wireless
+
+ucidef_set_interface_wan "$wan_if_list"
+ucidef_set_interface_lan "$lan_if_list"
+uci set network.lan.ipaddr=192.168.2.1
+
+uci commit network
+
+exit 0

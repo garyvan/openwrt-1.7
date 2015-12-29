@@ -1,0 +1,35 @@
+<map id="exit" name="exit">
+<area shape="rect" id="node3" href="$hfa-lnx_8c.html#a5c6551bf9ea9cf51ae7f2076c4cbe8ef" title="Application cleanup will be done by this routine." alt="" coords="99,373,171,403"/>
+<area shape="rect" id="node5" href="$cvm-hfa-search_8c.html#a30064f173d814bd3791b59d675c2f45f" title="This routine cleans&#45;up a Search Context." alt="" coords="219,112,421,141"/>
+<area shape="rect" id="node23" href="$cvm-hfa-graph_8c.html#aa4ce7845277b4b3099159bbd7afd5c08" title="This routine is used to cacheunload a cacheload&#39;ed graph in a non&#45;blocking manner." alt="" coords="232,373,408,403"/>
+<area shape="rect" id="node59" href="$cvm-hfa-graph_8c.html#a5e79919f5903d97aee5e82bfc7e71597" title="This routine is the counterpart of hfa_dev_graph_init()." alt="" coords="232,427,408,456"/>
+<area shape="rect" id="node61" href="$cvm-hfa_8c.html#af14bebdd444bd0bf92faac9d5d88b492" title="This function is called by application to cleanup all resources configured for HFA device and then sh..." alt="" coords="255,312,385,341"/>
+<area shape="rect" id="node68" href="$app-utils_8c.html#a1f92c93fe820ec9fc9f4d8e993883b05" title="This routine is counter part of hfautils_init_payload_attributes()." alt="" coords="228,479,412,526"/>
+<area shape="rect" id="node7" href="$cvm-hfa-pp_8c.html#add6064138ec2e35741929056a0992d8d" title="ppgetstats" alt="" coords="513,5,601,35"/>
+<area shape="rect" id="node11" href="$cvm-hfa-pp_8c.html#a57ec655c9bdb6ce63ada6767c7e14763" title="ppcleanstats" alt="" coords="507,59,608,88"/>
+<area shape="rect" id="node15" href="$cvm-hfa-pp_8c.html#a41ce9d3103c639e474783d3843e09071" title="ppcleanup" alt="" coords="513,112,601,141"/>
+<area shape="rect" id="node19" href="$cvm-hfa-stats_8c.html#a2df4c76e04e7b028ed2df4bba1b2de3d" title="This routine is the counterpart of hfa_searchctx_init_stats()." alt="" coords="483,165,632,211"/>
+<area shape="rect" id="node9" href="$pp_8h.html#a808d5057ee5670ce724a6a88fc22b799" title="pphfa_getstats" alt="" coords="735,5,849,35"/>
+<area shape="rect" id="node13" href="$pp_8h.html#a978b171bd7a736cb7fa0d5d034aa94e2" title="pphfa_cleanstats" alt="" coords="727,59,857,88"/>
+<area shape="rect" id="node17" href="$pp_8h.html#a428ad073d1fd72da37ab8b00f13693a3" title="pphfa_cleanup" alt="" coords="735,112,849,141"/>
+<area shape="rect" id="node21" href="$cvm-hfa-stats_8c.html#a7a2acbe48c3850d43256938ee996aa16" title="This routine frees memory to STATS ARENA." alt="" coords="709,169,875,199"/>
+<area shape="rect" id="node25" href="$cvm-hfa-graph_8c.html#afb63ce4f42afc7987e6222b1c1ea91a1" title="This routine is used to cacheunload a cacheload&#39;ed graph in a non&#45;blocking manner." alt="" coords="469,374,645,421"/>
+<area shape="rect" id="node45" href="$cvm-hfa-graph_8c.html#a0f2f13fb51e5d56dcf049ff3c7c6ad78" title="This routine is used to check the status of the graph." alt="" coords="481,676,633,705"/>
+<area shape="rect" id="node27" href="$cvm-hfa-instr_8h.html#acaf8def6cbffb04c100bf7f7684f242e" title="Initialize the HFA instruction." alt="" coords="724,223,860,252"/>
+<area shape="rect" id="node29" href="$cvm-hfa-instr_8h.html#a2d6082e2e599fe8523162b18d0a06f6c" title="Sets rptr in the instruction." alt="" coords="712,276,872,305"/>
+<area shape="rect" id="node31" href="$cvm-hfa-instr_8h.html#a6960a0761295ada9f449ea5e8c41ec80" title="Sets clmsk in the instruction." alt="" coords="704,329,880,359"/>
+<area shape="rect" id="node33" href="$cvm-hfa-instr_8h.html#add4e981377a02cd06e2bca116e584bca" title="Sets vgid in the instruction." alt="" coords="709,383,875,412"/>
+<area shape="rect" id="node35" href="$cvm-hfa-common_8h.html#a0da7c57174fb96d75ae9cc2ed3116a05" title="Dump buffer pointed by &quot;buf&quot; in readable format." alt="" coords="735,436,849,465"/>
+<area shape="rect" id="node37" href="$cvm-hfa-instr_8h.html#a88a92a987acac81360f3b880d013cd10" title="Sets wqptr instruction." alt="" coords="705,489,879,519"/>
+<area shape="rect" id="node39" href="$cvm-hfa-graph_8c.html#a1320f0566be0069bd604cc820a12a114" title="This routine sets WQE field in graph data structure." alt="" coords="723,543,861,572"/>
+<area shape="rect" id="node41" href="$cvm-hfa_8c.html#a4677d07b901d6aeb02e793c1dbdfabbf" title="Asynchronous instruction submit to HFA hardware Do not wait for instruction to complete." alt="" coords="711,596,873,625"/>
+<area shape="rect" id="node43" href="$cvmx-hfa_8c.html#a96a123c8918e83cdf914f6de1bfb4f00" title="Submit a command to the DFA block." alt="" coords="959,596,1095,625"/>
+<area shape="rect" id="node47" href="$cvm-hfa_8c.html#a4753d2dd586e19676b1a59dd16baaeed" title="Obtain status of submitted insruction." alt="" coords="704,649,880,679"/>
+<area shape="rect" id="node53" href="$cvm-hfa-instr_8h.html#aa7b5661907cf23e01fe784a70980ed4b" title="Gets itype from RWORD0." alt="" coords="711,703,873,732"/>
+<area shape="rect" id="node55" href="$cvm-hfa-graph_8c.html#aa4c0667cc4f92a08c249041eb8a4ec58" title="This routine is used to free the buffers and change the graph load status after instruction completio..." alt="" coords="695,756,889,785"/>
+<area shape="rect" id="node49" href="$cvm-hfa-instr_8h.html#a56f2522dcba965745a1bc239fc432dca" title="Gets done from RWORD0." alt="" coords="945,649,1108,679"/>
+<area shape="rect" id="node51" href="$cvm-hfa-instr_8h.html#a9700a50b68b6616506528eb725a8bda1" title="Gets reason from RWORD0." alt="" coords="940,703,1113,732"/>
+<area shape="rect" id="node57" href="$cvm-hfa-cluster_8c.html#ad8cad96579f5a310b62caaf8c166658f" title="Returns a copy of a cluster of the HFA device." alt="" coords="967,756,1087,785"/>
+<area shape="rect" id="node63" href="$cvm-hfa-stats_8c.html#ad6d5ab096d9d84d2b2f52bd551443592" title="This routine is the counterpart of hfa_dev_init_stats()." alt="" coords="473,243,641,272"/>
+<area shape="rect" id="node66" href="$cvm-hfa-stats_8c.html#a75504ae5d9797d314ee11704fc86cdb1" title="This routine prints statistics of each core." alt="" coords="485,312,629,341"/>
+</map>

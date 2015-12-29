@@ -1,0 +1,5 @@
+<map id="hfa_dev_searchctx_init" name="hfa_dev_searchctx_init">
+<area shape="rect" id="node3" href="$cvm-hfa-stats_8c.html#a1cff986555a79b0d5ccee49801cb0056" title="This routine allocates the memory for counters to maintain the statistics of search context..." alt="" coords="225,32,399,61"/>
+<area shape="rect" id="node5" href="$cvm-hfa-stats_8c.html#acbdfa65e476c04cd9b67b7c462eefe56" title="This routine allocates required memory from STATS ARENA." alt="" coords="449,5,620,35"/>
+<area shape="rect" id="node7" href="$cvm-hfa-stats_8c.html#a7a2acbe48c3850d43256938ee996aa16" title="This routine frees memory to STATS ARENA." alt="" coords="452,59,617,88"/>
+</map>

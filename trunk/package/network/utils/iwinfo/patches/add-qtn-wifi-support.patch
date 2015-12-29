@@ -1,0 +1,772 @@
+diff -Naur a/hardware.txt b/hardware.txt
+--- a/hardware.txt	2015-03-27 13:27:24.000000000 -0700
++++ b/hardware.txt	2015-07-20 15:24:59.000000000 -0700
+@@ -58,3 +58,4 @@
+ 0x1814 0x3052 0x1814 0x0008    0      0  "RaLink"   "Rt3052"
+ 0x1814 0x3352 0x1814 0x000c    0      0  "RaLink"   "Rt3352"
+ 0x11ab 0x2a55 0x11ab 0x0000    0      0  "Marvell"  "88W8864"
++0x1bb5 0x0008 0xffff 0x0000    0      0  "Quantenna" "QTP840"
+diff -Naur a/include/iwinfo/lua.h b/include/iwinfo/lua.h
+--- a/include/iwinfo/lua.h	2015-03-27 13:27:24.000000000 -0700
++++ b/include/iwinfo/lua.h	2015-07-22 14:15:17.000000000 -0700
+@@ -41,6 +41,9 @@
+ #define IWINFO_NL80211_META	"iwinfo.nl80211"
+ #endif
+ 
++#ifdef USE_QTN
++#define IWINFO_QTN_META		"iwinfo.quantenna"
++#endif
+ 
+ #define LUA_REG(type,op) \
+ 	{ #op, iwinfo_L_##type##_##op }
+diff -Naur a/include/iwinfo.h b/include/iwinfo.h
+--- a/include/iwinfo.h	2015-03-27 13:27:24.000000000 -0700
++++ b/include/iwinfo.h	2015-07-22 14:15:23.000000000 -0700
+@@ -190,6 +190,7 @@
+ extern const struct iwinfo_ops madwifi_ops;
+ extern const struct iwinfo_ops nl80211_ops;
+ extern const struct iwinfo_ops wl_ops;
++extern const struct iwinfo_ops qtn_ops;
+ 
+ #include "iwinfo/utils.h"
+ 
+diff -Naur a/iwinfo_lib.c b/iwinfo_lib.c
+--- a/iwinfo_lib.c	2015-03-27 13:27:24.000000000 -0700
++++ b/iwinfo_lib.c	2015-07-22 14:16:39.000000000 -0700
+@@ -327,6 +327,10 @@
+ #ifdef USE_WL
+ 	&wl_ops,
+ #endif
++#ifdef USE_QTN
++	&qtn_ops,
++#endif
++
+ 	&wext_ops,
+ };
+ 
+diff -Naur a/iwinfo_lua.c b/iwinfo_lua.c
+--- a/iwinfo_lua.c	2015-03-27 13:27:24.000000000 -0700
++++ b/iwinfo_lua.c	2015-07-22 14:19:00.000000000 -0700
+@@ -699,6 +699,35 @@
+ LUA_WRAP_STRUCT_OP(nl80211,hardware_id)
+ #endif
+ 
++#ifdef USE_QTN
++/* Quantenna */
++LUA_WRAP_INT_OP(qtn,channel)
++LUA_WRAP_INT_OP(qtn,frequency)
++LUA_WRAP_INT_OP(qtn,frequency_offset)
++LUA_WRAP_INT_OP(qtn,txpower)
++LUA_WRAP_INT_OP(qtn,txpower_offset)
++LUA_WRAP_INT_OP(qtn,bitrate)
++LUA_WRAP_INT_OP(qtn,signal)
++LUA_WRAP_INT_OP(qtn,noise)
++LUA_WRAP_INT_OP(qtn,quality)
++LUA_WRAP_INT_OP(qtn,quality_max)
++LUA_WRAP_STRING_OP(qtn,ssid)
++LUA_WRAP_STRING_OP(qtn,bssid)
++LUA_WRAP_STRING_OP(qtn,country)
++LUA_WRAP_STRING_OP(qtn,hardware_name)
++LUA_WRAP_STRING_OP(qtn,phyname)
++LUA_WRAP_STRUCT_OP(qtn,mode)
++LUA_WRAP_STRUCT_OP(qtn,assoclist)
++LUA_WRAP_STRUCT_OP(qtn,txpwrlist)
++LUA_WRAP_STRUCT_OP(qtn,scanlist)
++LUA_WRAP_STRUCT_OP(qtn,freqlist)
++LUA_WRAP_STRUCT_OP(qtn,countrylist)
++LUA_WRAP_STRUCT_OP(qtn,hwmodelist)
++LUA_WRAP_STRUCT_OP(qtn,encryption)
++LUA_WRAP_STRUCT_OP(qtn,mbssid_support)
++LUA_WRAP_STRUCT_OP(qtn,hardware_id)
++#endif
++
+ /* Wext */
+ LUA_WRAP_INT_OP(wext,channel)
+ LUA_WRAP_INT_OP(wext,frequency)
+@@ -822,6 +851,38 @@
+ };
+ #endif
+ 
++#ifdef USE_QTN
++/* Quantenna table */
++static const luaL_reg R_quantenna[] = {
++	LUA_REG(qtn,channel),
++	LUA_REG(qtn,frequency),
++	LUA_REG(qtn,frequency_offset),
++	LUA_REG(qtn,txpower),
++	LUA_REG(qtn,txpower_offset),
++	LUA_REG(qtn,bitrate),
++	LUA_REG(qtn,signal),
++	LUA_REG(qtn,noise),
++	LUA_REG(qtn,quality),
++	LUA_REG(qtn,quality_max),
++	LUA_REG(qtn,mode),
++	LUA_REG(qtn,ssid),
++	LUA_REG(qtn,bssid),
++	LUA_REG(qtn,country),
++	LUA_REG(qtn,assoclist),
++	LUA_REG(qtn,txpwrlist),
++	LUA_REG(qtn,scanlist),
++	LUA_REG(qtn,freqlist),
++	LUA_REG(qtn,countrylist),
++	LUA_REG(qtn,hwmodelist),
++	LUA_REG(qtn,encryption),
++	LUA_REG(qtn,mbssid_support),
++	LUA_REG(qtn,hardware_id),
++	LUA_REG(qtn,hardware_name),
++	LUA_REG(qtn,phyname),
++	{ NULL, NULL }
++};
++#endif
++
+ /* Wext table */
+ static const luaL_reg R_wext[] = {
+ 	LUA_REG(wext,channel),
+@@ -890,6 +951,15 @@
+ 	lua_setfield(L, -2, "nl80211");
+ #endif
+ 
++#ifdef USE_QTN
++	luaL_newmetatable(L, IWINFO_QTN_META);
++	luaL_register(L, NULL, R_common);
++	luaL_register(L, NULL, R_quantenna);
++	lua_pushvalue(L, -1);
++	lua_setfield(L, -2, "__index");
++	lua_setfield(L, -2, "quantenna");
++#endif
++
+ 	luaL_newmetatable(L, IWINFO_WEXT_META);
+ 	luaL_register(L, NULL, R_common);
+ 	luaL_register(L, NULL, R_wext);
+diff -Naur a/iwinfo_qtn.c b/iwinfo_qtn.c
+--- a/iwinfo_qtn.c	1969-12-31 16:00:00.000000000 -0800
++++ b/iwinfo_qtn.c	2015-07-31 16:11:30.692621394 -0700
+@@ -0,0 +1,612 @@
++#include "iwinfo.h"
++#include "qcsapi.h"
++#include "qcsapi_rpc_client.h"
++#include "qcsapi_rpc.h"
++#include "rpc_pci.h"
++
++#define _PRIMARY_IFNAME_LEN			32
++
++static CLIENT *_clnt = NULL;
++static char _primary_ifname[_PRIMARY_IFNAME_LEN] = "\0";
++
++static int _check_libqcsapi() {
++	if (_clnt == NULL) {
++
++		const char* host = "localhost";
++
++		if ((_clnt = clnt_pci_create(host, QCSAPI_PROG, QCSAPI_VERS, NULL))
++				== NULL) {
++			clnt_pcreateerror(host);
++			fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++			return -1;
++		}
++		client_qcsapi_set_rpcclient(_clnt);
++	}
++	if (_primary_ifname[0] == '\0') {
++		if (qcsapi_get_primary_interface(_primary_ifname, _PRIMARY_IFNAME_LEN)
++				!= 0) {
++			fprintf(stderr, "Failed Primary interface : %s\n", _primary_ifname);
++			_primary_ifname[0] = '\0';
++			fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++			return -2;
++		}
++	}
++	return 0;
++}
++
++static int qtn_probe(const char *ifname) {
++	return (strcmp(ifname, "host0") ? 0 : 1);
++}
++
++static void qtn_close(void) {
++}
++
++static int qtn_get_mode(const char *ifname, int *buf) {
++	qcsapi_wifi_mode wifi_mode;
++
++	if (_check_libqcsapi() != 0) {
++		return -1;
++	}
++
++	if (qcsapi_wifi_get_mode(_primary_ifname, &wifi_mode) == 0) {
++		*buf = (wifi_mode == qcsapi_access_point) ?
++				IWINFO_OPMODE_MASTER : IWINFO_OPMODE_CLIENT;
++		return 0;
++	}
++	fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++	return -1;
++}
++
++static int qtn_get_ssid(const char *ifname, char *buf) {
++	qcsapi_SSID ssid;
++
++	if (_check_libqcsapi() != 0) {
++		return -1;
++	}
++
++	if (qcsapi_wifi_get_SSID(_primary_ifname, ssid) == 0) {
++		strcpy(buf, ssid);
++		return 0;
++	}
++	fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++	return -1;
++}
++
++static int qtn_get_bssid(const char *ifname, char *buf) {
++	qcsapi_mac_addr bssid;
++
++	if (_check_libqcsapi() != 0) {
++		return -1;
++	}
++
++	if (qcsapi_wifi_get_BSSID(_primary_ifname, bssid) == 0) {
++		sprintf(buf, "%02X:%02X:%02X:%02X:%02X:%02X", bssid[0], bssid[1],
++				bssid[2], bssid[3], bssid[4], bssid[5]);
++
++		return 0;
++	}
++	fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++	return -1;
++}
++
++static int qtn_get_bitrate(const char *ifname, int *buf) {
++	*buf = 0;
++	return 0;
++}
++
++static int qtn_get_channel(const char *ifname, int *buf) {
++	qcsapi_unsigned_int current_channel;
++
++	if (_check_libqcsapi() != 0) {
++		return -1;
++	}
++	if (qcsapi_wifi_get_channel(_primary_ifname, &current_channel) == 0) {
++		*buf = current_channel;
++		return 0;
++	}
++	fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++	return -1;
++}
++
++static int qtn_get_frequency(const char *ifname, int *buf) {
++
++	if (qtn_get_channel(ifname, buf) == 0) {
++		*buf = (5000 + ((*buf) * 5));
++		return 0;
++	}
++	fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++	return -1;
++}
++
++static int qtn_get_txpower(const char *ifname, int *buf) {
++
++	qcsapi_unsigned_int channel;
++
++	if (qtn_get_channel(ifname, &channel) == 0) {
++		if (qcsapi_wifi_get_tx_power(_primary_ifname, channel, buf) == 0) {
++			return 0;
++		}
++	}
++	fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++	return -1;
++}
++
++static int qtn_get_signal(const char *ifname, int *buf) {
++	*buf = 0;
++	return 0;
++}
++
++static int qtn_get_noise(const char *ifname, int *buf) {
++	*buf = 0;
++	return 0;
++}
++
++static int qtn_get_quality(const char *ifname, int *buf) {
++	*buf = 0;
++	return 0;
++}
++
++static int qtn_get_quality_max(const char *ifname, int *buf) {
++	*buf = 0;
++	return 0;
++}
++
++static int qtn_get_assoclist(const char *ifname, char *buf, int *len) {
++
++	int mode, i, j;
++	qcsapi_unsigned_int sta_count;
++	struct iwinfo_assoclist_entry entry;
++	qcsapi_mac_addr sta_addr;
++	qcsapi_unsigned_int rssi;
++	int noise;
++	qcsapi_unsigned_int mcs, bandwidth;
++
++	if (qtn_get_mode(ifname, &mode) != 0) {
++		return -1;
++	}
++	sta_count = 1;
++
++	if (mode == IWINFO_OPMODE_MASTER) {
++
++		if (qcsapi_wifi_get_count_associations(_primary_ifname, &sta_count)
++				!= 0) {
++			fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++			return -2;
++		}
++	}
++
++	for (i = 0, j = 0; i < sta_count; i++, j +=
++			sizeof(struct iwinfo_assoclist_entry)) {
++
++		memset(&entry, 0, sizeof(entry));
++		qcsapi_wifi_get_associated_device_mac_addr(_primary_ifname, i,
++				entry.mac);
++		qcsapi_wifi_get_rssi_per_association(_primary_ifname, i, &rssi);
++		entry.signal = rssi;
++		qcsapi_wifi_get_hw_noise_per_association(_primary_ifname, i, &noise);
++		entry.noise = noise;
++
++		qcsapi_wifi_get_rx_packets_per_association(_primary_ifname, i,
++				&entry.rx_packets);
++		qcsapi_wifi_get_tx_packets_per_association(_primary_ifname, i,
++				&entry.tx_packets);
++
++		qcsapi_wifi_get_rx_phy_rate_per_association(_primary_ifname, i,
++				&entry.rx_rate.rate);
++		qcsapi_wifi_get_rx_mcs_per_association(_primary_ifname, i, &mcs);
++		entry.rx_rate.mcs = mcs;
++
++		qcsapi_wifi_get_bw_per_association(_primary_ifname, i, &bandwidth);
++		entry.rx_rate.is_40mhz = (bandwidth == 40) ? 1 : 0;
++
++		qcsapi_wifi_get_tx_phy_rate_per_association(_primary_ifname, i,
++				&entry.tx_rate.rate);
++		qcsapi_wifi_get_tx_mcs_per_association(_primary_ifname, i, &mcs);
++		entry.tx_rate.mcs = mcs;
++
++		entry.tx_rate.is_40mhz = (bandwidth == 40) ? 1 : 0;
++
++		memcpy(&buf[j], &entry, sizeof(entry));
++	}
++	*len = sta_count;
++
++	return 0;
++}
++
++static int qtn_get_txpwrlist(const char *ifname, char *buf, int *len) {
++
++	struct iwinfo_txpwrlist_entry entry;
++	char region[4];
++	string_1024 channels;
++	qcsapi_unsigned_int bw;
++	char* p_channel;
++	int channel;
++	int tx_power;
++	int i;
++
++	if (_check_libqcsapi() != 0) {
++		return -1;
++	}
++
++	if (qcsapi_wifi_get_regulatory_region(_primary_ifname, region) != 0) {
++		fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++		return -2;
++	}
++	if (qcsapi_wifi_get_bw(_primary_ifname, &bw) != 0) {
++		bw = 20;
++	}
++	if (qcsapi_regulatory_get_list_regulatory_channels(region, bw, channels)
++			!= 0) {
++		fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++		return -3;
++	}
++
++	p_channel = channels;
++	i = 0;
++	while (p_channel) {
++		channel = atoi(p_channel);
++		if (channel) {
++			if (qcsapi_wifi_get_regulatory_tx_power(_primary_ifname, channel,
++					region, &tx_power) == 0) {
++				entry.dbm = tx_power;
++				entry.mw = iwinfo_dbm2mw(tx_power);
++				memcpy(&buf[i * sizeof(entry)], &entry, sizeof(entry));
++				i++;
++			}
++		}
++		p_channel = strchr(p_channel, ',');
++		if (p_channel) {
++			p_channel++;
++		}
++	}
++
++	*len = i * sizeof(entry);
++	return 0;
++}
++
++static int qtn_get_freqlist(const char *ifname, char *buf, int *len) {
++	struct iwinfo_freqlist_entry entry;
++	char region[4];
++	string_1024 channels;
++	qcsapi_unsigned_int bw;
++	char* p_channel;
++	int channel;
++	int tx_power;
++	int i;
++
++	if (_check_libqcsapi() != 0) {
++		return -1;
++	}
++
++	if (qcsapi_wifi_get_regulatory_region(_primary_ifname, region) != 0) {
++		fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++		return -2;
++	}
++	if (qcsapi_wifi_get_bw(_primary_ifname, &bw) != 0) {
++		bw = 20;
++	}
++	if (qcsapi_regulatory_get_list_regulatory_channels(region, bw, channels)
++			!= 0) {
++		fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++		return -3;
++	}
++
++	p_channel = channels;
++	i = 0;
++	while (p_channel) {
++		channel = atoi(p_channel);
++		if (channel) {
++			entry.channel = channel;
++			entry.mhz = (5000 + ((channel) * 5));
++			entry.restricted = 0;
++			memcpy(&buf[i * sizeof(entry)], &entry, sizeof(entry));
++			i++;
++		}
++		p_channel = strchr(p_channel, ',');
++		if (p_channel) {
++			p_channel++;
++		}
++	}
++
++	*len = i * sizeof(entry);
++	return 0;
++}
++
++static int qtn_get_country(const char *ifname, char *buf) {
++
++	if (_check_libqcsapi() != 0) {
++		return -1;
++	}
++
++	if (qcsapi_wifi_get_regulatory_region(_primary_ifname, buf) != 0) {
++		fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++		return -2;
++	}
++	return 0;
++}
++
++static int qtn_get_countrylist(const char *ifname, char *buf, int *len) {
++	/* Stub */
++	return -1;
++}
++
++static int qtn_get_hwmodelist(const char *ifname, int *buf) {
++	*buf = IWINFO_80211_AC;
++
++	return 0;
++}
++
++static int qtn_get_ap_wpa_crypto(struct iwinfo_crypto_entry *c) {
++	string_32 auth_mode;
++	string_32 enc_modes;
++
++	if (qcsapi_wifi_get_WPA_authentication_mode(_primary_ifname, auth_mode)
++			!= 0) {
++		fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++		return -1;
++	}
++	if (strncmp("PSKAuthentication", auth_mode, 17) == 0) {
++		c->auth_suites |= IWINFO_KMGMT_PSK;
++	}
++
++	if (qcsapi_wifi_get_WPA_encryption_modes(_primary_ifname, enc_modes) != 0) {
++		fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++		return -2;
++	}
++	if (strncmp("AESEncryption", enc_modes, 13) == 0) {
++		c->pair_ciphers |= IWINFO_CIPHER_CCMP;
++	} else if (strncmp("TKIPEncryption", enc_modes, 14) == 0) {
++		c->pair_ciphers |= IWINFO_CIPHER_TKIP;
++	} else if (strncmp("TKIPandAESEncryption", enc_modes, 20) == 0) {
++		c->pair_ciphers |= IWINFO_CIPHER_TKIP | IWINFO_CIPHER_CCMP;
++	}
++	return 0;
++}
++
++static int qtn_get_ap_11i_crypto(struct iwinfo_crypto_entry *c) {
++
++	string_32 auth_mode;
++	string_32 enc_modes;
++
++	if (qcsapi_wifi_get_IEEE11i_authentication_mode(_primary_ifname, auth_mode)
++			!= 0) {
++		fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++		return -3;
++	}
++	if (strncmp("PSKAuthentication", auth_mode, 17) == 0) {
++		c->auth_suites |= IWINFO_KMGMT_PSK;
++	}
++
++	if (qcsapi_wifi_get_IEEE11i_encryption_modes(_primary_ifname, enc_modes)
++			!= 0) {
++		fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++		return -3;
++	}
++	if (strncmp("AESEncryption", enc_modes, 13) == 0) {
++		c->pair_ciphers |= IWINFO_CIPHER_CCMP;
++	} else if (strncmp("TKIPEncryption", enc_modes, 14) == 0) {
++		c->pair_ciphers |= IWINFO_CIPHER_TKIP;
++	} else if (strncmp("TKIPandAESEncryption", enc_modes, 20) == 0) {
++		c->pair_ciphers |= IWINFO_CIPHER_TKIP | IWINFO_CIPHER_CCMP;
++	}
++	return 0;
++}
++
++static int qtn_get_encryption(const char *ifname, char *buf) {
++	int mode;
++	string_16 auth_proto;
++	qcsapi_SSID ssid;
++	string_32 auth_mode;
++	string_32 enc_modes;
++
++	struct iwinfo_crypto_entry *c = (struct iwinfo_crypto_entry *) buf;
++
++	if (qtn_get_mode(ifname, &mode) != 0) {
++		fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++		return -1;
++	}
++
++	if (mode == IWINFO_OPMODE_MASTER) {
++		if (qcsapi_wifi_get_beacon_type(_primary_ifname, auth_proto) != 0) {
++			fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++			return -2;
++		}
++		c->enabled = 1;
++		if (strncmp("Basic", auth_proto, 5) == 0) {
++			c->auth_suites |= IWINFO_KMGMT_NONE;
++			c->pair_ciphers |= IWINFO_CIPHER_NONE;
++		} else {
++			if (strncmp("WPAand11i", auth_proto, 9) == 0) {
++				if (qtn_get_ap_wpa_crypto(c) != 0) {
++					fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++					return -3;
++				}
++				if (qtn_get_ap_11i_crypto(c) != 0) {
++					fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++					return -3;
++				}
++				c->wpa_version = 3;
++			} else if (strncmp("11i", auth_proto, 3) == 0) {
++				if (qtn_get_ap_11i_crypto(c) != 0) {
++					fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++					return -3;
++				}
++				c->wpa_version = 2;
++			} else if (strncmp("WPA", auth_proto, 3) == 0) {
++				if (qtn_get_ap_wpa_crypto(c) != 0) {
++					fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++					return -3;
++				}
++				c->wpa_version = 1;
++			}
++		}
++	} else {
++		if (qcsapi_wifi_get_SSID(_primary_ifname, ssid) != 0) {
++			fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++			return -2;
++		}
++		if (strlen(ssid) <= 0) {
++			return 0;
++		}
++		if (qcsapi_SSID_get_authentication_mode(_primary_ifname, ssid,
++				auth_mode) != 0) {
++			fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++			return -1;
++		}
++
++		if (strncmp("NONE", auth_mode, 17) == 0) {
++			c->auth_suites |= IWINFO_KMGMT_NONE;
++			c->pair_ciphers |= IWINFO_CIPHER_NONE;
++		} else {
++			if (qcsapi_SSID_get_protocol(_primary_ifname, ssid, auth_proto)
++					!= 0) {
++				fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++				return -2;
++			}
++			if (strncmp("WPAand11i", auth_proto, 9) == 0) {
++				c->wpa_version = 3;
++			} else if (strncmp("11i", auth_proto, 3) == 0) {
++				c->wpa_version = 2;
++			} else if (strncmp("WPA", auth_proto, 3) == 0) {
++				c->wpa_version = 1;
++			}
++			if (strncmp("PSKAuthentication", auth_mode, 17) == 0) {
++				c->auth_suites |= IWINFO_KMGMT_PSK;
++			}
++
++			if (qcsapi_SSID_get_encryption_modes(_primary_ifname, ssid,
++					enc_modes) != 0) {
++				fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++				return -2;
++			}
++			if (strncmp("AESEncryption", enc_modes, 13) == 0) {
++				c->pair_ciphers |= IWINFO_CIPHER_CCMP;
++			} else if (strncmp("TKIPEncryption", enc_modes, 14) == 0) {
++				c->pair_ciphers |= IWINFO_CIPHER_TKIP;
++			} else if (strncmp("TKIPandAESEncryption", enc_modes, 20) == 0) {
++				c->pair_ciphers |= IWINFO_CIPHER_TKIP | IWINFO_CIPHER_CCMP;
++			}
++		}
++	}
++	return 0;
++}
++
++static int qtn_get_phyname(const char *ifname, char *buf) {
++	strcpy(buf, ifname);
++	return 0;
++}
++
++static int qtn_get_mbssid_support(const char *ifname, int *buf) {
++	/* No multi bssid support atm */
++	return -1;
++}
++
++static int qtn_get_hardware_id(const char *ifname, char *buf) {
++
++	return wext_ops.hardware_id(ifname, buf);;
++}
++
++static int qtn_get_hardware_name(const char *ifname, char *buf) {
++	sprintf(buf, "Quantenna");
++	return 0;
++}
++
++static int qtn_get_txpower_offset(const char *ifname, int *buf) {
++	/* Stub */
++	*buf = 0;
++	return 0;
++}
++
++static int qtn_get_frequency_offset(const char *ifname, int *buf) {
++	/* Stub */
++	*buf = 0;
++	return 0;
++}
++
++static int qtn_get_scanlist(const char *ifname, char *buf, int *len) {
++
++	int mode, i;
++	qcsapi_unsigned_int ap_count;
++	qcsapi_ap_properties ap_props;
++	int num_retries;
++	struct iwinfo_scanlist_entry *e = (struct iwinfo_scanlist_entry *) buf;
++
++	if (qtn_get_mode(ifname, &mode) != 0) {
++		return -1;
++	}
++
++	if (mode == IWINFO_OPMODE_MASTER) {
++		return 0;
++	}
++
++	if (qcsapi_wifi_start_scan(_primary_ifname) != 0) {
++		fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++		return -1;
++	}
++
++	num_retries = 10;
++
++	while (num_retries--) {
++		fprintf(stderr, "%d : Waiting for scan to complete\n", num_retries);
++		if (qcsapi_wifi_wait_scan_completes(_primary_ifname, 3) == 0) {
++			break;
++		}
++	}
++
++	if (qcsapi_wifi_get_results_AP_scan(_primary_ifname, &ap_count) < 0) {
++		fprintf(stderr, "%s : %d\n", __func__, __LINE__);
++		return -2;
++	}
++	for (i = 0; i < ap_count; i++) {
++		if (qcsapi_wifi_get_properties_AP(_primary_ifname, i, &ap_props) == 0) {
++
++			memset(e, 0, sizeof(struct iwinfo_scanlist_entry));
++
++			memcpy(e->mac, ap_props.ap_mac_addr, 6);
++			strcpy(e->ssid, ap_props.ap_name_SSID);
++			e->mode = IWINFO_OPMODE_MASTER;
++			e->channel = ap_props.ap_channel;
++			e->signal = ap_props.ap_RSSI;
++			e->quality = ap_props.ap_RSSI;
++			e->quality_max = 68;
++			if (ap_props.ap_flags) {
++				e->crypto.enabled = 1;
++				e->crypto.wpa_version = ap_props.ap_protocol;
++				if (ap_props.ap_encryption_modes
++						& qcsapi_ap_TKIP_encryption_mask) {
++					e->crypto.pair_ciphers |= IWINFO_CIPHER_TKIP;
++				}
++				if (ap_props.ap_encryption_modes
++						& qcsapi_ap_CCMP_encryption_mask) {
++					e->crypto.pair_ciphers |= IWINFO_CIPHER_CCMP;
++				}
++
++				if (ap_props.ap_authentication_mode
++						== qcsapi_ap_PSK_authentication) {
++					e->crypto.auth_suites = IWINFO_KMGMT_PSK;
++				} else {
++					e->crypto.auth_suites = IWINFO_KMGMT_NONE;
++				}
++			}
++			e += sizeof(struct iwinfo_scanlist_entry);
++			*len += sizeof(struct iwinfo_scanlist_entry);
++		}
++	}
++	return 0;
++}
++
++const struct iwinfo_ops qtn_ops = { .name = "quantenna", .probe = qtn_probe,
++		.channel = qtn_get_channel, .frequency = qtn_get_frequency,
++		.frequency_offset = qtn_get_frequency_offset,
++		.txpower = qtn_get_txpower, .txpower_offset = qtn_get_txpower_offset,
++		.bitrate = qtn_get_bitrate, .signal = qtn_get_signal, .noise =
++				qtn_get_noise, .quality = qtn_get_quality, .quality_max =
++				qtn_get_quality_max, .mbssid_support = qtn_get_mbssid_support,
++		.hwmodelist = qtn_get_hwmodelist, .mode = qtn_get_mode, .ssid =
++				qtn_get_ssid, .bssid = qtn_get_bssid,
++		.country = qtn_get_country, .hardware_id = qtn_get_hardware_id,
++		.hardware_name = qtn_get_hardware_name,
++		.encryption = qtn_get_encryption, .phyname = qtn_get_phyname,
++		.assoclist = qtn_get_assoclist, .txpwrlist = qtn_get_txpwrlist,
++		.scanlist = qtn_get_scanlist, .freqlist = qtn_get_freqlist,
++		.countrylist = qtn_get_countrylist, .close = qtn_close };
+diff -Naur a/Makefile b/Makefile
+--- a/Makefile	2015-03-27 13:27:24.000000000 -0700
++++ b/Makefile	2015-07-27 15:48:36.000000000 -0700
+@@ -32,6 +32,12 @@
+ 	IWINFO_LIB_OBJ     += iwinfo_nl80211.o
+ endif
+ 
++ifneq ($(filter qtn,$(IWINFO_BACKENDS)),)
++	IWINFO_CFLAGS  += -DUSE_QTN
++	IWINFO_CLI_LDFLAGS += -lqcsapi_client
++	IWINFO_LIB_LDFLAGS += -lqcsapi_client
++	IWINFO_LIB_OBJ += iwinfo_qtn.o
++endif
+ 
+ %.o: %.c
+ 	$(CC) $(IWINFO_CFLAGS) $(FPIC) -c -o $@ $<

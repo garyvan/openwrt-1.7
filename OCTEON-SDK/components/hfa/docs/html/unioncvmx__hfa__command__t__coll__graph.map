@@ -1,0 +1,6 @@
+<map id="cvmx_hfa_command_t" name="cvmx_hfa_command_t">
+<area shape="rect" id="node2" href="$unioncvmx__hfa__word3__t.html" title="{cvmx_hfa_word3_t\n|+ u64\l+ varies0\l+ wqptr\l+ @34\l+ unused1\l+ vgid\l+ unused0\l+ f3\l+ walk\l+ f4\l+ cload\l+ mload\l+ free\l|}" alt="" coords="5,23,149,316"/>
+<area shape="rect" id="node4" href="$unioncvmx__hfa__word0__t.html" title="{cvmx_hfa_word0_t\n|+ u64\l+ varies0\l+ store_full\l+ varies1\l+ itype\l+ varies2\l+ @16\l+ f1\l+ unused1\l+ snode\land 17 more...\l|}" alt="" coords="173,40,317,299"/>
+<area shape="rect" id="node6" href="$unioncvmx__hfa__word1__t.html" title="{cvmx_hfa_word1_t\n|+ u64\l+ varies0\l+ rptr\l+ @22\l+ rmax\l+ f2\l+ walk\l+ unused1\l+ unused0\l+ cload\l+ mload\l+ unused\l+ free\l|}" alt="" coords="341,23,485,316"/>
+<area shape="rect" id="node8" href="$unioncvmx__hfa__word2__t.html" title="{cvmx_hfa_word2_t\n|+ u64\l+ varies0\l+ clmsk\l+ varies1\l+ @28\l+ dlen\l+ f5\l+ unused\l+ dptr\l+ walk\l+ cload\l+ mload\l+ unused1\l+ unused0\l+ free\l|}" alt="" coords="509,5,653,333"/>
+</map>

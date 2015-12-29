@@ -1,0 +1,6 @@
+<map id="hfaf_flowdb_t" name="hfaf_flowdb_t">
+<area shape="rect" id="node2" href="$structhfa__dev.html" title="HFA Device Structure." alt="" coords="39,500,111,585"/>
+<area shape="rect" id="node4" href="$structhfa__devinfo__t.html" title="HFA Device Info." alt="" coords="5,192,144,416"/>
+<area shape="rect" id="node6" href="$structhfa__memchunk__t.html" title="Memory Chunk attributes." alt="" coords="8,6,141,109"/>
+<area shape="rect" id="node8" href="$structhfaf__flowdb__node__t.html" title="{hfaf_flowdb_node_t\n|+ lock\l+ list\l+ ncnt\l|}" alt="" coords="135,483,281,603"/>
+</map>

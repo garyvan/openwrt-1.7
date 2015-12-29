@@ -1,0 +1,49 @@
+10
+
+dir
+46194
+svn://svn.openwrt.org/openwrt/trunk/package/boot/uboot-oxnas/files
+svn://svn.openwrt.org/openwrt
+
+
+
+2014-12-03T16:05:11.361903Z
+43508
+blogic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3c298f89-4303-0410-b956-a3cf2f4a3e73
+
+common
+dir
+
+configs
+dir
+
+arch
+dir
+
+drivers
+dir
+
+tools
+dir
+
+include
+dir
+
+board
+dir
+

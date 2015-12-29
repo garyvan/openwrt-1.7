@@ -1,0 +1,9 @@
+diff -Naur openssl-1.0.2d_orig/util/domd openssl-1.0.2d/util/domd
+--- openssl-1.0.2d_orig/util/domd	2015-07-28 12:00:01.248451230 +0530
++++ openssl-1.0.2d/util/domd	2015-07-28 12:06:12.321769934 +0530
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/env bash
+ # Do a makedepend, only leave out the standard headers
+ # Written by Ben Laurie <ben@algroup.co.uk> 19 Jan 1999
+ 

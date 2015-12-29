@@ -1,0 +1,18 @@
+prefix=/data/gary/SNORT/usr/local/Cavium_Networks/OCTEON-SDK/components/snortxl/install
+exec_prefix=${prefix}
+bindir=${exec_prefix}/bin
+libdir=${exec_prefix}/lib
+package=snort
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+mandir=${datarootdir}/info
+infodir=${datarootdir}/info
+
+Name: Snort
+Description: Snort dynamic preprocessors
+URL: www.snort.org
+Version: 2.9.3.1
+Libs: -L${libdir}/${package}/dynamic_preproc -lsf_dynamic_preproc
+Cflags: -I${includedir}/${package}/dynamic_preproc  -DSF_WCHAR -DPERF_PROFILING -DNORMALIZER -DACTIVE_RESPONSE  -DSF_VISIBILITY -fvisibility=hidden  -I/data/gary/SNORT/usr/local/Cavium_Networks/OCTEON-SDK/components/snortxl/install/include/ -I/data/gary/SNORT/usr/local/Cavium_Networks/OCTEON-SDK/components/snortxl/install/include
+

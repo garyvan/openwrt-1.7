@@ -1,0 +1,47 @@
+  SnortXL Release Notes
+  ======================
+
+  3.1.0
+  --------------------------
+        SnortXL source release for OCTEON CN70XX EVB in Linux mode.
+
+       - Upgraded to open source snort revision 2.9.3.1.
+       - Utilization of HFA device in Asynchronous mode for Enhanced Performance
+       - Hardware assisted flow pinning for traffic distribution among cores.
+       - Hardware based checksum calculation for improved performance.
+       - x86 based HFA Graph compiler added.
+       - Heuristic based HFA Graph resource allocation.
+       - Support for Merged Graphs added.
+       - Support for Compressed graphs added.
+       - Optimizations in memory allocations.
+       - Experimental DAQ AFPACKET support added.
+
+  2.3.0 
+  ------
+       - Upgraded to latest open source snort revision 2.9.0.4.
+       - Added support to run snortxl on OCTEON Linux.
+       - Support to run snort in file-read mode(using pcap files) on OCTEON.
+       - Support for newer OCTEON II models - 68xx/66xx/61xx.
+
+  2.0.0
+  ------
+       - Support for system memory more than 2GB added.
+       - Default value of PORT_TOGGLE set to YES in mode.mk. 
+       - Fixed pool check which was causing debug prints.
+       - Rate limiter for SnortXL alert generation via management port added 
+         and documentation modified. 
+       - Handling of crash caused by insufficient number of interfaces for 
+         PORT_TOGGLE mode.
+       - Fixed bug which was causing SnortXL to freeze when packets were dropped
+         by HFA engine.
+       - Support for Stream5 and URI content preprocessors.
+       - Removal of libpcap and libpcre dependency from RPM.
+       - Remote logging bug fix - Erroneous assignment of local logging IP 
+         causing a crash if host is on a different subnet.
+       - Optimization of FPA memory usage - reduced memory consumption of
+         SnortXL.
+       - Support for OCTEON II CN63XX HFA.
+
+  1.9.0
+  ------
+       - Initial release.

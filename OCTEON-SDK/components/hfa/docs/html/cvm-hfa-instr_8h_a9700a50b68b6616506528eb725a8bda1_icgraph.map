@@ -1,0 +1,47 @@
+<map id="cvm_hfa_rslt_getreason" name="cvm_hfa_rslt_getreason">
+<area shape="rect" id="node3" href="$cvm-hfa_8c.html#a4753d2dd586e19676b1a59dd16baaeed" title="Obtain status of submitted insruction." alt="" coords="231,811,407,840"/>
+<area shape="rect" id="node5" href="$cvm-hfa-graph_8c.html#a0f2f13fb51e5d56dcf049ff3c7c6ad78" title="This routine is used to check the status of the graph." alt="" coords="495,483,647,512"/>
+<area shape="rect" id="node44" href="$cvm-hfa-search_8c.html#a6a8e1d7e70e0a10520302df5651e5fc5" title="This routine provides the status of an outstanding pattern search operation initiated using hfa_searc..." alt="" coords="456,811,685,840"/>
+<area shape="rect" id="node105" href="$cvm-hfa_8c.html#ae6a7ff220c7ddd04101adbe90631baa9" title="Synchronous instruction submit to HFA hardware Block until submitted instruction completes." alt="" coords="509,864,632,893"/>
+<area shape="rect" id="node7" href="$app-utils_8c.html#aed95bb72627cff313c596ebcfcd8af61" title="Parse graph into chunks and load graph to HFA memory." alt="" coords="1215,473,1393,503"/>
+<area shape="rect" id="node9" href="$hfa-lnx-async_8c.html#a546f3769e735d4bef0bfab1cba56921c" title="Load graph to HFA memory and cache." alt="" coords="1459,599,1549,628"/>
+<area shape="rect" id="node15" href="$cvm-hfa-graph_8c.html#a647ccf649077cb5170221218ab2cdccf" title="This routine downloads graph data to the HFA engine in a non&#45;blocking manner." alt="" coords="733,474,923,521"/>
+<area shape="rect" id="node18" href="$cvm-hfa-graph_8c.html#a9e3f1a4bf2be683265108b5131541e89" title="This routine downloads graph data to the HFA engine in a blocking manner." alt="" coords="973,525,1163,555"/>
+<area shape="rect" id="node22" href="$cvm-hfa-graph_8c.html#a60861d15ed5f6bccc42bbde834aa2b32" title="This routine is used to cacheload a cacheable graph in a blocking manner." alt="" coords="748,371,908,400"/>
+<area shape="rect" id="node29" href="$cvm-hfa-graph_8c.html#aa4ce7845277b4b3099159bbd7afd5c08" title="This routine is used to cacheunload a cacheload&#39;ed graph in a non&#45;blocking manner." alt="" coords="980,111,1156,140"/>
+<area shape="rect" id="node13" href="$hfa-lnx-ctx_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="1477,268,1531,297"/>
+<area shape="rect" id="node11" href="$hfa-lnx-async_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="1665,625,1719,655"/>
+<area shape="rect" id="node25" href="$hfa-lnx-linkgraph_8c.html#a546f3769e735d4bef0bfab1cba56921c" title="Load graph to HFA memory and cache." alt="" coords="1023,371,1113,400"/>
+<area shape="rect" id="node27" href="$hfa-lnx-linkgraph_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="1277,551,1331,580"/>
+<area shape="rect" id="node31" href="$hfa-lnx-async_8c.html#acd9e54f020b77f14d54c200b65423a15" title="Application cleanup will be done by this routine." alt="" coords="1268,59,1340,88"/>
+<area shape="rect" id="node37" href="$hfa-lnx-ctx_8c.html#aaf98ef7cdde3a0dfb2e49919de3298b1" title="exit" alt="" coords="1283,163,1325,192"/>
+<area shape="rect" id="node39" href="$hfa-se-ngraphs_8c.html#a546f3769e735d4bef0bfab1cba56921c" title="Load ngraphs into HFA memory and cache." alt="" coords="1259,5,1349,35"/>
+<area shape="rect" id="node34" href="$hfa-lnx-async_8c.html#aaf98ef7cdde3a0dfb2e49919de3298b1" title="exit" alt="" coords="1483,59,1525,88"/>
+<area shape="rect" id="node41" href="$hfa-se-ngraphs_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1477,5,1531,35"/>
+<area shape="rect" id="node46" href="$cvm-hfa-search_8c.html#a57d7540278164eb6b6c132be00db0de5" title="This routine performs a pattern search using the given parameters in a blocking manner." alt="" coords="747,680,909,709"/>
+<area shape="rect" id="node51" href="$flow_8c.html#a696ee2b7ad7078c47242360be84d89bf" title="Counterpart of __hfaf_create_flow." alt="" coords="753,811,903,840"/>
+<area shape="rect" id="node65" href="$flow_8c.html#a2976ab60901b133a56214323fb901663" title="Low level API to poll a flow." alt="" coords="743,931,913,960"/>
+<area shape="rect" id="node76" href="$hfa-lnx-async_8c.html#a972f8b60ef804914c009c2ef85bac50e" title="Process search for given payload and graph." alt="" coords="1243,705,1365,735"/>
+<area shape="rect" id="node84" href="$hfa-lnx-ctx_8c.html#a630ea21ffa0ae1e09e74fc5add8c2715" title="destroyctx" alt="" coords="784,268,872,297"/>
+<area shape="rect" id="node93" href="$hfa-lnx-ctx_8c.html#a71e1d3d18cc48b90a1ecde583ffb3f7a" title="poll_searchctx" alt="" coords="771,1048,885,1077"/>
+<area shape="rect" id="node99" href="$hfa-lnx-nctx-lock_8c.html#a48d3743fb7abc7d3c6b68359678e52a1" title="Poll for the pending search instructions in the HW (blocked till instruction completes) and process t..." alt="" coords="807,991,849,1020"/>
+<area shape="rect" id="node103" href="$hfa-se-async_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="801,864,855,893"/>
+<area shape="rect" id="node49" href="$hfa-se-linkgraph_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1041,680,1095,709"/>
+<area shape="rect" id="node53" href="$flow_8c.html#a93974ea83df979435eb77f3c5d4ab848" title="Cleanup Flowdb Node (Per Index)" alt="" coords="971,891,1165,920"/>
+<area shape="rect" id="node59" href="$flow_8h.html#abdb62c6f71f5ca9ecddc66c90166d37b" title="Create Packet Flow in Flowdb." alt="" coords="995,784,1141,813"/>
+<area shape="rect" id="node63" href="$flow_8h.html#a8d99fe33dc3203530d360196cc7decb4" title="Counterpart of hfaf_create_pktflow()." alt="" coords="991,837,1145,867"/>
+<area shape="rect" id="node55" href="$flow_8h.html#a2a51025bf645e4e1eec8cac2b4f8a8c0" title="Cleanups Flow database which was created in hfaf_flowdb_init()" alt="" coords="1615,891,1769,920"/>
+<area shape="rect" id="node57" href="$hfa-se-flow-wqe_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Implementation." alt="" coords="1819,917,1872,947"/>
+<area shape="rect" id="node61" href="$hfa-se-flow-wqe_8c.html#a6d3e23d8f7a3aaf1b0d6e350b7631a0e" title="Get flow pointer from Flow database, If flow ptr is NULL then create at runtime." alt="" coords="1259,784,1349,813"/>
+<area shape="rect" id="node67" href="$flow_8h.html#ab1b3378af88a440a6c3c0851be942e65" title="All submitted search parameters in Paramlist of flow are polled If low level API __hfaf_process_pktfl..." alt="" coords="989,944,1147,973"/>
+<area shape="rect" id="node69" href="$hfa-se-flow_8c.html#a2d83c733eacd7afc955c3af18edcb52a" title="Polls for a submitted search instruction of a flow." alt="" coords="1248,944,1360,973"/>
+<area shape="rect" id="node71" href="$hfa-se-flow_8c.html#a786591694a8f8fb46cedbc8a580c88f6" title="Submitting or Polling flows from the software recently used cache IF Cache is empty, it tries to refill it." alt="" coords="1463,944,1545,973"/>
+<area shape="rect" id="node73" href="$hfa-se-flow_8c.html#aba72a61590283e37ffd78b4defd38220" title="Receive network packets and process." alt="" coords="1628,944,1756,973"/>
+<area shape="rect" id="node78" href="$hfa-lnx-async_8c.html#a1e97b1d598034fdc92d57054a6c386e6" title="tasklet_callback" alt="" coords="1443,652,1565,681"/>
+<area shape="rect" id="node81" href="$hfa-lnx-async_8c.html#a7dea7d59754828b1173c4c7ec5d42f3e" title="thread_callback" alt="" coords="1443,705,1565,735"/>
+<area shape="rect" id="node87" href="$hfa-lnx-ctx_8c.html#a3c1f07835ef5be8d3adfbaf09af5ca28" title="core_exit" alt="" coords="1028,216,1108,245"/>
+<area shape="rect" id="node89" href="$hfa-lnx-ctx_8c.html#a4c3443f524b4c0d95639694f0b74e850" title="Process command line options, Read graph and payload." alt="" coords="1241,216,1367,245"/>
+<area shape="rect" id="node95" href="$hfa-lnx-ctx_8c.html#a934a9fc08c4aab25d6f0d861e4a4f762" title="poll" alt="" coords="1047,1051,1089,1080"/>
+<area shape="rect" id="node97" href="$hfa-lnx-ctx_8c.html#a97df0ba8293c1b8436547946fd9d0d17" title="process_pkt" alt="" coords="1255,1051,1353,1080"/>
+<area shape="rect" id="node101" href="$hfa-lnx-nctx-lock_8c.html#a972f8b60ef804914c009c2ef85bac50e" title="Performs search process for each core." alt="" coords="1007,997,1129,1027"/>
+</map>

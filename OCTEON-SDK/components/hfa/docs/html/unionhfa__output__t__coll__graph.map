@@ -1,0 +1,5 @@
+<map id="hfa_output_t" name="hfa_output_t">
+<area shape="rect" id="node2" href="$structhfa__output__t_1_1sparam__data__gather.html" title="Output buffer &#45; gather mode." alt="" coords="5,185,165,305"/>
+<area shape="rect" id="node4" href="$structppiovec__t.html" title="{ppiovec_t\n|+ ptr\l+ len\l|}" alt="" coords="44,6,127,109"/>
+<area shape="rect" id="node6" href="$structhfa__output__t_1_1sparam__data__direct.html" title="Direct output buffer (Non&#45;iovec)" alt="" coords="189,177,349,314"/>
+</map>

@@ -1,0 +1,37 @@
+<map id="pphfa_assignstats" name="pphfa_assignstats">
+<area shape="rect" id="node3" href="$ppdfa_8h.html#a63d3c222edf17b8cbd525dcd5d76bd44" title="ppassignstats" alt="" coords="191,136,297,165"/>
+<area shape="rect" id="node5" href="$cvm-hfa-search_8c.html#a60c8025118f6a47f924733e47db8c77d" title="This routine is used to specify settings used during the search and getmatches API." alt="" coords="347,136,517,165"/>
+<area shape="rect" id="node7" href="$flow_8c.html#a28378e8a6f53ff0e87f2e688d1c21834" title="Low level API to create a flow Allocate Flow, Intialize searchctx, set graph and setflags,." alt="" coords="567,5,708,35"/>
+<area shape="rect" id="node13" href="$hfa-lnx-async_8c.html#a972f8b60ef804914c009c2ef85bac50e" title="Process search for given payload and graph." alt="" coords="1455,64,1577,93"/>
+<area shape="rect" id="node22" href="$hfa-lnx-ctx_8c.html#a6926aada806433e15eae2c50298b4aa9" title="createctx" alt="" coords="596,109,679,139"/>
+<area shape="rect" id="node26" href="$hfa-lnx-linkgraph_8c.html#a6604748091c732cb29568c12d0f77b4e" title="Initialize search ctx for each subgraph." alt="" coords="587,163,688,192"/>
+<area shape="rect" id="node28" href="$hfa-lnx-nctx-lock_8c.html#a2c813b2ff20c5bf67f487908476604d6" title="Initialize search context object for nctxts and a global list to track nctxts." alt="" coords="572,216,703,245"/>
+<area shape="rect" id="node32" href="$hfa-lnx_8c.html#a924d2733ebc7a856f8c3fd293193ba44" title="Initialize search context." alt="" coords="588,269,687,299"/>
+<area shape="rect" id="node9" href="$flow_8h.html#abdb62c6f71f5ca9ecddc66c90166d37b" title="Create Packet Flow in Flowdb." alt="" coords="759,5,905,35"/>
+<area shape="rect" id="node11" href="$hfa-se-flow-wqe_8c.html#a6d3e23d8f7a3aaf1b0d6e350b7631a0e" title="Get flow pointer from Flow database, If flow ptr is NULL then create at runtime." alt="" coords="956,5,1047,35"/>
+<area shape="rect" id="node15" href="$hfa-lnx-async_8c.html#a1e97b1d598034fdc92d57054a6c386e6" title="tasklet_callback" alt="" coords="1669,13,1792,43"/>
+<area shape="rect" id="node19" href="$hfa-lnx-async_8c.html#a7dea7d59754828b1173c4c7ec5d42f3e" title="thread_callback" alt="" coords="1669,67,1792,96"/>
+<area shape="rect" id="node17" href="$hfa-lnx-async_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="1893,67,1947,96"/>
+<area shape="rect" id="node24" href="$hfa-lnx-ctx_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="805,109,859,139"/>
+<area shape="rect" id="node30" href="$hfa-lnx-nctx-lock_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="805,216,859,245"/>
+<area shape="rect" id="node34" href="$hfa-lnx_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="805,269,859,299"/>
+<area shape="rect" id="node36" href="$cvm-hfa-pp_8c.html#adcc1149c628372e2e566c246870929cb" title="infoentry" alt="" coords="963,244,1040,273"/>
+<area shape="rect" id="node38" href="$ppdfa_8h.html#a81b3389c2c25a4ba308f71501f980e38" title="pp" alt="" coords="1097,243,1135,272"/>
+<area shape="rect" id="node40" href="$cvm-hfa-search_8c.html#a6dbb15dc58155b2c94b19784ad42ef89" title="This routine post&#45;processes the search results from the HFA engine and reports the pattern matches fo..." alt="" coords="1185,229,1380,259"/>
+<area shape="rect" id="node42" href="$flow_8c.html#a2976ab60901b133a56214323fb901663" title="Low level API to poll a flow." alt="" coords="1431,121,1601,151"/>
+<area shape="rect" id="node55" href="$hfa-lnx-ctx_8c.html#a71e1d3d18cc48b90a1ecde583ffb3f7a" title="poll_searchctx" alt="" coords="1459,175,1573,204"/>
+<area shape="rect" id="node61" href="$hfa-lnx-linkgraph_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="1489,228,1543,257"/>
+<area shape="rect" id="node63" href="$hfa-lnx-nctx-lock_8c.html#adb0c831ef0f9af5441a6769c377d9c95" title="Post process the results from HFA and record found matches." alt="" coords="1463,281,1569,311"/>
+<area shape="rect" id="node70" href="$hfa-se-async_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1489,335,1543,364"/>
+<area shape="rect" id="node72" href="$hfa-se-wqe-lock_8c.html#a06b5fcfab0e1d5eb36b633ec080ad7f9" title="Process search for given contexts." alt="" coords="1463,388,1569,417"/>
+<area shape="rect" id="node44" href="$flow_8h.html#ab1b3378af88a440a6c3c0851be942e65" title="All submitted search parameters in Paramlist of flow are polled If low level API __hfaf_process_pktfl..." alt="" coords="1652,121,1809,151"/>
+<area shape="rect" id="node46" href="$hfa-se-flow_8c.html#a2d83c733eacd7afc955c3af18edcb52a" title="Polls for a submitted search instruction of a flow." alt="" coords="1864,121,1976,151"/>
+<area shape="rect" id="node48" href="$hfa-se-flow_8c.html#a786591694a8f8fb46cedbc8a580c88f6" title="Submitting or Polling flows from the software recently used cache IF Cache is empty, it tries to refill it." alt="" coords="2031,121,2113,151"/>
+<area shape="rect" id="node50" href="$hfa-se-flow_8c.html#aba72a61590283e37ffd78b4defd38220" title="Receive network packets and process." alt="" coords="2163,121,2291,151"/>
+<area shape="rect" id="node52" href="$hfa-se-flow-wqe_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Implementation." alt="" coords="2339,121,2392,151"/>
+<area shape="rect" id="node57" href="$hfa-lnx-ctx_8c.html#a934a9fc08c4aab25d6f0d861e4a4f762" title="poll" alt="" coords="1709,175,1752,204"/>
+<area shape="rect" id="node59" href="$hfa-lnx-ctx_8c.html#a97df0ba8293c1b8436547946fd9d0d17" title="process_pkt" alt="" coords="1871,175,1969,204"/>
+<area shape="rect" id="node65" href="$hfa-lnx-nctx-lock_8c.html#a48d3743fb7abc7d3c6b68359678e52a1" title="Poll for the pending search instructions in the HW (blocked till instruction completes) and process t..." alt="" coords="1709,255,1752,284"/>
+<area shape="rect" id="node67" href="$hfa-lnx-nctx-lock_8c.html#a972f8b60ef804914c009c2ef85bac50e" title="Performs search process for each core." alt="" coords="1859,280,1981,309"/>
+<area shape="rect" id="node74" href="$hfa-se-wqe-lock_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1704,388,1757,417"/>
+</map>

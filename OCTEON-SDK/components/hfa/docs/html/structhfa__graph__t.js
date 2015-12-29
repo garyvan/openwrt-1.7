@@ -1,0 +1,28 @@
+var structhfa__graph__t =
+[
+    [ "cbuf", "structhfa__graph__t.html#a4d35e7b80824ce5489e0db161e1141b8", null ],
+    [ "clinfo", "structhfa__graph__t.html#a1f3ab4940e62b1896ede1e9f44534427", null ],
+    [ "clmsk", "structhfa__graph__t.html#a9d51981d2a636b6ff238fa2820c867c6", null ],
+    [ "cload_clmsk", "structhfa__graph__t.html#ae4385daa92f75323ba5914d844cf9a0b", null ],
+    [ "curr_seek", "structhfa__graph__t.html#ab6d6167976335861a4310d15a9340769", null ],
+    [ "gtype", "structhfa__graph__t.html#acfd6a9bd074d2d6fc37515358845cf41", null ],
+    [ "info", "structhfa__graph__t.html#a14281519b79647220236adf284e1429e", null ],
+    [ "irt", "structhfa__graph__t.html#a0d9a1c7d1c492abf577d5550ac691004", null ],
+    [ "isinit", "structhfa__graph__t.html#af6d4fa80c4be6e352cb3097cc3d59c62", null ],
+    [ "list", "structhfa__graph__t.html#a5374c879cdd98a717cb9a7d92b4279bc", null ],
+    [ "lock", "structhfa__graph__t.html#a13d35994079528cdabf0ae8ebb1c8e55", null ],
+    [ "mbuf", "structhfa__graph__t.html#ac8070211e5380c94b41f3c76705e6dc6", null ],
+    [ "mload", "structhfa__graph__t.html#a0be8b9e2400e6bdeacaba70c1a6eb7c7", null ],
+    [ "mload_triggersz", "structhfa__graph__t.html#a2f717a3281cd2b2f3440f6b272282ef5", null ],
+    [ "ngraphs", "structhfa__graph__t.html#a80ac52dfdaeb0bdc712cef12aa83ece5", null ],
+    [ "ninfo", "structhfa__graph__t.html#a3ffe7e0f8ce2e08ca2aafe53c3576823", null ],
+    [ "nirt", "structhfa__graph__t.html#a007b53b08a34b33c3a2f61bdc87017dc", null ],
+    [ "nobj", "structhfa__graph__t.html#afd0d778f325fee0b6ce81831ee08f95d", null ],
+    [ "obj", "structhfa__graph__t.html#a90cbe5a03689619089a46325416257b3", null ],
+    [ "pdev", "structhfa__graph__t.html#a80bb4b6ee0fc1e994ddcbb62a4dcd478", null ],
+    [ "pibuf", "structhfa__graph__t.html#a1bd837fd5201f3def3dfa69a4bdde67a", null ],
+    [ "skiplen", "structhfa__graph__t.html#a3caac9e4657b1828d6e8e396df40b433", null ],
+    [ "state", "structhfa__graph__t.html#a8adb0911376e61ade17e2c342b11c7c2", null ],
+    [ "submittedinstr_clmsk", "structhfa__graph__t.html#a7128b007c417ffbc580dea7a086d115b", null ],
+    [ "totlen", "structhfa__graph__t.html#a5003f695369180bf4ade53f71549fe68", null ]
+];

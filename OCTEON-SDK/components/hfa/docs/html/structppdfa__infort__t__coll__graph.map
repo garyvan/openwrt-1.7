@@ -1,0 +1,6 @@
+<map id="ppdfa_infort_t" name="ppdfa_infort_t">
+<area shape="rect" id="node2" href="$structppdfa__tstamp__t.html" title="{ppdfa_tstamp_t\n|+ version\l+ uuid\l|}" alt="" coords="15,374,135,477"/>
+<area shape="rect" id="node4" href="$structppdfa__tstampopt__t.html" title="{ppdfa_tstampopt_t\n|+ linkable\l+ memonly\l+ cachealgo\l+ dfa\l+ strings\l+ cachesize\l+ target\l+ optlevel\l+ unused1\l+ linked\land 7 more...\l|}" alt="" coords="5,5,144,264"/>
+<area shape="rect" id="node6" href="$structppdfa__strnode__t.html" title="{ppdfa_strnode_t\n|+ patno\l+ patlen\l+ unused0\l+ unused1\l|}" alt="" coords="159,357,281,494"/>
+<area shape="rect" id="node8" href="$unionppdfa__hashent__t.html" title="{ppdfa_hashent_t\n|+ u64\l+ off\l+ nnptr\l+ unused\l+ present\l+ bucket\l+ s\l|}" alt="" coords="305,331,433,520"/>
+</map>

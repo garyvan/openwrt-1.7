@@ -1,0 +1,77 @@
+/*
+ * Cavium THUNDER ARMv8 Emulation Model
+ *
+ * Motherboard component
+ *
+ */
+
+	motherboard {
+		arm,v2m-memory-map = "rs1";
+		compatible = "arm,vexpress,v2m-p1", "simple-bus";
+		#address-cells = <2>; /* SMB chipselect number and offset */
+		#size-cells = <2>;
+		#interrupt-cells = <1>;
+		ranges;
+
+		v2m_nic0: ethernet@843000000000 {
+			compatible = "smsc,lan9115";
+			reg = <0x8430 0x0 0x0 0x1000>;
+			reg-io-width = <4>;
+			interrupts = <15>;
+			clocks = <&v2m_clk24mhz>;
+		};
+
+		v2m_clk24mhz: clk24mhz {
+			compatible = "fixed-clock";
+			#clock-cells = <0>;
+			clock-frequency = <24000000>;
+			clock-output-names = "v2m:clk24mhz";
+		};
+
+		v2m_refclk1mhz: refclk1mhz {
+			compatible = "fixed-clock";
+			#clock-cells = <0>;
+			clock-frequency = <1000000>;
+			clock-output-names = "v2m:refclk1mhz";
+		};
+
+		v2m_refclk32khz: refclk32khz {
+			compatible = "fixed-clock";
+			#clock-cells = <0>;
+			clock-frequency = <32768>;
+			clock-output-names = "v2m:refclk32khz";
+		};
+
+		iofpga@3,00000000 {
+			compatible = "arm,amba-bus", "simple-bus";
+			#address-cells = <2>;
+			#size-cells = <2>;
+			ranges;
+
+			v2m_serial0: uart@87e024000000 {
+				compatible = "arm,pl011", "arm,primecell";
+				reg = <0x87e0 0x24000000 0x0 0x1000>;
+				interrupts = <5>;
+				clocks = <&v2m_clk24mhz>, <&v2m_clk24mhz>;
+				clock-names = "uartclk", "apb_pclk";
+			};
+
+			v2m_serial1: uart@87e025000000 {
+				compatible = "arm,pl011", "arm,primecell";
+				reg = <0x87e0 0x25000000 0x0 0x1000>;
+				interrupts = <6>;
+				clocks = <&v2m_clk24mhz>, <&v2m_clk24mhz>;
+				clock-names = "uartclk", "apb_pclk";
+			};
+
+			rtc@170000 {
+				compatible = "arm,pl031", "arm,primecell";
+				reg = <0x0 0x170000 0x0 0x1000>;
+				interrupts = <4>;
+				clocks = <&v2m_clk24mhz>;
+				clock-names = "apb_pclk";
+			};
+
+		};
+
+	};

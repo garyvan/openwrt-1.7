@@ -1,0 +1,7 @@
+<map id="hfa_searchctx_search" name="hfa_searchctx_search">
+<area shape="rect" id="node3" href="$cvm-hfa-search_8c.html#a0c36da280b39bd8afdf6081baea24472" title="This routine performs a pattern search using the given parameters in a non&#45;blocking manner..." alt="" coords="252,5,415,51"/>
+<area shape="rect" id="node5" href="$cvm-hfa-search_8c.html#a6a8e1d7e70e0a10520302df5651e5fc5" title="This routine provides the status of an outstanding pattern search operation initiated using hfa_searc..." alt="" coords="219,75,448,104"/>
+<area shape="rect" id="node7" href="$cvm-hfa_8c.html#a4753d2dd586e19676b1a59dd16baaeed" title="Obtain status of submitted insruction." alt="" coords="497,75,673,104"/>
+<area shape="rect" id="node9" href="$cvm-hfa-instr_8h.html#a56f2522dcba965745a1bc239fc432dca" title="Gets done from RWORD0." alt="" coords="729,48,892,77"/>
+<area shape="rect" id="node11" href="$cvm-hfa-instr_8h.html#a9700a50b68b6616506528eb725a8bda1" title="Gets reason from RWORD0." alt="" coords="724,101,897,131"/>
+</map>

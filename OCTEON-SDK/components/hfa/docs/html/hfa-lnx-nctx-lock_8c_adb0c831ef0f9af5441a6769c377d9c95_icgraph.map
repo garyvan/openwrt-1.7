@@ -1,0 +1,4 @@
+<map id="post_process" name="post_process">
+<area shape="rect" id="node3" href="$hfa-lnx-nctx-lock_8c.html#a48d3743fb7abc7d3c6b68359678e52a1" title="Poll for the pending search instructions in the HW (blocked till instruction completes) and process t..." alt="" coords="161,5,204,35"/>
+<area shape="rect" id="node5" href="$hfa-lnx-nctx-lock_8c.html#a972f8b60ef804914c009c2ef85bac50e" title="Performs search process for each core." alt="" coords="253,32,376,61"/>
+</map>

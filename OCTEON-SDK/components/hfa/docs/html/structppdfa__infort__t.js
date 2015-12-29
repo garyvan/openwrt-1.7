@@ -1,0 +1,27 @@
+var structppdfa__infort__t =
+[
+    [ "base", "structppdfa__infort__t.html#a92d47b15da3925ec083a7eab9b868afe", null ],
+    [ "hasht0", "structppdfa__infort__t.html#aa210bf968ae384f099e8e4aa5e105476", null ],
+    [ "hasht1", "structppdfa__infort__t.html#a6e1766892ca0329ea5b112367b9b995c", null ],
+    [ "hasht2", "structppdfa__infort__t.html#ad16cdf70f1f9b461ab538e4104e84f5f", null ],
+    [ "hasht3", "structppdfa__infort__t.html#a941b3b4bc12b4ee7eb08044db73b5161", null ],
+    [ "hasht4", "structppdfa__infort__t.html#a546b250f6b6f23ca403e222dc37714da", null ],
+    [ "hasht5", "structppdfa__infort__t.html#abd79db288b1604488d01b9c1b111275e", null ],
+    [ "hasht6", "structppdfa__infort__t.html#a0311737df1a82bda88db62a04f329221", null ],
+    [ "hashts0", "structppdfa__infort__t.html#a52a0134cfbc53f927f6e445d83cddf79", null ],
+    [ "hashts1", "structppdfa__infort__t.html#ae0ab72e5f14d7e19707005af2de63048", null ],
+    [ "hashts2", "structppdfa__infort__t.html#ad15c0d1f89a22e94be1d1aa7ec19cd70", null ],
+    [ "hashts3", "structppdfa__infort__t.html#a26358fb046cc5f311e156d7d34e1bf22", null ],
+    [ "hashts4", "structppdfa__infort__t.html#aa0a58851d62e7bb8e2fda9025f3ada04", null ],
+    [ "hashts5", "structppdfa__infort__t.html#ac0bb8ded30b27e961bc4c03dedaada65", null ],
+    [ "hashts6", "structppdfa__infort__t.html#ad84b88883bee0cc4f349498d29835ac3", null ],
+    [ "mode", "structppdfa__infort__t.html#a9bf38ec85eabe63d35c56b60c210f1ec", null ],
+    [ "snode", "structppdfa__infort__t.html#a48cd06aa206aa20364d417a5822a4a5b", null ],
+    [ "snode2", "structppdfa__infort__t.html#a08d424a6387e39c107dba4af40e8eebc", null ],
+    [ "stamp", "structppdfa__infort__t.html#adbfbc7bc1cd601d491df57c307dd11f5", null ],
+    [ "strnodes", "structppdfa__infort__t.html#a60a24b0969b3973de067c61033f77ba6", null ],
+    [ "unused0", "structppdfa__infort__t.html#a7ec57015056967e993ac00dfc565f557", null ],
+    [ "unused1", "structppdfa__infort__t.html#ad152236f04d05c81c42038093dc4c020", null ],
+    [ "unused2", "structppdfa__infort__t.html#a3508258111796e64932229c3878a4a56", null ],
+    [ "unused3", "structppdfa__infort__t.html#a2e9ee2ffebf9ee54d8fe72ec3e56e195", null ]
+];

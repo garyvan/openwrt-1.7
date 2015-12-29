@@ -1,0 +1,6 @@
+<map id="hfautils_parse_arguments" name="hfautils_parse_arguments">
+<area shape="rect" id="node3" href="$app-utils_8c.html#ad9aef676c72e2455ff8cc29b0451a533" title="initialize the tar for gzip." alt="" coords="252,5,356,35"/>
+<area shape="rect" id="node5" href="$app-utils_8c.html#a091d7c63f67cac17115c60efc4f5ec8b" title="gz_fsinit" alt="" coords="428,31,503,60"/>
+<area shape="rect" id="node8" href="$app-utils_8c.html#a8d5ec2ca8ebb2e04916983e6053a5c79" title="Return size of a file(compressed or uncompressed)." alt="" coords="241,109,367,139"/>
+<area shape="rect" id="node10" href="$app-utils_8c.html#a7c78f1e7a6e793fea566793e167e22bc" title="gz_get_size" alt="" coords="417,109,513,139"/>
+</map>

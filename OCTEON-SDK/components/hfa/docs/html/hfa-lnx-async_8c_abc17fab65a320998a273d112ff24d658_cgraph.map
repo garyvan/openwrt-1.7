@@ -1,0 +1,18 @@
+<map id="configure_cluster_memory_resources" name="configure_cluster_memory_resources">
+<area shape="rect" id="node3" href="$cvm-hfa_8h.html#a1afec397da10d79424478877387414f3" title="Returns number of clusters configured in device." alt="" coords="269,5,435,35"/>
+<area shape="rect" id="node5" href="$cvm-hfa-cluster_8c.html#ad8cad96579f5a310b62caaf8c166658f" title="Returns a copy of a cluster of the HFA device." alt="" coords="292,59,412,88"/>
+<area shape="rect" id="node7" href="$cvm-hfa-cluster_8c.html#ae4fec611b1343b2f6cad63b81987d98b" title="Cleanup Cluster." alt="" coords="277,112,427,141"/>
+<area shape="rect" id="node13" href="$cvm-hfa-cluster_8c.html#aa0d1e40097e956ad06c9f7c454f77b80" title="The HFA device consists of one or more clusters." alt="" coords="293,165,411,195"/>
+<area shape="rect" id="node17" href="$cvm-hfa_8h.html#a760b4a245f0bf0c6823c9edb7eba6425" title="Indicates whether device has its own HFA memory." alt="" coords="249,219,455,248"/>
+<area shape="rect" id="node19" href="$cvm-hfa_8h.html#a426b2044f6c6a2367ea14a92665e6851" title="Returns configured memory address in device." alt="" coords="267,272,437,301"/>
+<area shape="rect" id="node21" href="$cvm-hfa_8h.html#a17131375a514b77a425632ee41a2d347" title="Returns configured memory size in device." alt="" coords="268,325,436,355"/>
+<area shape="rect" id="node23" href="$app-utils_8c.html#a9c2ecc9580f894c6d3cf3a682e42ffb6" title="Return base address of named block." alt="" coords="289,379,415,408"/>
+<area shape="rect" id="node27" href="$app-utils_8c.html#a3e85d4c12420d8086bc60dedf59ab11f" title="Return size of named block." alt="" coords="280,432,424,461"/>
+<area shape="rect" id="node30" href="$cvm-hfa-cluster_8c.html#ad3dc54e450e08d6bf010a81b1eb11f15" title="Assigns a memory block to the cluster as HFA memory for the purpose of loading graphs." alt="" coords="276,485,428,515"/>
+<area shape="rect" id="node32" href="$cvm-hfa-cluster_8c.html#af2466b1e67058e962fac92ac1d93f716" title="This routine allows multiple clusters to share the same HFA memory block for loading graphs..." alt="" coords="264,539,440,568"/>
+<area shape="rect" id="node9" href="$cvm-hfa-cluster_8c.html#a5eb9ad880a56c9e7af7891cb994ae9db" title="Counterpart of hfa_cluster_setmem()." alt="" coords="509,59,693,88"/>
+<area shape="rect" id="node11" href="$cvm-hfa-cluster_8c.html#a6c30dec281084f6e40bf9d98356418bd" title="Frees Cache pool for cluster." alt="" coords="507,112,696,141"/>
+<area shape="rect" id="node15" href="$cvm-hfa-cluster_8c.html#ae7f77575030285c474e1ee2669171a3c" title="Each HFA cluster has predefined cache size and addresses to be used by cluster for graph cache load I..." alt="" coords="523,165,680,195"/>
+<area shape="rect" id="node25" href="$cvmx-hfa_8c.html#a547dc48185d98dcfe05c3f2cf49429fd" title="Finds a named bootmem block by name." alt="" coords="504,397,699,443"/>
+<area shape="rect" id="node34" href="$cvm-hfa-osapi_8h.html#a87f3d3c0849e129d606a8858b090e21a" title="hfa_os_listempty" alt="" coords="537,539,665,568"/>
+</map>

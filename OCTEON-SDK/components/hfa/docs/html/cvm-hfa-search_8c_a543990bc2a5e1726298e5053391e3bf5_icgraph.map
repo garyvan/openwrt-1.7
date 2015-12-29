@@ -1,0 +1,14 @@
+<map id="hfa_matches_cleanup" name="hfa_matches_cleanup">
+<area shape="rect" id="node3" href="$app-utils_8c.html#a633038357891aa5147b77fe939f300bf" title="Print pattern matches via match buffer and cleanup all matches." alt="" coords="219,137,384,167"/>
+<area shape="rect" id="node5" href="$hfa-lnx-async_8c.html#a972f8b60ef804914c009c2ef85bac50e" title="Process search for given payload and graph." alt="" coords="432,31,555,60"/>
+<area shape="rect" id="node14" href="$hfa-lnx-linkgraph_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="467,84,520,113"/>
+<area shape="rect" id="node16" href="$hfa-lnx-nctx-lock_8c.html#adb0c831ef0f9af5441a6769c377d9c95" title="Post process the results from HFA and record found matches." alt="" coords="440,137,547,167"/>
+<area shape="rect" id="node23" href="$hfa-se-async_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="467,191,520,220"/>
+<area shape="rect" id="node25" href="$hfa-se-wqe-lock_8c.html#a06b5fcfab0e1d5eb36b633ec080ad7f9" title="Process search for given contexts." alt="" coords="440,244,547,273"/>
+<area shape="rect" id="node7" href="$hfa-lnx-async_8c.html#a1e97b1d598034fdc92d57054a6c386e6" title="tasklet_callback" alt="" coords="603,5,725,35"/>
+<area shape="rect" id="node11" href="$hfa-lnx-async_8c.html#a7dea7d59754828b1173c4c7ec5d42f3e" title="thread_callback" alt="" coords="603,59,725,88"/>
+<area shape="rect" id="node9" href="$hfa-lnx-async_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="808,47,861,76"/>
+<area shape="rect" id="node18" href="$hfa-lnx-nctx-lock_8c.html#a48d3743fb7abc7d3c6b68359678e52a1" title="Poll for the pending search instructions in the HW (blocked till instruction completes) and process t..." alt="" coords="643,112,685,141"/>
+<area shape="rect" id="node20" href="$hfa-lnx-nctx-lock_8c.html#a972f8b60ef804914c009c2ef85bac50e" title="Performs search process for each core." alt="" coords="773,125,896,155"/>
+<area shape="rect" id="node27" href="$hfa-se-wqe-lock_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="637,244,691,273"/>
+</map>

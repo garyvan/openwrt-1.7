@@ -1,0 +1,5 @@
+<map id="hfa_savedsearchctx" name="hfa_savedsearchctx">
+<area shape="rect" id="node2" href="$unioncvm__hfa__snode__t.html" title="Type for saved node data(WORD0)." alt="" coords="5,6,141,247"/>
+<area shape="rect" id="node4" href="$unioncvm__hfa__snode2__t.html" title="Type for saved node data(WORD1)." alt="" coords="165,49,309,204"/>
+<area shape="rect" id="node6" href="$structppstate__t.html" title="{ppstate_t\n|+ state\l|}" alt="" coords="333,84,413,169"/>
+</map>

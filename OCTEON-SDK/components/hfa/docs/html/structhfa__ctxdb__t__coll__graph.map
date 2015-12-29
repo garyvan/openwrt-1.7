@@ -1,0 +1,22 @@
+<map id="hfa_ctxdb_t" name="hfa_ctxdb_t">
+<area shape="rect" id="node2" href="$structhfa__ctx__t.html" title="{hfa_ctx_t\n|+ curr_payload\l+ curr_psize\l+ lock\l+ ctxid\l+ rptr\l+ ctx_status\l+ status\l|}" alt="" coords="172,1579,289,1768"/>
+<area shape="rect" id="node4" href="$structppiovec__t.html" title="{ppiovec_t\n|+ ptr\l+ len\l|}" alt="" coords="17,407,100,510"/>
+<area shape="rect" id="node34" href="$structhfa__output__t_1_1sparam__data__gather.html" title="Output buffer &#45; gather mode." alt="" coords="280,699,440,819"/>
+<area shape="rect" id="node39" href="$structhfa__input__t.html" title="Gather input search parameter." alt="" coords="36,904,127,989"/>
+<area shape="rect" id="node6" href="$structhfa__searchctx.html" title="Search context data structure." alt="" coords="552,1374,664,1477"/>
+<area shape="rect" id="node8" href="$structhfa__graph__t.html" title="Graph structure." alt="" coords="523,1013,693,1272"/>
+<area shape="rect" id="node10" href="$structppinfo__t.html" title="{ppinfo_t\n|+ base\l+ snode\l+ snode2\l+ info\l|}" alt="" coords="567,690,649,827"/>
+<area shape="rect" id="node12" href="$structpp__tstamp__t.html" title="{pp_tstamp_t\n|+ version\l+ uuid\l|}" alt="" coords="576,407,675,510"/>
+<area shape="rect" id="node14" href="$structpp__tstampopt__t.html" title="{pp_tstampopt_t\n|+ linkable\l+ memonly\l+ cachealgo\l+ dfa\l+ strings\l+ cachesize\l+ target\l+ optlevel\l+ unused1\l+ linked\land 7 more...\l|}" alt="" coords="567,5,687,264"/>
+<area shape="rect" id="node16" href="$structhfa__dev.html" title="HFA Device Structure." alt="" coords="468,716,540,801"/>
+<area shape="rect" id="node18" href="$structhfa__devinfo__t.html" title="HFA Device Info." alt="" coords="409,347,548,571"/>
+<area shape="rect" id="node20" href="$structhfa__memchunk__t.html" title="Memory Chunk attributes." alt="" coords="409,83,543,186"/>
+<area shape="rect" id="node22" href="$structhfa__savedsearchctx.html" title="Hardware and software search context." alt="" coords="775,1100,927,1185"/>
+<area shape="rect" id="node24" href="$unioncvm__hfa__snode__t.html" title="Type for saved node data(WORD0)." alt="" coords="673,638,809,879"/>
+<area shape="rect" id="node26" href="$unioncvm__hfa__snode2__t.html" title="Type for saved node data(WORD1)." alt="" coords="833,681,977,836"/>
+<area shape="rect" id="node28" href="$structppstate__t.html" title="{ppstate_t\n|+ state\l|}" alt="" coords="1001,716,1081,801"/>
+<area shape="rect" id="node30" href="$structhfa__searchparams.html" title="Search Parameters set by Application." alt="" coords="160,1339,301,1511"/>
+<area shape="rect" id="node32" href="$unionhfa__output__t.html" title="Output search parameter provided by application Depending upon used mode &#45; Single or Gather..." alt="" coords="181,1074,280,1211"/>
+<area shape="rect" id="node37" href="$structhfa__output__t_1_1sparam__data__direct.html" title="Direct output buffer (Non&#45;iovec)" alt="" coords="96,690,256,827"/>
+<area shape="rect" id="node42" href="$structhfa__search__hwpp__ofields__t.html" title="HFA hardware and Post processing fields returned to Application." alt="" coords="304,1083,499,1203"/>
+</map>

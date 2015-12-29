@@ -1,0 +1,178 @@
+diff -Naur a/arch/mips/include/asm/octeon/octeon-ethernet-user.h b/arch/mips/include/asm/octeon/octeon-ethernet-user.h
+--- a/arch/mips/include/asm/octeon/octeon-ethernet-user.h	2015-02-03 13:11:43.000000000 -0800
++++ b/arch/mips/include/asm/octeon/octeon-ethernet-user.h	2015-10-09 11:38:07.446278491 -0700
+@@ -106,6 +106,11 @@
+ extern int cvm_oct_transmit_qos_not_free(struct net_device *dev,
+ 					 void *work_queue_entry,
+ 					 struct sk_buff *skb);
++
++extern int cvm_oct_transmit_skb(struct net_device *dev, 
++							struct sk_buff *skb, 
++							int pko_ipoffp1);
++
+ #else 
+ extern int cvm_oct_transmit_qos(struct net_device *dev, void *work_queue_entry,
+ 			 int do_free, int qos);
+diff -Naur a/drivers/net/ethernet/octeon/ethernet-tx.c b/drivers/net/ethernet/octeon/ethernet-tx.c
+--- a/drivers/net/ethernet/octeon/ethernet-tx.c	2015-02-03 13:12:04.000000000 -0800
++++ b/drivers/net/ethernet/octeon/ethernet-tx.c	2015-10-09 16:23:03.117927659 -0700
+@@ -79,6 +79,9 @@
+ 	if (unlikely(fpa_head - skb->head < sizeof(void *)))
+ 		return false;
+ 
++	if(unlikely(*(struct sk_buff **)(fpa_head - sizeof(void *)) != skb))
++		return false;
++
+ 	if (unlikely((skb_end_pointer(skb) - fpa_head) < FPA_PACKET_POOL_SIZE))
+ 		return false;
+ 
+@@ -380,4 +383,149 @@
+ 	return dropped;
+ }
+ EXPORT_SYMBOL(cvm_oct_transmit_qos_not_free);
++
++/**
++ * cvm_oct_transmit_skb - transmit a skb out of the ethernet port.
++ *
++ * This function should be used to transmit a packet received over
++ * non-octeon interface.
++ *
++ * New work queue entry is allocated.
++ * Both the work queue entry and the packet data will be freed on error.
++ * Napi will free both on successful transmission.
++ *
++ * @dev: Device to transmit out.
++ * @skb: socket buffer
++ *
++ * Returns Zero on success, negative on failure.
++ */
++int cvm_oct_transmit_skb(struct net_device *dev, struct sk_buff *skb, int pko_ipoffp1)
++{
++	unsigned long				flags;
++	cvmx_buf_ptr_t				hw_buffer;
++	cvmx_pko_command_word0_t	pko_command;
++	int							dropped;
++	struct octeon_ethernet		*priv = netdev_priv(dev);
++	cvmx_wqe_t					*rcv_work = NULL;
++	cvmx_pko_lock_t 			lock_type;
++	u64 						word2;
++	int 						qos;
++	bool						skb_is_reusable;
++	s32 						buffers_to_free;
++
++	if (!(dev->flags & IFF_UP)) {
++		netdev_err(dev, "Error: Device not up\n");
++		return -1;
++	}
++
++	if (priv->tx_lockless) {
++		qos = cvmx_get_core_num();
++		lock_type = CVMX_PKO_LOCK_NONE;
++	} else {
++		/*
++	 	* The check on CVMX_PKO_QUEUES_PER_PORT_* is designed to
++	 	* completely remove "qos" in the event neither interface
++	 	* supports multiple queues per port.
++	 	*/
++		if (priv->tx_multiple_queues) {
++			qos = GET_SKBUFF_QOS(skb);
++			if (qos <= 0)
++				qos = 0;
++			else if (qos >= priv->num_tx_queues)
++				qos = 0;
++		} else
++			qos = 0;
++		lock_type = CVMX_PKO_LOCK_CMD_QUEUE;
++	}
++
++	skb_is_reusable = cvm_oct_skb_ok_for_reuse(skb);
++
++	/* Start off assuming no drop */
++	dropped = 0;
++
++	/* Build the PKO buffer pointer */
++	hw_buffer.u64 = 0;
++	hw_buffer.s.addr = virt_to_phys(skb->data);
++	hw_buffer.s.size = skb->len;
++	if (skb_is_reusable) {
++		cvm_oct_set_back(skb, &hw_buffer);
++	} else {
++		hw_buffer.s.back = 0;
++	}
++
++	if (USE_ASYNC_IOBDMA) {
++		/* Get the number of skbuffs in use by the hardware */
++		CVMX_SYNCIOBDMA;
++		buffers_to_free = cvmx_scratch_read64(CVMX_SCR_SCRATCH + 8);
++	} else {
++		/* Get the number of skbuffs in use by the hardware */
++		buffers_to_free = cvmx_fau_fetch_and_add32(FAU_NUM_PACKET_BUFFERS_TO_FREE, 0);
++	}
++
++	/* Build the PKO command */
++	pko_command.u64 = 0;
++	pko_command.s.n2 = 0; /* pollute L2 with the outgoing packet */
++
++	if (unlikely(buffers_to_free < -100)) {
++		pko_command.s.dontfree = 1;
++	} else {
++		pko_command.s.dontfree = (skb_is_reusable) ? 0 : 1;
++	}
++
++	pko_command.s.segs = 1;
++	pko_command.s.total_bytes = skb->len;
++	pko_command.s.ipoffp1 = sizeof(struct ethhdr) + 1 + pko_ipoffp1;
++
++	rcv_work = cvmx_fpa_alloc(wqe_pool);
++	if (unlikely(!rcv_work)) {
++		netdev_err(dev, "failed to allocate rcv work\n");
++		dropped = -1;
++		goto skip_xmit;
++	}
++
++	pko_command.s.rsp = 1;
++	pko_command.s.wqp = 1;
++
++	pko_command.s.reg0 = 0;
++	rcv_work->word0.u64 = 0;
++	rcv_work->word0.raw.unused = (u8)qos;
++
++	rcv_work->word1.u64 = 0;
++	rcv_work->word1.tag_type = CVMX_POW_TAG_TYPE_NULL;
++	rcv_work->word1.tag = 0;
++	rcv_work->word2.u64 = 0;
++	rcv_work->word2.s.software = 1;
++	cvmx_wqe_set_grp(rcv_work, pow_receive_group);
++	rcv_work->packet_ptr.u64 = (unsigned long)skb;
++
++	word2 = virt_to_phys(rcv_work);
++
++	if (!pko_command.s.dontfree) {
++		cvm_oct_skb_prepare_for_reuse(skb);
++	}
++
++	local_irq_save(flags);
++
++	cvmx_pko_send_packet_prepare_pkoid(priv->pko_port, priv->tx_queue[qos].queue, lock_type);
++
++	/* Send the packet to the output queue */
++	if (unlikely(cvmx_pko_send_packet_finish3_pkoid(priv->pko_port, priv->tx_queue[qos].queue,
++							pko_command, hw_buffer, word2, lock_type))) {
++		printk("%s: Failed to send the packet\n", dev->name);
++		dropped = -1;
++	}
++	local_irq_restore(flags);
++
++skip_xmit:
++	if (unlikely(dropped)) {
++		cvmx_fau_atomic_add32(priv->tx_queue[qos].fau, -1);
++		dev_kfree_skb_any(skb);
++		dev->stats.tx_dropped++;
++		if (rcv_work)
++			cvmx_fpa_free(rcv_work, wqe_pool, DONT_WRITEBACK(1));
++	}
++
++	return dropped;
++}
++EXPORT_SYMBOL(cvm_oct_transmit_skb);
+ #endif

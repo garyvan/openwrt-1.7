@@ -1,0 +1,6 @@
+<map id="hfa_dev_submit" name="hfa_dev_submit">
+<area shape="rect" id="node3" href="$cvmx-hfa_8c.html#a96a123c8918e83cdf914f6de1bfb4f00" title="Submit a command to the DFA block." alt="" coords="200,5,336,35"/>
+<area shape="rect" id="node5" href="$cvm-hfa_8c.html#a4753d2dd586e19676b1a59dd16baaeed" title="Obtain status of submitted insruction." alt="" coords="180,59,356,88"/>
+<area shape="rect" id="node7" href="$cvm-hfa-instr_8h.html#a56f2522dcba965745a1bc239fc432dca" title="Gets done from RWORD0." alt="" coords="412,32,575,61"/>
+<area shape="rect" id="node9" href="$cvm-hfa-instr_8h.html#a9700a50b68b6616506528eb725a8bda1" title="Gets reason from RWORD0." alt="" coords="407,85,580,115"/>
+</map>

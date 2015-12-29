@@ -1,0 +1,51 @@
+<map id="post_process" name="post_process">
+<area shape="rect" id="node3" href="$cvm-hfa-search_8h.html#ab50a2d84e35b5a4a03a23fc90e4dffa0" title="This routine retrieves the reason code after a search operation has been completed by the HFA engine..." alt="" coords="819,5,981,51"/>
+<area shape="rect" id="node5" href="$cvm-hfa-common_8h.html#ad117ba199386b8d427cbb04f288b5905" title="Dump HFA related registers." alt="" coords="840,725,960,755"/>
+<area shape="rect" id="node7" href="$cvm-hfa-search_8c.html#a6dbb15dc58155b2c94b19784ad42ef89" title="This routine post&#45;processes the search results from the HFA engine and reports the pattern matches fo..." alt="" coords="161,593,356,623"/>
+<area shape="rect" id="node84" href="$app-utils_8c.html#a633038357891aa5147b77fe939f300bf" title="Print pattern matches via match buffer and cleanup all matches." alt="" coords="817,992,983,1021"/>
+<area shape="rect" id="node9" href="$cvm-hfa-common_8h.html#a0da7c57174fb96d75ae9cc2ed3116a05" title="Dump buffer pointed by &quot;buf&quot; in readable format." alt="" coords="405,620,520,649"/>
+<area shape="rect" id="node11" href="$cvm-hfa-pp_8c.html#a02d24f276578f8a39a93968262a08f1d" title="pp" alt="" coords="444,567,481,596"/>
+<area shape="rect" id="node13" href="$pp_8h.html#af7a68f9e08d3b54012ad008a4f47e1cd" title="pphfa" alt="" coords="579,620,637,649"/>
+<area shape="rect" id="node15" href="$cvm-hfa-res_8c.html#ad0de0b790a5786053d59797884dbdd23" title="Rinit" alt="" coords="584,673,632,703"/>
+<area shape="rect" id="node17" href="$cvm-hfa-pp_8c.html#adcc1149c628372e2e566c246870929cb" title="infoentry" alt="" coords="569,460,647,489"/>
+<area shape="rect" id="node98" href="$cvm-hfa-res_8c.html#a6c56aa24fa6551b23e4283ae2d5bcad8" title="Rreport1" alt="" coords="571,567,645,596"/>
+<area shape="rect" id="node102" href="$cvm-hfa-res_8c.html#a38aa04fce135199ec3bb8726da163846" title="Rfinish" alt="" coords="576,513,640,543"/>
+<area shape="rect" id="node19" href="$hfa-lnx_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="705,408,759,437"/>
+<area shape="rect" id="node96" href="$cvm-hfa-pp_8c.html#a85b4c8af06430f26eab8afdeea3a7395" title="hashidx" alt="" coords="696,461,768,491"/>
+<area shape="rect" id="node21" href="$hfa-lnx_8c.html#a4c3443f524b4c0d95639694f0b74e850" title="Process command line options, Read graph and payload." alt="" coords="837,619,963,648"/>
+<area shape="rect" id="node29" href="$cvm-hfa_8c.html#a873768042b716d60996ec5d858fc8fd9" title="This function must be called by application to initialize HFA engine and setup resources for HFA hard..." alt="" coords="851,672,949,701"/>
+<area shape="rect" id="node67" href="$hfa-lnx_8c.html#a546f3769e735d4bef0bfab1cba56921c" title="Load graph to HFA memory and cache." alt="" coords="855,75,945,104"/>
+<area shape="rect" id="node69" href="$hfa-lnx_8c.html#a924d2733ebc7a856f8c3fd293193ba44" title="Initialize search context." alt="" coords="851,128,949,157"/>
+<area shape="rect" id="node71" href="$app-utils_8c.html#a4b47f3c9c5a0b3eaee64e264171628a3" title="This routine reads data of chunksize/a packet from given payload(Normal/PCAP) file and returns data b..." alt="" coords="816,181,984,211"/>
+<area shape="rect" id="node73" href="$cvm-hfa-search_8h.html#ae9741e867075c9b8cc63a7d889d5bf20" title="This routine is a variant of hfa_searchparam_set_inputiovec() when the previously searched input IO v..." alt="" coords="820,234,980,281"/>
+<area shape="rect" id="node75" href="$cvm-hfa-search_8h.html#a12882fa53f8ec49b9b2950711161db42" title="This routine sets the output buffer in the sparam." alt="" coords="820,303,980,350"/>
+<area shape="rect" id="node77" href="$cvm-hfa-search_8c.html#a57d7540278164eb6b6c132be00db0de5" title="This routine performs a pattern search using the given parameters in a blocking manner." alt="" coords="819,373,981,403"/>
+<area shape="rect" id="node81" href="$cvm-hfa-search_8h.html#ad18e328b50b109e1e44821f3d006bd9d" title="This routine returns the data&#45;buffer offset." alt="" coords="819,426,981,473"/>
+<area shape="rect" id="node92" href="$cvm-hfa-search_8h.html#ac5bcfbfda7036d9aca28a3c5828847a5" title="This routine retrieves flags returned by post&#45;processor." alt="" coords="819,495,981,542"/>
+<area shape="rect" id="node94" href="$hfa-lnx_8c.html#a5c6551bf9ea9cf51ae7f2076c4cbe8ef" title="Application cleanup will be done by this routine." alt="" coords="864,565,936,595"/>
+<area shape="rect" id="node23" href="$app-utils_8c.html#a8d5ec2ca8ebb2e04916983e6053a5c79" title="Return size of a file(compressed or uncompressed)." alt="" coords="1080,69,1205,99"/>
+<area shape="rect" id="node25" href="$app-utils_8c.html#a12339c67618c4b3a54c32f43d378c273" title="Read data from a file to a buffer(compressed or uncompressed)." alt="" coords="1079,123,1207,152"/>
+<area shape="rect" id="node27" href="$app-utils_8c.html#a1944a739d03e86dcaee1a7d245cfeba0" title="Initialize the attributes needed for parsing the payload file." alt="" coords="1068,175,1217,222"/>
+<area shape="rect" id="node31" href="$cvm-hfa-stats_8c.html#a2fcf955b47370bfa46705ee5a23a70cf" title="This routine allocates memory for counters to maintain statistics of each processing core..." alt="" coords="1075,1045,1211,1075"/>
+<area shape="rect" id="node33" href="$cvm-hfa_8c.html#a27982497398da2118cd5287ed51732e7" title="Provides device&#45;specific information This is a utility routine used to obtain HFA device&#45;specific det..." alt="" coords="1069,1099,1216,1128"/>
+<area shape="rect" id="node35" href="$pp_8h.html#a6f5982b2671e9682262a26b0d2996396" title="Constructs a readable version string for the PP library." alt="" coords="1063,1152,1223,1181"/>
+<area shape="rect" id="node37" href="$cvm-hfa_8c.html#afd1d53fe8a402d4c5799e6e98c67baaa" title="Displays HFA Device info." alt="" coords="1065,245,1220,275"/>
+<area shape="rect" id="node39" href="$cvm-hfa_8c.html#a236e64ca73680ea6761204d5c44d4e96" title="API to set PP resource allocator for partial matches." alt="" coords="1053,299,1232,328"/>
+<area shape="rect" id="node41" href="$cvm-hfa_8c.html#ab547f175726534d6a0a334eb35af4980" title="Default function pointer for PP allocations." alt="" coords="1063,352,1223,381"/>
+<area shape="rect" id="node43" href="$cvm-hfa_8c.html#a148abbfdeebb207ff46884af8eeb8fa4" title="API to set PP resource deallocator for partial matches." alt="" coords="1055,405,1231,435"/>
+<area shape="rect" id="node45" href="$cvm-hfa_8c.html#a832239ee7b188265bdacbbfb7e879af1" title="Default function pointer for PP deallocations." alt="" coords="1065,459,1220,488"/>
+<area shape="rect" id="node47" href="$cvm-hfa_8c.html#a774451b83b300f862763d189c9758e1f" title="API to set PP buffer size function pointer." alt="" coords="1055,512,1231,541"/>
+<area shape="rect" id="node49" href="$cvm-hfa_8c.html#a11aab8e30488e4cfc900f60a0dabc784" title="Default function pointer for PP size." alt="" coords="1065,565,1220,595"/>
+<area shape="rect" id="node51" href="$cvm-hfa_8c.html#a9a0b038e0d29435cb91a21d9c62806cc" title="API to set PP resource allocator for temporary memory." alt="" coords="1051,619,1235,648"/>
+<area shape="rect" id="node53" href="$cvm-hfa_8c.html#a2cbca63c413f08d3861f9b4c2855391f" title="API to set PP resource deallocator for temporary memory." alt="" coords="1053,672,1232,701"/>
+<area shape="rect" id="node55" href="$cvm-hfa_8c.html#af0b17e8a09b1f7a1dd438ddcb1e4cd14" title="API to set temporary memory size function pointer." alt="" coords="1053,725,1232,755"/>
+<area shape="rect" id="node57" href="$cvm-hfa_8c.html#aa2754afcdd94eb3dcd90c374f779dd24" title="API to set PP resource allocator for match/result buffer." alt="" coords="1032,779,1253,808"/>
+<area shape="rect" id="node59" href="$cvm-hfa_8c.html#ad022f5aec72780af8b36533884693539" title="API to set PP resource deallocator for result/match buf." alt="" coords="1035,832,1251,861"/>
+<area shape="rect" id="node61" href="$cvm-hfa_8c.html#a8b71887165c143e32600513d12f9274f" title="API to set match buffer size function pointer." alt="" coords="1035,885,1251,915"/>
+<area shape="rect" id="node63" href="$cvm-hfa_8c.html#abcc0595aa8b2bb2d6116d600abbf55f8" title="API to set PP error callback." alt="" coords="1052,939,1233,968"/>
+<area shape="rect" id="node65" href="$cvm-hfa_8c.html#ac115556b315ff135ed2fd059cdf7d066" title="Default function pointer for PP errors." alt="" coords="1069,992,1216,1021"/>
+<area shape="rect" id="node86" href="$cvm-hfa-search_8c.html#a0ac0bca99358ad294a18f86696acf218" title="This routine returns a match by parsing through the match buffer." alt="" coords="1084,1259,1201,1288"/>
+<area shape="rect" id="node88" href="$cvm-hfa-search_8c.html#a543990bc2a5e1726298e5053391e3bf5" title="This routine cleans&#45;up the match&#45;buffers allocated by hfa_searchctx_getmatches()." alt="" coords="1061,1205,1224,1235"/>
+<area shape="rect" id="node90" href="$cvm-hfa-res_8c.html#a78813e2d747c1d659277b705ebdffc50" title="Rfree" alt="" coords="1301,1205,1357,1235"/>
+<area shape="rect" id="node100" href="$cvm-hfa-res_8c.html#a70c9e55ba1fcb934f74ad71ddca9d08f" title="Radd" alt="" coords="705,567,759,596"/>
+</map>

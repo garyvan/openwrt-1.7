@@ -1,0 +1,38 @@
+# Copyright 2001-2005 Sourcefire, Inc. All Rights Reserved
+#
+# This file may contain proprietary rules that were created, tested and
+# certified by Sourcefire, Inc. (the "VRT Certified Rules") as well as
+# rules that were created by Sourcefire and other third parties and
+# distributed under the GNU General Public License (the "GPL Rules").  The
+# VRT Certified Rules contained in this file are the property of
+# Sourcefire, Inc. Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# The GPL Rules created by Sourcefire, Inc. are the property of
+# Sourcefire, Inc. Copyright 2002-2005 Sourcefire, Inc. All Rights
+# Reserved.  All other GPL Rules are owned and copyrighted by their
+# respective owners (please see www.snort.org/contributors for a list of
+# owners and their respective copyrights).  In order to determine what
+# rules are VRT Certified Rules or GPL Rules, please refer to the VRT
+# Certified Rules License Agreement.
+#
+#
+# $Id: chat.rules,v 1.55.4.6.4.3.2.1.2.1 2011/02/08 18:33:27 vrtbuild Exp $
+#-------------
+# CHAT RULES
+#-------------
+# These signatures look for people using various types of chat programs (for
+# example: AIM, ICQ, and IRC) which may be against corporate policy
+
+
+
+
+
+
+
+
+
+
+# alert udp any 1025: -> any 1025: (msg:"CHAT Microsoft Live chat video feed initiation"; content:"H|00 00 00 00 00 00 00 00 00|"; fast_pattern:only; dsize:10; reference:url,ml20rc.msnfanatic.com/vc_1_1/; classtype:policy-violation; sid:12457; rev:2;)
+# alert udp $HOME_NET any -> $EXTERNAL_NET 8000 (msg:"CHAT QQ protocol detected - version 2006"; content:"|02 0E|5|00|"; depth:4; threshold:type limit, track by_src, count 1, seconds 300; metadata:policy security-ips alert; reference:url,www.qq.com; classtype:policy-violation; sid:15292; rev:1;)
+# alert udp $HOME_NET any -> $EXTERNAL_NET 8000 (msg:"CHAT QQ protocol detected - version 2008"; content:"|02 12|Q|00|"; depth:4; threshold:type limit, track by_src, count 1, seconds 300; metadata:policy security-ips alert; reference:url,www.qq.com; classtype:policy-violation; sid:15293; rev:1;)
+# alert udp $HOME_NET any -> $EXTERNAL_NET 53 (msg:"CHAT deny Gmail chat DNS request"; byte_test:1,!&,128,2; content:"|0B|chatenabled|04|mail|06|google|03|com"; fast_pattern:only; classtype:policy-violation; sid:16443; rev:2;)
+alert udp $EXTERNAL_NET any -> $HOME_NET 5004:65535 (msg:"CHAT MSN Messenger and Windows Live Messenger Code Execution attempt"; content:"|F3 49|"; depth:2; byte_test:1,>,130,5,relative,little; metadata:policy security-ips drop; reference:bugtraq,25461; reference:cve,2007-2931; classtype:attempted-user; sid:17551; rev:2;)

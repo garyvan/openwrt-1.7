@@ -1,0 +1,8 @@
+<map id="hfa_get_wqe_type" name="hfa_get_wqe_type">
+<area shape="rect" id="node3" href="$hfa-lnx-wqe-lock_8c.html#a14d9beff0b867b96d1b26571245087dd" title="process_hwwqe" alt="" coords="199,5,324,35"/>
+<area shape="rect" id="node7" href="$hfa-lnx-wqe_8c.html#a695f1751f4b40675560d493a4ded2d5e" title="intercept_callback" alt="" coords="193,59,329,88"/>
+<area shape="rect" id="node11" href="$hfa-se-wqe-lock_8c.html#a06b5fcfab0e1d5eb36b633ec080ad7f9" title="Process search for given contexts." alt="" coords="208,112,315,141"/>
+<area shape="rect" id="node5" href="$hfa-lnx-wqe-lock_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="380,5,433,35"/>
+<area shape="rect" id="node9" href="$hfa-lnx-wqe_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="380,59,433,88"/>
+<area shape="rect" id="node13" href="$hfa-se-wqe-lock_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="380,112,433,141"/>
+</map>

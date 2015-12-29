@@ -1,0 +1,12 @@
+diff -Naur a/net/core/net_namespace.c b/net/core/net_namespace.c
+--- a/net/core/net_namespace.c	2015-02-03 13:12:12.000000000 -0800
++++ b/net/core/net_namespace.c	2015-03-16 15:31:48.767803213 -0700
+@@ -362,6 +362,8 @@
+ }
+ #endif
+ 
++EXPORT_SYMBOL_GPL(get_net_ns_by_fd);
++
+ struct net *get_net_ns_by_pid(pid_t pid)
+ {
+ 	struct task_struct *tsk;

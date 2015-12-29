@@ -1,0 +1,38 @@
+# Copyright 2001-2005 Sourcefire, Inc. All Rights Reserved
+#
+# This file may contain proprietary rules that were created, tested and
+# certified by Sourcefire, Inc. (the "VRT Certified Rules") as well as
+# rules that were created by Sourcefire and other third parties and
+# distributed under the GNU General Public License (the "GPL Rules").  The
+# VRT Certified Rules contained in this file are the property of
+# Sourcefire, Inc. Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# The GPL Rules created by Sourcefire, Inc. are the property of
+# Sourcefire, Inc. Copyright 2002-2005 Sourcefire, Inc. All Rights
+# Reserved.  All other GPL Rules are owned and copyrighted by their
+# respective owners (please see www.snort.org/contributors for a list of
+# owners and their respective copyrights).  In order to determine what
+# rules are VRT Certified Rules or GPL Rules, please refer to the VRT
+# Certified Rules License Agreement.
+#
+#
+# $Id: dos.rules,v 1.94.4.5.4.6 2010/10/28 18:03:06 vrtbuild Exp $
+#----------
+# DOS RULES
+#----------
+
+# alert udp any 19 <> any 7 (msg:"DOS UDP echo+chargen bomb"; flow:to_server; reference:cve,1999-0103; reference:cve,1999-0635; classtype:attempted-dos; sid:271; rev:9;)
+# alert ip $EXTERNAL_NET any -> $HOME_NET any (msg:"DOS IGMP dos attack"; fragbits:M+; ip_proto:2; reference:bugtraq,514; reference:cve,1999-0918; reference:url,www.microsoft.com/technet/security/bulletin/MS99-034.mspx; classtype:attempted-dos; sid:272; rev:13;)
+# alert udp $EXTERNAL_NET any -> $HOME_NET 161 (msg:"DOS Bay/Nortel Nautica Marlin"; flow:to_server; dsize:0; reference:bugtraq,1009; reference:cve,2000-0221; classtype:attempted-dos; sid:279; rev:8;)
+# alert udp $EXTERNAL_NET any -> $HOME_NET 9 (msg:"DOS Ascend Route"; flow:to_server; content:"NAMENAME"; depth:50; offset:25; reference:arachnids,262; reference:bugtraq,714; reference:cve,1999-0060; classtype:attempted-dos; sid:281; rev:9;)
+# alert udp $EXTERNAL_NET any -> $HOME_NET 500 (msg:"DOS ISAKMP invalid identification payload attempt"; flow:to_server; content:"|05|"; depth:1; offset:16; byte_test:1,!&,1,19; byte_test:1,>,8,32; byte_test:2,>,0,30; byte_test:2,<,10,30; byte_test:2,!=,8,30; reference:bugtraq,10004; reference:cve,2004-0184; classtype:attempted-dos; sid:2486; rev:11;)
+# alert udp $EXTERNAL_NET any -> $HOME_NET 2048 (msg:"DOS squid WCCP I_SEE_YOU message overflow attempt"; flow:to_server; content:"|00 00 00 08|"; depth:4; byte_test:4,>,32,16; reference:bugtraq,12275; reference:cve,2005-0095; classtype:attempted-user; sid:3089; rev:7;)
+# alert ip $EXTERNAL_NET any -> $HOME_NET any (msg:"DOS linux kernel SCTP chunkless packet denial of service attempt"; ip_proto:132; dsize:12; reference:bugtraq,18755; reference:cve,2006-2934; classtype:attempted-dos; sid:7021; rev:4;)
+# alert udp $HOME_NET any -> $HOME_NET 67 (msg:"DOS ISC DHCP server 2 client_id length denial of service attempt"; flow:to_server; content:"c|82|Sc"; content:"= "; distance:0; metadata:policy security-ips drop; reference:cve,2006-3122; reference:url,www.debian.org/security/2006/dsa-1143; classtype:attempted-dos; sid:8056; rev:3;)
+alert udp $EXTERNAL_NET any -> $HOME_NET 5151 (msg:"DOS Ipswitch WS_FTP log server long unicode string"; flow:to_server; content:"|AB AA|"; byte_test:2,>,2123,0,relative,little; reference:cve,2007-3823; reference:url,secunia.com/advisories/26040; classtype:denial-of-service; sid:12076; rev:3;)
+alert udp $EXTERNAL_NET any -> $HOME_NET 135 (msg:"DOS RPC NTLMSSP malformed credentials"; flow:established,to_server; content:"NTLMSSP|00 03 00 00 00|"; content:"|00 00 00 00|"; within:4; distance:16; content:"|00 00 00 00|"; within:4; distance:4; content:"|00 00 00 00|"; within:4; distance:4; content:"|05 00 00 03 10 00 00 00|"; within:500; pcre:"/\x05\x00\x00\x03\x10\x00\x00\x00.{16}\x0a[\x03\x04]/"; reference:cve,2007-2228; reference:url,www.microsoft.com/technet/security/bulletin/ms07-058.mspx; classtype:denial-of-service; sid:12642; rev:3;)
+# alert udp $EXTERNAL_NET any -> $HOME_NET 512 (msg:"DOS Spiffit UDP denial of service attempt"; flow:to_server; dsize:10; content:"@0"; fast_pattern:only; pcre:"/@0\x00*$/sm"; threshold:type both, track by_src, count 10, seconds 100; reference:cve,1999-0194; classtype:attempted-dos; sid:9622; rev:7;)
+# alert udp $EXTERNAL_NET any -> $HOME_NET 53 (msg:"DOS DNS root query traffic amplification attempt"; flow:to_server; content:"|00 01|"; depth:2; offset:4; content:"|00 00 02 00 01|"; within:5; distance:6; detection_filter:track by_src, count 5, seconds 30; metadata:service dns; reference:url,isc.sans.org/diary.html?storyid=5713; classtype:misc-activity; sid:15259; rev:2;)
+# alert udp $HOME_NET 53 -> $EXTERNAL_NET any (msg:"DOS DNS root query response traffic amplification attempt"; flow:to_client; content:"|00 01|"; depth:2; offset:4; content:"|00 00 02 00 01|"; within:5; distance:6; detection_filter:track by_dst, count 5, seconds 30; metadata:service dns; reference:url,isc.sans.org/diary.html?storyid=5713; classtype:misc-activity; sid:15260; rev:2;)
+# alert udp $EXTERNAL_NET any -> $HOME_NET [1645,1812] (msg:"DOS FreeRADIUS RADIUS server rad_decode remote denial of service attempt"; flow:to_server; content:"|01|"; depth:1; content:"E|02|"; within:2; distance:19; metadata:policy security-ips drop, service radius; reference:bugtraq,36263; reference:cve,2009-3111; classtype:attempted-dos; sid:16209; rev:1;)
+alert udp $EXTERNAL_NET any -> $HOME_NET 53 (msg:"DOS Microsoft Windows NAT Helper DNS query denial of service attempt"; flow:to_server; byte_test:1,!&,0xF8,2; content:"|00 00|"; depth:2; offset:4; metadata:policy balanced-ips drop, policy security-ips drop, service dns; reference:bugtraq,20804; reference:cve,2006-5614; classtype:attempted-dos; sid:17294; rev:1;)
+# alert ip $EXTERNAL_NET any -> $HOME_NET any (msg:"DOS Linux kernel SCTP Unknown Chunk Types denial of service attempt"; ip_proto:132; dsize:>12; byte_test:1,>,14,12; reference:bugtraq,24376; reference:cve,2007-2876; classtype:attempted-dos; sid:17302; rev:2;)

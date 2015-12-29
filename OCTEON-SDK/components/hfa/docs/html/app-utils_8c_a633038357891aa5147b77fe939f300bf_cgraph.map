@@ -1,0 +1,5 @@
+<map id="hfautils_print_matches" name="hfautils_print_matches">
+<area shape="rect" id="node3" href="$cvm-hfa-search_8c.html#a0ac0bca99358ad294a18f86696acf218" title="This routine returns a match by parsing through the match buffer." alt="" coords="243,5,360,35"/>
+<area shape="rect" id="node5" href="$cvm-hfa-search_8c.html#a543990bc2a5e1726298e5053391e3bf5" title="This routine cleans&#45;up the match&#45;buffers allocated by hfa_searchctx_getmatches()." alt="" coords="220,59,383,88"/>
+<area shape="rect" id="node7" href="$cvm-hfa-res_8c.html#a78813e2d747c1d659277b705ebdffc50" title="Rfree" alt="" coords="432,59,488,88"/>
+</map>

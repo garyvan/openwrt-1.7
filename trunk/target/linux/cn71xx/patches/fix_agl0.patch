@@ -1,0 +1,17 @@
+diff -Naur a/arch/mips/cavium-octeon/executive/cvmx-agl.c b/arch/mips/cavium-octeon/executive/cvmx-agl.c
+--- a/arch/mips/cavium-octeon/executive/cvmx-agl.c	2015-02-03 13:11:43.000000000 -0800
++++ b/arch/mips/cavium-octeon/executive/cvmx-agl.c	2015-10-15 10:47:48.623768567 -0700
+@@ -227,9 +227,12 @@
+ 		cvmx_read_csr(CVMX_AGL_PRTX_CTL(port));
+ 
+ 	    //liteon+ 
++		//this fix is for wr8691c router reference board only
++		//agl0 port fails on 70xx sff board with this code
++		//so execute for cavium,wr8691c model only
+ 		sprop = of_get_property(of_find_node_by_path("/"),"model",NULL);
+ 
+-		if(strcmp(sprop,"cavium,wp868cp,wp868cp_v4"))
++		if(strcmp(sprop,"cavium,wr8691c")==0)
+ 		{
+ 			agl_prtx_ctl.s.clkrx_byp = 1;
+ 			cvmx_write_csr(CVMX_AGL_PRTX_CTL(port), agl_prtx_ctl.u64);

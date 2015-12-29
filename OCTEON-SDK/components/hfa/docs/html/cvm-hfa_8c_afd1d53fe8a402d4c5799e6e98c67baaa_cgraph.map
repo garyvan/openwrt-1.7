@@ -1,0 +1,4 @@
+<map id="hfa_dev_display_info" name="hfa_dev_display_info">
+<area shape="rect" id="node3" href="$pp_8h.html#a9e7b310f36183e66e8880a57028cb670" title="Constructs a readable extended version string for the PP library." alt="" coords="212,5,393,35"/>
+<area shape="rect" id="node5" href="$cvmx-hfa_8c.html#a04d071e03c6b4ceee5c1f527b34de173" title="Given the chip processor ID from COP0, this function returns a string representing the chip model num..." alt="" coords="219,58,387,105"/>
+</map>

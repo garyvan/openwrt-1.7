@@ -1,0 +1,25 @@
+<map id="cleanup" name="cleanup">
+<area shape="rect" id="node3" href="$cvm-hfa-graph_8c.html#aa4ce7845277b4b3099159bbd7afd5c08" title="This routine is used to cacheunload a cacheload&#39;ed graph in a non&#45;blocking manner." alt="" coords="125,485,301,515"/>
+<area shape="rect" id="node39" href="$cvm-hfa-graph_8c.html#a5e79919f5903d97aee5e82bfc7e71597" title="This routine is the counterpart of hfa_dev_graph_init()." alt="" coords="125,539,301,568"/>
+<area shape="rect" id="node41" href="$cvm-hfa_8c.html#af14bebdd444bd0bf92faac9d5d88b492" title="This function is called by application to cleanup all resources configured for HFA device and then sh..." alt="" coords="148,592,279,621"/>
+<area shape="rect" id="node5" href="$cvm-hfa-graph_8c.html#afb63ce4f42afc7987e6222b1c1ea91a1" title="This routine is used to cacheunload a cacheload&#39;ed graph in a non&#45;blocking manner." alt="" coords="349,210,525,257"/>
+<area shape="rect" id="node25" href="$cvm-hfa-graph_8c.html#a0f2f13fb51e5d56dcf049ff3c7c6ad78" title="This routine is used to check the status of the graph." alt="" coords="361,485,513,515"/>
+<area shape="rect" id="node7" href="$cvm-hfa-instr_8h.html#acaf8def6cbffb04c100bf7f7684f242e" title="Initialize the HFA instruction." alt="" coords="604,5,740,35"/>
+<area shape="rect" id="node9" href="$cvm-hfa-instr_8h.html#a2d6082e2e599fe8523162b18d0a06f6c" title="Sets rptr in the instruction." alt="" coords="592,59,752,88"/>
+<area shape="rect" id="node11" href="$cvm-hfa-instr_8h.html#a6960a0761295ada9f449ea5e8c41ec80" title="Sets clmsk in the instruction." alt="" coords="584,112,760,141"/>
+<area shape="rect" id="node13" href="$cvm-hfa-instr_8h.html#add4e981377a02cd06e2bca116e584bca" title="Sets vgid in the instruction." alt="" coords="589,165,755,195"/>
+<area shape="rect" id="node15" href="$cvm-hfa-common_8h.html#a0da7c57174fb96d75ae9cc2ed3116a05" title="Dump buffer pointed by &quot;buf&quot; in readable format." alt="" coords="615,219,729,248"/>
+<area shape="rect" id="node17" href="$cvm-hfa-instr_8h.html#a88a92a987acac81360f3b880d013cd10" title="Sets wqptr instruction." alt="" coords="585,272,759,301"/>
+<area shape="rect" id="node19" href="$cvm-hfa-graph_8c.html#a1320f0566be0069bd604cc820a12a114" title="This routine sets WQE field in graph data structure." alt="" coords="603,325,741,355"/>
+<area shape="rect" id="node21" href="$cvm-hfa_8c.html#a4677d07b901d6aeb02e793c1dbdfabbf" title="Asynchronous instruction submit to HFA hardware Do not wait for instruction to complete." alt="" coords="591,379,753,408"/>
+<area shape="rect" id="node23" href="$cvmx-hfa_8c.html#a96a123c8918e83cdf914f6de1bfb4f00" title="Submit a command to the DFA block." alt="" coords="839,379,975,408"/>
+<area shape="rect" id="node27" href="$cvm-hfa_8c.html#a4753d2dd586e19676b1a59dd16baaeed" title="Obtain status of submitted insruction." alt="" coords="584,432,760,461"/>
+<area shape="rect" id="node33" href="$cvm-hfa-instr_8h.html#aa7b5661907cf23e01fe784a70980ed4b" title="Gets itype from RWORD0." alt="" coords="591,485,753,515"/>
+<area shape="rect" id="node35" href="$cvm-hfa-graph_8c.html#aa4c0667cc4f92a08c249041eb8a4ec58" title="This routine is used to free the buffers and change the graph load status after instruction completio..." alt="" coords="575,539,769,568"/>
+<area shape="rect" id="node29" href="$cvm-hfa-instr_8h.html#a56f2522dcba965745a1bc239fc432dca" title="Gets done from RWORD0." alt="" coords="825,432,988,461"/>
+<area shape="rect" id="node31" href="$cvm-hfa-instr_8h.html#a9700a50b68b6616506528eb725a8bda1" title="Gets reason from RWORD0." alt="" coords="820,485,993,515"/>
+<area shape="rect" id="node37" href="$cvm-hfa-cluster_8c.html#ad8cad96579f5a310b62caaf8c166658f" title="Returns a copy of a cluster of the HFA device." alt="" coords="847,539,967,568"/>
+<area shape="rect" id="node43" href="$cvm-hfa-stats_8c.html#ad6d5ab096d9d84d2b2f52bd551443592" title="This routine is the counterpart of hfa_dev_init_stats()." alt="" coords="353,592,521,621"/>
+<area shape="rect" id="node47" href="$cvm-hfa-stats_8c.html#a75504ae5d9797d314ee11704fc86cdb1" title="This routine prints statistics of each core." alt="" coords="365,645,509,675"/>
+<area shape="rect" id="node45" href="$cvm-hfa-stats_8c.html#a7a2acbe48c3850d43256938ee996aa16" title="This routine frees memory to STATS ARENA." alt="" coords="589,592,755,621"/>
+</map>

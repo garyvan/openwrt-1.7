@@ -1,0 +1,24 @@
+diff -Naur openssl-1.0.2d_orig/Makefile.org openssl-1.0.2d/Makefile.org
+--- openssl-1.0.2d_orig/Makefile.org	2015-07-28 12:16:12.436854170 +0530
++++ openssl-1.0.2d/Makefile.org	2015-07-28 12:18:05.359693581 +0530
+@@ -185,7 +185,7 @@
+ EXHEADER=       e_os2.h
+ HEADER=         e_os.h
+ 
+-all: Makefile build_all
++all: build_all openssl.pc libssl.pc libcrypto.pc
+ 
+ # as we stick to -e, CLEARENV ensures that local variables in lower
+ # Makefiles remain local and variable. $${VAR+VAR} is tribute to Korn
+@@ -399,11 +399,6 @@
+ 	    echo 'Version: '$(VERSION); \
+ 	    echo 'Requires: libssl libcrypto' ) > openssl.pc
+ 
+-Makefile: Makefile.org Configure config
+-	@echo "Makefile is older than Makefile.org, Configure or config."
+-	@echo "Reconfigure the source tree (via './config' or 'perl Configure'), please."
+-	@false
+-
+ libclean:
+ 	rm -f *.map *.so *.so.* *.dylib *.dll engines/*.so engines/*.dll engines/*.dylib *.a engines/*.a */lib */*/lib
+ 

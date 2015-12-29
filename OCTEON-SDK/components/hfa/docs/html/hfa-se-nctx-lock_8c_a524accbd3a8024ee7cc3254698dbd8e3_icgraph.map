@@ -1,0 +1,5 @@
+<map id="snode_cleanup" name="snode_cleanup">
+<area shape="rect" id="node3" href="$hfa-se-nctx-lock_8c.html#acd9e54f020b77f14d54c200b65423a15" title="Application cleanup will be done by this routine." alt="" coords="204,5,276,35"/>
+<area shape="rect" id="node7" href="$hfa-se-nctx-lock_8c.html#a2c813b2ff20c5bf67f487908476604d6" title="Initialize search context object for nctxts and a global list to track nctxts." alt="" coords="175,59,305,88"/>
+<area shape="rect" id="node5" href="$hfa-se-nctx-lock_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="355,32,408,61"/>
+</map>

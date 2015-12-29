@@ -1,0 +1,118 @@
+diff -urp hfa-orig/apps/func/Makefile hfa/apps/func/Makefile
+--- hfa-orig/apps/func/Makefile	2015-09-03 16:34:40.103369069 -0400
++++ hfa/apps/func/Makefile	2015-09-03 16:44:20.226368268 -0400
+@@ -121,7 +121,7 @@ include $(dir)/octeon-hfa.mk
+ 
+ dir := $(APPSDIR)/../../utils/cvmgz
+ include $(dir)/cvmgz.mk
+-
++LDFLAGS_GLOBAL += -Wl,--no-warn-mismatch
+ LIBS_LIST += $(HFAROOT)/lib/octeon/pp/$(HFAENV)/libpp.a
+ 
+ dir := $(OCTEON_ROOT)/executive
+@@ -173,7 +173,7 @@ include $(dir)/octeon-hfa.mk
+ 
+ dir := $(APPSDIR)/../../utils/cvmgz
+ include $(dir)/cvmgz.mk
+-
++LDFLAGS_GLOBAL += -Wl,--no-warn-mismatch
+ LIBS_LIST += $(HFAROOT)/lib/octeon/pp/$(HFAENV)/libpp.a
+ 
+ dir := $(OCTEON_ROOT)/executive
+diff -urp hfa-orig/apps/perf/Makefile hfa/apps/perf/Makefile
+--- hfa-orig/apps/perf/Makefile	2015-09-03 16:34:40.095369069 -0400
++++ hfa/apps/perf/Makefile	2015-09-03 16:44:45.114368237 -0400
+@@ -106,7 +106,7 @@ include $(dir)/octeon-hfa.mk
+ 
+ dir := $(APPSDIR)/../../utils/cvmgz
+ include $(dir)/cvmgz.mk
+-
++LDFLAGS_GLOBAL += -Wl,--no-warn-mismatch
+ LIBS_LIST += $(HFAROOT)/lib/octeon/pp/$(HFAENV)/libpp.a
+ 
+ dir := $(OCTEON_ROOT)/executive
+@@ -152,7 +152,7 @@ include $(dir)/octeon-hfa.mk
+ 
+ dir := $(APPSDIR)/../../utils/cvmgz
+ include $(dir)/cvmgz.mk
+-
++LDFLAGS_GLOBAL += -Wl,--no-warn-mismatch
+ LIBS_LIST += $(HFAROOT)/lib/octeon/pp/$(HFAENV)/libpp.a
+ 
+ dir := $(OCTEON_ROOT)/executive
+diff -urp hfa-orig/drv/include/config/octeon-hfa-drv-config.h hfa/drv/include/config/octeon-hfa-drv-config.h
+--- hfa-orig/drv/include/config/octeon-hfa-drv-config.h	2015-09-03 16:34:40.216369069 -0400
++++ hfa/drv/include/config/octeon-hfa-drv-config.h	2015-09-03 16:36:12.285368940 -0400
+@@ -58,29 +58,50 @@
+                 size = 3
+                 pool = 5
+                 description = "temp buffers for OCTEON hfa";
++            fpa CAV_OCT_SNORT_8K_POOL
++                size = 64
++                pool = 7
++                description = "Packet structure poll for OCTEON snort";
++            fpa CAV_OCT_SNORT_2K_POOL
++                size = 16
++                pool = 3 
++                description = "Sbuf Poll for OCTEON snort";
++
+ 
+             define OCTEON_IBUFPOOL_COUNT
+-                value = 60000;
++                value = 30000;
+     
+             define OCTEON_HFAPOOL
+                 value = CVMX_FPA_DFA_POOL;
+             define OCTEON_HFAPOOL_SIZE
+                 value = CVMX_FPA_DFA_POOL_SIZE;
+             define OCTEON_HFAPOOL_COUNT
+-                value = 60000;
++                value = 9600;
+             define OCTEON_PPBUFPOOL_COUNT
+                 value = OCTEON_HFAPOOL_COUNT
+                 description = "thread buffer count for OCTEON hfa";
+             define OCTEON_TBUFPOOL_COUNT
+-                value = 60000
++                value = 4800
+                 description = "temp buffer count for OCTEON hfa";
+-    
++            define CAV_OCT_SNORT_2K_POOL_COUNT
++                value = 4800
++                description = "Sbuf pool for OCTEON snort";
++            define CAV_OCT_SNORT_8K_POOL_COUNT
++                value = 4800
++                description = "Snort pkt pool for OCTEON snort";
++            define CAV_OCT_SNORT_128B_POOL
++                value = OCTEON_PPBUFPOOL; 
++            define CAV_OCT_SNORT_128B_POOL_COUNT
++                value = OCTEON_HFAPOOL_COUNT
++                description = "Snort 128B Pool";
++            define CAV_OCT_SNORT_128B_POOL_SIZE
++                value = OCTEON_HFAPOOL_SIZE;
+             define OCTEON_HFA_ARENA_SIZE
+-                value = 0x6400000
+-                description = "HFA arena size for graph in bytes";
++                value = 0x4000000
++                description = "HFA arena size for graph in bytes 64 MB (default 1024 MB)";
+             define OCTEON_HFA_MEMORY_SIZE
+-                value = 0x80
+-                description = "HFA Memory Size in Mega Bytes";
++                value = 0x100
++                description = "HFA Memory Size in Megabytes 256 MB (default 1024 MB)";
+ 
+         }
+ #endif
+diff -urp hfa-orig/utils/cvmgz/misc_defs.h hfa/utils/cvmgz/misc_defs.h
+--- hfa-orig/utils/cvmgz/misc_defs.h	2015-09-03 16:34:40.219369069 -0400
++++ hfa/utils/cvmgz/misc_defs.h	2015-09-03 16:36:12.285368940 -0400
+@@ -56,8 +56,10 @@
+ #else
+ #define swap32(x)   (x)
+ #endif
++#ifndef __linux__
+ #define malloc memfs_malloc
+ #define free memfs_free
++#endif
+ #ifndef KERNEL
+ void gz_fsinit(void *nm_blk_addr, void *(*memfs_alloc_rtn)(unsigned long), 
+                                        void (*memfs_free_rtn)(const void *));

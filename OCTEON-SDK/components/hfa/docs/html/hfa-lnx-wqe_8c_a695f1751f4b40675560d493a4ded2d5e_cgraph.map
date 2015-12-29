@@ -1,0 +1,4 @@
+<map id="intercept_callback" name="intercept_callback">
+<area shape="rect" id="node3" href="$cvm-hfa-common_8h.html#ab6b5a9b432c71164f1c1aaa4db029031" title="This routine is for getting WQE type." alt="" coords="224,5,363,35"/>
+<area shape="rect" id="node5" href="$cvm-hfa-search_8c.html#a4e3a1a826235d80899e23fb44c69eb0f" title="This routine handles HFA WQE posted by HFA engine to indicate instruction completion." alt="" coords="193,59,393,88"/>
+</map>

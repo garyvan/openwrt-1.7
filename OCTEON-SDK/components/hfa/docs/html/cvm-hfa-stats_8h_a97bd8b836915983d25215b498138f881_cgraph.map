@@ -1,0 +1,4 @@
+<map id="hfa_searchctx_stats_init" name="hfa_searchctx_stats_init">
+<area shape="rect" id="node3" href="$cvm-hfa-stats_8c.html#acbdfa65e476c04cd9b67b7c462eefe56" title="This routine allocates required memory from STATS ARENA." alt="" coords="231,5,401,35"/>
+<area shape="rect" id="node5" href="$cvm-hfa-stats_8c.html#a7a2acbe48c3850d43256938ee996aa16" title="This routine frees memory to STATS ARENA." alt="" coords="233,59,399,88"/>
+</map>

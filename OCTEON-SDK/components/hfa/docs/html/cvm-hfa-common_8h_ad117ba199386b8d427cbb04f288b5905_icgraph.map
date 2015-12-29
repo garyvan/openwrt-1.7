@@ -1,0 +1,11 @@
+<map id="hfa_dump_regs" name="hfa_dump_regs">
+<area shape="rect" id="node3" href="$hfa-lnx-async_8c.html#a972f8b60ef804914c009c2ef85bac50e" title="Process search for given payload and graph." alt="" coords="176,31,299,60"/>
+<area shape="rect" id="node12" href="$hfa-lnx-linkgraph_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="211,84,264,113"/>
+<area shape="rect" id="node14" href="$hfa-lnx-nctx-lock_8c.html#adb0c831ef0f9af5441a6769c377d9c95" title="Post process the results from HFA and record found matches." alt="" coords="184,137,291,167"/>
+<area shape="rect" id="node21" href="$hfa-se-linkgraph_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="211,191,264,220"/>
+<area shape="rect" id="node5" href="$hfa-lnx-async_8c.html#a1e97b1d598034fdc92d57054a6c386e6" title="tasklet_callback" alt="" coords="347,5,469,35"/>
+<area shape="rect" id="node9" href="$hfa-lnx-async_8c.html#a7dea7d59754828b1173c4c7ec5d42f3e" title="thread_callback" alt="" coords="347,59,469,88"/>
+<area shape="rect" id="node7" href="$hfa-lnx-async_8c.html#a78ffddbcd7cdd164889cfb53ea367886" title="entry" alt="" coords="552,47,605,76"/>
+<area shape="rect" id="node16" href="$hfa-lnx-nctx-lock_8c.html#a48d3743fb7abc7d3c6b68359678e52a1" title="Poll for the pending search instructions in the HW (blocked till instruction completes) and process t..." alt="" coords="387,112,429,141"/>
+<area shape="rect" id="node18" href="$hfa-lnx-nctx-lock_8c.html#a972f8b60ef804914c009c2ef85bac50e" title="Performs search process for each core." alt="" coords="517,125,640,155"/>
+</map>

@@ -1,0 +1,166 @@
+2012-07-17 - Snort 2.9.3
+[*] Improvements
+
+ * Updates to http_inspect client PAF handling and server flow_depth handling.
+ 
+ * Logging updates to the smtp preprocessor.
+
+2012-06-06 - Snort 2.9.3 RC
+[*] Improvements
+
+ * Added detailed documentation of unified2 logging configuration and
+   logging.
+
+ * Removed --enable-decoder-preprocessor-rules configure option and
+   hardened preprocessor and decoder rule event code.  To enable old
+   behavior such that specific preprocessor and decoder rules don't
+   have to be explicity added to snort.conf, add "config
+   autogenerate_preprocessor_decoder_rules" to your snort.conf.
+
+ * Fixed SMTP mempool allocation for significant memory savings.  Also
+   tweaked memory required per stream5 session tracker.
+
+ * Force exact versioning match of running dynamic engine and dynamic
+   engine used to build SO rules.
+
+ * User can now query reputation pp for routing table and management
+   information.
+
+2012-04-27 - Snort 2.9.3 Beta
+[*] New additions
+ * Update to flowbit rule option to allow for OR and AND
+  of individual bits within a single rule, and allow flowbits
+  to be used in multiple groups.  See README.flowbits and
+  the Snort manual for details.
+
+ * Dynamic output plugin architecture to provide an API that
+  developers can write their own output mechanisms to log alert
+  and packet data from Snort.
+
+ * Update to dcerpc2 preprocessor for improved accuracy and
+  handling of different OSs for SMB processing.  See README.dcerpc2
+  and the Snort manual for details.
+
+ * Updates to reputation preprocessor for handling of whitlelist
+  and trustlists and zone information.  See README.reputation
+  and the Snort manual for details.
+
+[*] Improvements
+ * Update to return error messages through the control channel.
+
+ * Updates to the processing of email attachments for better
+  handling of non-encoded attachments, and improved memory
+  management for attachment processing.
+
+ * Improvements in HTTP Inspect for better performance with gzip
+  decompression.  Also improvements for handling simple responses,
+  encoded query strings, transfer encoding and chunk encoding
+  processing.
+
+ * Updates to the packet decoders to support pflog v4.
+
+ * Fix logging of multiple unified2 alerts with reassembled packets.
+
+ * Compiler warning cleanup across multiple platforms.
+
+ * Added 116:458 and 116:459 to cover fragmentation issues.
+
+[*] Deletions
+ * Removed all database outputs.
+
+2012-03-26 - Snort 2.9.2.2
+[*] Improvements
+ * Updates to HTTP Inspect to handle normalization with large
+   number of directories, eliminate false positives when chunks
+   span multiple packets, and remove the upper limit on the
+   gzip memcap.
+
+ * Update stream handling for TCP session cleanup with RSTs and
+   other TCP state tracking.
+
+ * Update for responses to fragmented IPv6 traffic and to the
+   react page configuration.
+
+ * Updates SIP preprocessor to limit false positives.
+
+ * Update for correct logging in unified2 when interface is passive.
+
+ * Add stats for SMTP preprocessor at termination.
+
+ * State tracking improvements to SMB processing in the dcerpc2
+   preprocessor when missing packets on a session.
+
+ * 
+  
+2012-01-17 - Snort 2.9.2.1
+
+[*] New Additions
+ * Added new alerts for HTTP (undefined methods & HTTP 0.9 simple requests).
+
+[*] Improvements
+ * Updates to Stream preprocessor in TCP session tracking to avoid requeuing 
+   retransmitted data that was already flushed. Also varies tweaks for PAF flushing.
+
+ * Updates to reputation preprocessor to handle shared memory switching. 
+
+ * Updates to the SCADA preprocessors in handling PAF flushing and modbus request/response
+   length checking. Also tweaks in alert for reserved DNP3 functions.  
+
+ * Updates to flowbit groups to always use the group when some rules refer to a flow group 
+   while others do not refer to a group for the same flowbit. 
+
+ * Updates to GTP preprocessor to check invalid extension header length for GTPv1.
+ 
+ * Updates to sfrt library in calculating memory allocated and support for IPv6. 
+
+2011-12-14 - Snort 2.9.2
+[*] New Additions
+ * SCADA (DNP3 and Modbus) preprocessors. Added two new preprocessors
+   to support writing rules for detecting attacks for control systems.
+   New rule keywords are supported, and DNP3 leverages Stream5 PAF
+   support for TCP reassembly.  See the Snort Manual, README.dnp3 and
+   README.modbus for details of the configurations and new rule
+   options.
+
+ * GTP decoding and preprocessor.  Updated the Snort packet decoders
+   and added a preprocessor to support detecting attacks over GTP (GPRS
+   Tunneling Protocol).  Snort's GTP support handles multiple versions
+   of GTP and has a rich configuration set.  See the Snort Manual and
+   README.GTP for details.
+
+ * Updates to the HTTP preprocessor to normalize HTTP responses that
+   include javascript escaped data in the HTTP response body.  This
+   expands Snort's coverage in detecting HTTP client-side attacks.
+   See the Snort Manual and README.http_inspect for configuration
+   details.
+
+ * Added Protocol-Aware Flushing (PAF) support for FTP.
+
+[*] Improvements
+ * Updates to Stream preprocessor to be able to track and store
+   "stream" data for non TCP/UDP flows.  Also improvements to handle
+   when memory associated with a blocked stream is released and usable
+   for other connections.
+
+ * Updates to dce_stub_data to make it act the same as file_data
+   and pkt_data rule option keywords in how it interacts with
+   subsequent content/pcre/etc rule options.
+
+ * Updates to how Snort handles and processes signals received
+   from the OS.
+
+ * Enabled logging of normalized JavaScript to unified2 without the
+   use of the --enable-sourcefire configuration option.
+
+ * Improved handling of gaps and overlaps for "first" and "vista"
+   policies in Stream5.
+
+ * Added support for signal handler customization. At compile-time,
+   Snort can be customized to use different signal numbers.
+   This allows problems with overlapping signals to be fixed on a
+   per-platform basis, which is especially helpful for the BSDs.
+   See the Snort Manual for more details.
+
+ * Perfmonitor's output files ("now" files) are now created after
+   Snort drops privileges. Output files will now be owned by the
+   user and group specified with "-u" and "-g" at the command line.

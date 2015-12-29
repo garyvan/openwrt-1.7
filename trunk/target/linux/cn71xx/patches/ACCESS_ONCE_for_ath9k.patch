@@ -1,0 +1,11 @@
+--- a/include/uapi/linux/compiler.h	2014-06-26 14:12:03.931025800 +0800
++++ b/include/uapi/linux/compiler.h	2014-06-26 14:16:50.267013824 +0800
+@@ -407,7 +407,7 @@
+  * use is to mediate communication between process-level code and irq/NMI
+  * handlers, all running on the same CPU.
+  */
+-#define ACCESS_ONCE(x) (*(volatile const typeof(x) *)&(x))
++#define ACCESS_ONCE(x) (*(volatile typeof(x) *)&(x))
+ #define ACCESS_ONCE_RW(x) (*(volatile typeof(x) *)&(x))
+ 
+ /* Ignore/forbid kprobes attach on very low level functions marked by this attribute: */

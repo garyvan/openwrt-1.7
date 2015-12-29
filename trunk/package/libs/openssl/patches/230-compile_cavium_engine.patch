@@ -1,0 +1,12 @@
+diff -Naur openssl-1.0.2a_orig/Configure openssl-1.0.2a/Configure
+--- openssl-1.0.2a_orig/Configure	2015-03-19 19:00:36.000000000 +0530
++++ openssl-1.0.2a/Configure	2015-04-02 15:53:29.985686273 +0530
+@@ -350,6 +350,8 @@
+ # throw in -D[BL]_ENDIAN, whichever appropriate...
+ "linux-generic32","gcc:-O3 -fomit-frame-pointer -Wall::-D_REENTRANT::-ldl:BN_LLONG RC4_CHAR RC4_CHUNK DES_INT DES_UNROLL BF_PTR:${no_asm}:dlfcn:linux-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR)",
+ "linux-ppc",	"gcc:-DB_ENDIAN -O3 -Wall::-D_REENTRANT::-ldl:BN_LLONG RC4_CHAR RC4_CHUNK DES_RISC1 DES_UNROLL:${ppc32_asm}:linux32:dlfcn:linux-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR)",
++"linux-octeon32","mips64-octeon-linux-gnu-gcc:-mabi=n32 -O3 -DB_ENDIAN -DTERMIO  -Wall::::-ldl::${no_asm}:dlfcn:linux-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR):mips64-octeon-linux-gnu-ranlib:",
++"linux-octeon64","mips64-octeon-linux-gnu-gcc:-O3 -DB_ENDIAN -DTERMIO -Wall::::-ldl:SIXTY_FOUR_BIT_LONG:${no_asm}:dlfcn:linux-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR):mips64-octeon-linux-gnu-ranlib:",
+ 
+ #######################################################################
+ # Note that -march is not among compiler options in below linux-armv4

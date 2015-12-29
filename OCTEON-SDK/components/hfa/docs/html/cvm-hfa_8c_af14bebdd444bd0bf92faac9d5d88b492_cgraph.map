@@ -1,0 +1,5 @@
+<map id="hfa_dev_cleanup" name="hfa_dev_cleanup">
+<area shape="rect" id="node3" href="$cvm-hfa-stats_8c.html#ad6d5ab096d9d84d2b2f52bd551443592" title="This routine is the counterpart of hfa_dev_init_stats()." alt="" coords="187,5,355,35"/>
+<area shape="rect" id="node7" href="$cvm-hfa-stats_8c.html#a75504ae5d9797d314ee11704fc86cdb1" title="This routine prints statistics of each core." alt="" coords="199,59,343,88"/>
+<area shape="rect" id="node5" href="$cvm-hfa-stats_8c.html#a7a2acbe48c3850d43256938ee996aa16" title="This routine frees memory to STATS ARENA." alt="" coords="404,5,569,35"/>
+</map>
