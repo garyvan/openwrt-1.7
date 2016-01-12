@@ -44,7 +44,6 @@
  * network ports from the rest of the cvmx-helper files.
  *
  */
-
 #ifdef CVMX_BUILD_FOR_LINUX_KERNEL
 #include <linux/module.h>
 #include <asm/octeon/cvmx.h>
@@ -375,6 +374,8 @@ int __cvmx_helper_board_get_port_from_dt(void *fdt_addr, int ipd_port)
 	int pip, iface, eth;
 	int dbg = device_tree_dbg;
 	cvmx_helper_interface_mode_t mode;
+	uint32_t *val;
+	int phy_node_offset;
 
 	interface_num = cvmx_helper_get_interface_num(ipd_port);
 	mode = cvmx_helper_interface_get_mode(interface_num);
@@ -388,6 +389,7 @@ int __cvmx_helper_board_get_port_from_dt(void *fdt_addr, int ipd_port)
         case CVMX_HELPER_INTERFACE_MODE_SGMII:
 	case CVMX_HELPER_INTERFACE_MODE_QSGMII:
         case CVMX_HELPER_INTERFACE_MODE_RXAUI:
+	case CVMX_HELPER_INTERFACE_MODE_AGL:
 		aliases = 1;
 		break;
 	default:
@@ -433,16 +435,54 @@ int __cvmx_helper_board_get_port_from_dt(void *fdt_addr, int ipd_port)
 	if (eth < 0) 
 		return -1;
 
+	cvmx_helper_set_port_fdt_node_offset(interface_num, port_index, eth);
+
+	phy_node_offset = cvmx_fdt_get_int(fdt_addr, eth, "phy", -1);
+	if (dbg)
+		cvmx_dprintf("%s: phy node offset: %d\n", __func__, phy_node_offset);
+	cvmx_helper_set_phy_fdt_node_offset(interface_num, port_index,
+					    phy_node_offset);
+
 	if (fdt_getprop(fdt_addr, eth, "cavium,sgmii-mac-phy-mode", NULL))
 		cvmx_helper_set_mac_phy_mode(interface_num, port_index, true);
 	else
 		cvmx_helper_set_mac_phy_mode(interface_num, port_index, false);
+
+	if (fdt_getprop(fdt_addr, eth, "cavium,force-link-up", NULL))
+		cvmx_helper_set_port_force_link_up(interface_num, port_index,
+						   true);
+	else
+		cvmx_helper_set_port_force_link_up(interface_num, port_index,
+						   false);
 
 	if (fdt_getprop(fdt_addr, eth, "cavium,sgmii-mac-1000x-mode", NULL))
 		cvmx_helper_set_1000x_mode(interface_num, port_index, true);
 	else
 		cvmx_helper_set_1000x_mode(interface_num, port_index, false);
 
+	if (fdt_getprop(fdt_addr, eth, "cavium,disable-autonegotiation", NULL))
+		cvmx_helper_set_port_autonegotiation(interface_num, port_index, false);
+	else
+		cvmx_helper_set_port_autonegotiation(interface_num, port_index, true);
+
+	if (mode == CVMX_HELPER_INTERFACE_MODE_AGL) {
+		if (fdt_getprop(fdt_addr, eth,
+				"cavium,rx-clk-delay-bypass", NULL))
+			cvmx_helper_set_agl_rx_clock_delay_bypass(interface_num,
+								  port_index,
+								  true);
+		else
+			cvmx_helper_set_agl_rx_clock_delay_bypass(interface_num,
+								  port_index,
+								  false);
+
+		val = (uint32_t *)fdt_getprop(fdt_addr, eth,
+					      "cavium,rx-clk-skew", NULL);
+
+		cvmx_helper_set_agl_rx_clock_skew(interface_num, port_index,
+						  (val) ?
+						  fdt32_to_cpu(*val) : 0);
+	}
 	return (eth >= 0);
 }
 
@@ -972,6 +1012,28 @@ int cvmx_helper_board_get_mii_address(int ipd_port)
 			return 7 - ipd_port;
 		else
 			return -1;
+	/* Gary 2015-06-29 Add board_type for CAMITO, CANARIUM and CEDAR */
+	case CVMX_BOARD_TYPE_CAMITO_400_WIRE:
+	case CVMX_BOARD_TYPE_CAMITO_400_WIRELESS:
+		if ( ipd_port == 0 )
+			return 0x6;
+		else
+			return -1;
+	case CVMX_BOARD_TYPE_CANARIUM_WIRE:
+        case CVMX_BOARD_TYPE_CANARIUM_WIRELESS:
+		if ( ipd_port == 0 )
+			return 0x5;
+		else if ( ipd_port == 16 )
+			return 0x106;
+		else
+			return -1;		
+	case CVMX_BOARD_TYPE_CEDAR:
+                if ( ipd_port == 0 )
+                        return 0x10;
+                else if ( ipd_port == 16 )
+                        return 0x11;
+                else
+                        return -1;
 	}
 
 	/* Some unknown board. Somebody forgot to update this function... */
@@ -1327,6 +1389,7 @@ cvmx_helper_link_info_t __cvmx_helper_board_link_get_from_dt(int ipd_port)
 {
 	cvmx_helper_link_info_t result;
 	cvmx_phy_info_t phy_info;
+	int interface_num, index;
 
 	result.u64 = 0;
 	if (cvmx_sysinfo_get()->board_type == CVMX_BOARD_TYPE_SIM) {
@@ -1337,6 +1400,30 @@ cvmx_helper_link_info_t __cvmx_helper_board_link_get_from_dt(int ipd_port)
 		return result;
 	}
 
+	if (ipd_port >= 0) {
+		interface_num = cvmx_helper_get_interface_num(ipd_port);
+		index = cvmx_helper_get_interface_index_num(ipd_port);
+		if (!cvmx_helper_get_port_autonegotiation(interface_num, index)) {
+			result.s.link_up = 1;
+			result.s.full_duplex = 1;
+			switch (cvmx_helper_interface_get_mode(interface_num)) {
+			case CVMX_HELPER_INTERFACE_MODE_RGMII:
+			case CVMX_HELPER_INTERFACE_MODE_GMII:
+			case CVMX_HELPER_INTERFACE_MODE_SGMII:
+			case CVMX_HELPER_INTERFACE_MODE_QSGMII:
+			case CVMX_HELPER_INTERFACE_MODE_SPI:
+				result.s.speed = 1000;
+				break;
+			case CVMX_HELPER_INTERFACE_MODE_RXAUI:
+			case CVMX_HELPER_INTERFACE_MODE_XAUI:
+				result.s.speed = 10000;
+				break;
+			default:
+				break;
+			}
+			return result;
+		}
+	}
 	if (__get_phy_info_from_dt(&phy_info, ipd_port) < 0) {
 		/* If we can't get the PHY info from the device tree then try
 		 * the inband state.
@@ -1537,6 +1624,37 @@ cvmx_helper_link_info_t __cvmx_helper_board_link_get(int ipd_port)
 	case CVMX_BOARD_TYPE_NIC68_4:
 		is_cortina_phy = 1;
 		break;
+	/* Gary 2015-06-29 Add board_type for CAMITO, CANARIUM and CEDAR */
+	case CVMX_BOARD_TYPE_CAMITO_300_WIRE:
+	case CVMX_BOARD_TYPE_CAMITO_300_WIRELESS:
+	case CVMX_BOARD_TYPE_TEAK:
+		result.s.link_up = 1;
+		result.s.full_duplex = 1;
+		result.s.speed = 1000;
+		return result;
+	case CVMX_BOARD_TYPE_CAMITO_400_WIRE:
+	case CVMX_BOARD_TYPE_CAMITO_400_WIRELESS:
+		if ( ipd_port == 0 ) {
+			is_broadcom_phy = 1;
+		} else {
+			result.s.link_up = 1;
+			result.s.full_duplex = 1;
+			result.s.speed = 1000;
+			return result;
+		}
+		break;
+	case CVMX_BOARD_TYPE_CANARIUM_WIRE:
+        case CVMX_BOARD_TYPE_CANARIUM_WIRELESS:
+	case CVMX_BOARD_TYPE_CEDAR:
+		if (ipd_port == 0 || ipd_port == 16) {
+			is_broadcom_phy = 1;
+		} else {
+			result.s.link_up = 1;
+                        result.s.full_duplex = 1;
+                        result.s.speed = 1000;
+                        return result;
+                }
+		break;	
 	}
 
 	phy_addr = cvmx_helper_board_get_mii_address(ipd_port);
@@ -1630,6 +1748,7 @@ int cvmx_helper_board_link_set_phy(int phy_addr, cvmx_helper_board_set_phy_link_
 			cvmx_mdio_write(phy_addr >> 8, phy_addr & 0xff, CVMX_MDIO_PHY_REG_CONTROL_1000, reg_control_1000.u16);
 		}
 		reg_control.u16 = cvmx_mdio_read(phy_addr >> 8, phy_addr & 0xff, CVMX_MDIO_PHY_REG_CONTROL);
+		reg_control.s.reset = 1;
 		reg_control.s.autoneg_enable = 1;
 		reg_control.s.restart_autoneg = 1;
 		cvmx_mdio_write(phy_addr >> 8, phy_addr & 0xff, CVMX_MDIO_PHY_REG_CONTROL, reg_control.u16);
@@ -1669,6 +1788,7 @@ int cvmx_helper_board_link_set_phy(int phy_addr, cvmx_helper_board_set_phy_link_
 		if (reg_status.s.capable_extended_status)
 			cvmx_mdio_write(phy_addr >> 8, phy_addr & 0xff, CVMX_MDIO_PHY_REG_CONTROL_1000, reg_control_1000.u16);
 		reg_control.u16 = cvmx_mdio_read(phy_addr >> 8, phy_addr & 0xff, CVMX_MDIO_PHY_REG_CONTROL);
+		reg_control.s.reset = 1;
 		reg_control.s.autoneg_enable = 1;
 		reg_control.s.restart_autoneg = 1;
 		cvmx_mdio_write(phy_addr >> 8, phy_addr & 0xff, CVMX_MDIO_PHY_REG_CONTROL, reg_control.u16);
@@ -1676,6 +1796,7 @@ int cvmx_helper_board_link_set_phy(int phy_addr, cvmx_helper_board_set_phy_link_
 		cvmx_mdio_phy_reg_control_t reg_control;
 		reg_control.u16 = cvmx_mdio_read(phy_addr >> 8, phy_addr & 0xff, CVMX_MDIO_PHY_REG_CONTROL);
 		reg_control.s.autoneg_enable = 0;
+		reg_control.s.reset = 1;
 		reg_control.s.restart_autoneg = 1;
 		reg_control.s.duplex = link_info.s.full_duplex;
 		if (link_info.s.speed == 1000) {
