@@ -1,0 +1,12 @@
+--- a/include/platform.h
++++ b/include/platform.h
+@@ -245,7 +245,8 @@ typedef uint64_t bb__aliased_uint64_t FI
+ 
+ #if defined(i386) || defined(__x86_64__) || defined(__mips__) || defined(__cris__)
+ /* add other arches which benefit from this... */
+-typedef signed char smallint;
++/* Compile error on senao's environment 
++typedef signed char smallint; */
+ typedef unsigned char smalluint;
+ #else
+ /* for arches where byte accesses generate larger code: */

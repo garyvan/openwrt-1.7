@@ -10,14 +10,14 @@ echo "Setup default .config..."
 cd ./trunk
 
 echo "Copy dl.tgz and feeds.tgz..."
-cp /data/public/Sonicwall/Source-Code/openwrt-1.7/2015-12-29-* .
+cp /data/public/Sonicwall/Source-Code/openwrt-1.7/used-* .
 
 #4 Untar feed.tgz and dl.tgz
 echo "Un-tar dl.tgz and feeds.tgz..."
-tar -zxvf 2015-12-29-dl.tgz 
-tar -zxvf 2015-12-29-feeds.tgz
+tar -zxvf used-*dl.tgz 
+tar -zxvf used-*feeds.tgz
 
-rm -rf 2015-12-29-*
+rm -rf used-*
 
 #5 Install feeds into package
 echo "Install all application in feeds to package..."
